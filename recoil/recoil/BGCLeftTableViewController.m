@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -49,15 +50,32 @@
     return 3;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSLog(@"About to configure the cell");
+    
+    // Configure the cell...
+    switch (indexPath.row) {
+        case 0:
+            cell.imageView.image = [UIImage imageNamed:@"shootings_btn.png"];
+//            cell.imageView.highlightedImage = [UIImage imageNamed:@"shootings_btn_hover.png"];
+            break;
+        case 1:
+            cell.imageView.image = [UIImage imageNamed:@"difference_btn.png"];
+//            cell.imageView.highlightedImage = [UIImage imageNamed:@"difference_btn_hover.png"];
+            break;
+        case 2:
+            cell.imageView.image = [UIImage imageNamed:@"settings_btn.png"];
+//            cell.imageView.highlightedImage = [UIImage imageNamed:@"settings_btn_hover.png"];
+            break;
+        default:
+            break;
+    }
+    
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

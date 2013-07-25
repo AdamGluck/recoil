@@ -23,10 +23,13 @@
     return self;
 }
 
+#define LEFT_SIDEBAR_WIDTH 107
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.leftFixedWidth = LEFT_SIDEBAR_WIDTH;
+    self.recognizesPanGesture = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +37,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 -(void) awakeFromNib
 {

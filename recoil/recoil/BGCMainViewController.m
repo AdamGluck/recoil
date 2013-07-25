@@ -16,36 +16,44 @@ typedef enum mapState {
 
 
 @interface BGCMainViewController ()
-
-
 @property (nonatomic) BGCMapState currentMapState;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 
 @end
 
 @implementation BGCMainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark - Map stuff
+#define CHICAGO_LATITUDE 41.8500
+#define CHICAGO_LONGITUDE -87.6500
+#define METERS_PER_MILE 1609.344
+#define VIEW_REGION_RADIUS 15
+-(void)configureMap
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    CLLocationCoordinate2D chicago;
+    chicago.latitude = CHICAGO_LATITUDE;
+    chicago.longitude = CHICAGO_LONGITUDE;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(chicago, VIEW_REGION_RADIUS*METERS_PER_MILE, VIEW_REGION_RADIUS*METERS_PER_MILE);
+    
+    [self.mapView setRegion:viewRegion];
 }
 
-- (void)viewDidLoad
+#pragma mark - UI Methods
+
+- (void)configureSlider
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.currentMapState = MAP_STATE_DEATHS;
+    [self.slider setThumbImage:[UIImage imageNamed:@"toggle_control.png"] forState:UIControlStateNormal];
+    
+    // These remove the track image
+    [self.slider setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
+    [self.slider setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)configureNavBar
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
-
 
 - (IBAction)sliderChanged:(UISlider *)sender {
     float newValue;
@@ -62,6 +70,48 @@ typedef enum mapState {
     [sender setValue:newValue animated:YES];
     
 }
+
+- (IBAction)leftSidebarButtonPressed:(id)sender {
+    if ([self.parentViewController isKindOfClass:[JASidePanelController class]]) {
+        [(JASidePanelController *)self.parentViewController toggleLeftPanel:nil];
+    }
+}
+
+#pragma mark - View Controller Lifecycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    [self configureSlider];
+    [self configureNavBar];
+    
+    self.currentMapState = MAP_STATE_DEATHS;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self configureMap];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
 
 
 
