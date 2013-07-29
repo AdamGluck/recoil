@@ -7,12 +7,14 @@
 //
 
 #import "BGCLeftTableViewController.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
-@interface BGCLeftTableViewController ()
+@interface BGCLeftTableViewController () <UITableViewDelegate, UITableViewDelegate>
 
 @end
 
-@implementation BGCLeftTableViewController
+@implementation BGCLeftTableViewController 
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,29 +54,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSLog(@"About to configure the cell");
-    
+    NSString *cellIdentifier;// = @"Cell";
+    UIImage *cellImage;
+     // = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     switch (indexPath.row) {
         case 0:
-            cell.imageView.image = [UIImage imageNamed:@"shootings_btn.png"];
+            //cell.imageView.image = [UIImage imageNamed:@"shootings_btn.png"];
 //            cell.imageView.highlightedImage = [UIImage imageNamed:@"shootings_btn_hover.png"];
+            cellIdentifier = @"Shootings";
+            cellImage = [UIImage imageNamed:@"shootings_btn.png"];
             break;
         case 1:
-            cell.imageView.image = [UIImage imageNamed:@"difference_btn.png"];
+            //cell.imageView.image = [UIImage imageNamed:@"difference_btn.png"];
 //            cell.imageView.highlightedImage = [UIImage imageNamed:@"difference_btn_hover.png"];
+            cellIdentifier = @"Difference";
+            cellImage = [UIImage imageNamed:@"difference_btn.png"];
             break;
         case 2:
-            cell.imageView.image = [UIImage imageNamed:@"settings_btn.png"];
+            //cell.imageView.image = [UIImage imageNamed:@"settings_btn.png"];
 //            cell.imageView.highlightedImage = [UIImage imageNamed:@"settings_btn_hover.png"];
+            cellIdentifier = @"Settings";
+            cellImage = [UIImage imageNamed:@"settings_btn.png"];
             break;
         default:
+            cellIdentifier = nil;
+            cellImage = nil;
             break;
+
     }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    if (cell) cell.imageView.image = cellImage;
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"toShootings"]) {
+        //blank
+    } else if ([segue.identifier isEqualToString:@"toDifference"]) {
+        //blank
+    }
 }
 
 /*
@@ -127,6 +148,14 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    switch (indexPath.row) {
+        case 0:
+            [self.sidePanelController toggleLeftPanel:nil];
+            break;
+
+        default:
+            break;
+    }
 }
 
 @end
