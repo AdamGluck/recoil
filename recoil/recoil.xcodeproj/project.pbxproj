@@ -135,6 +135,7 @@
 		8D6D32F017A112F600DA5556 /* ticker_bckg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D328217A112F600DA5556 /* ticker_bckg@2x.png */; };
 		8D6D32F217A1284D00DA5556 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D32F117A1284900DA5556 /* Default.png */; };
 		8D6D32F417A1287600DA5556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D32F317A1287500DA5556 /* Default-568h@2x.png */; };
+		8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -274,6 +275,8 @@
 		8D6D328217A112F600DA5556 /* ticker_bckg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticker_bckg@2x.png"; sourceTree = "<group>"; };
 		8D6D32F117A1284900DA5556 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D6D32F317A1287500DA5556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCLeftBarButton.h; sourceTree = "<group>"; };
+		8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCLeftBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,11 +332,11 @@
 		8D6D31CD179F3AC700DA5556 /* recoil */ = {
 			isa = PBXGroup;
 			children = (
-				8D6D31D6179F3AC700DA5556 /* BGCAppDelegate.h */,
-				8D6D31D7179F3AC700DA5556 /* BGCAppDelegate.m */,
 				8D6D31F217A0DC8200DA5556 /* BGCMainViewController.h */,
 				8D6D31F317A0DC8200DA5556 /* BGCMainViewController.m */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
+				8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */,
+				8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */,
 				8D6D320317A100B800DA5556 /* BGCLeftTableViewController.h */,
 				8D6D320417A100B800DA5556 /* BGCLeftTableViewController.m */,
 				8D6D31FE17A0FC1100DA5556 /* BGCSidebarViewController.h */,
@@ -347,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				8D6D320617A10E4D00DA5556 /* Images */,
+				8D6D31D6179F3AC700DA5556 /* BGCAppDelegate.h */,
+				8D6D31D7179F3AC700DA5556 /* BGCAppDelegate.m */,
 				8D6D31CF179F3AC700DA5556 /* recoil-Info.plist */,
 				8D6D31D0179F3AC700DA5556 /* InfoPlist.strings */,
 				8D6D31D3179F3AC700DA5556 /* main.m */,
@@ -791,6 +796,7 @@
 				8D6D31F417A0DC8200DA5556 /* BGCMainViewController.m in Sources */,
 				8D6D320017A0FC1100DA5556 /* BGCSidebarViewController.m in Sources */,
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
+				8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
