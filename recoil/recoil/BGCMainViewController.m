@@ -23,6 +23,31 @@ typedef enum mapState {
 
 @implementation BGCMainViewController
 
+#pragma mark - View Controller Lifecycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    [self configureSlider];
+    [self configureNavBar];
+    self.currentMapState = MAP_STATE_DEATHS;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self configureMap];
+}
+
 #pragma mark - Map stuff
 #define CHICAGO_LATITUDE 41.8500
 #define CHICAGO_LONGITUDE -87.6500
@@ -44,13 +69,11 @@ typedef enum mapState {
 - (void)configureSlider
 {
     [self.slider setThumbImage:[UIImage imageNamed:@"toggle_control.png"] forState:UIControlStateNormal];
-    
-    // These remove the track image
     [self.slider setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
     [self.slider setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 }
 
-- (void)configureNavBar
+-(void)configureNavBar
 {
     
 }
@@ -77,33 +100,7 @@ typedef enum mapState {
     }
 }
 
-#pragma mark - View Controller Lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
-    [self configureSlider];
-    [self configureNavBar];
-    
-    self.currentMapState = MAP_STATE_DEATHS;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self configureMap];
-}
 
 - (void)didReceiveMemoryWarning
 {

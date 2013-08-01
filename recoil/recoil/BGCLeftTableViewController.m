@@ -30,11 +30,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,8 +51,7 @@
 {
     NSString *cellIdentifier;// = @"Cell";
     UIImage *cellImage;
-     // = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    // Configure the cell...
+
     switch (indexPath.row) {
         case 0:
             //cell.imageView.image = [UIImage imageNamed:@"shootings_btn.png"];
