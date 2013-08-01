@@ -20,7 +20,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -35,7 +34,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -43,31 +41,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier;// = @"Cell";
+    NSString *cellIdentifier;
     UIImage *cellImage;
+    UIImage *highlightedImage;
 
     switch (indexPath.row) {
         case 0:
-            //cell.imageView.image = [UIImage imageNamed:@"shootings_btn.png"];
-//            cell.imageView.highlightedImage = [UIImage imageNamed:@"shootings_btn_hover.png"];
+            highlightedImage = [UIImage imageNamed:@"shootings_btn_hover.png"];
             cellIdentifier = @"Shootings";
             cellImage = [UIImage imageNamed:@"shootings_btn.png"];
             break;
         case 1:
-            //cell.imageView.image = [UIImage imageNamed:@"difference_btn.png"];
-//            cell.imageView.highlightedImage = [UIImage imageNamed:@"difference_btn_hover.png"];
+            highlightedImage = [UIImage imageNamed:@"difference_btn_hover.png"];
             cellIdentifier = @"Difference";
             cellImage = [UIImage imageNamed:@"difference_btn.png"];
             break;
         case 2:
-            //cell.imageView.image = [UIImage imageNamed:@"settings_btn.png"];
-//            cell.imageView.highlightedImage = [UIImage imageNamed:@"settings_btn_hover.png"];
+            highlightedImage = [UIImage imageNamed:@"settings_btn_hover.png"];
             cellIdentifier = @"Settings";
             cellImage = [UIImage imageNamed:@"settings_btn.png"];
             break;
@@ -78,7 +73,10 @@
 
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    if (cell) cell.imageView.image = cellImage;
+    if (cell){
+        cell.imageView.image = cellImage;
+        cell.imageView.highlightedImage = highlightedImage;
+    }
     
     return cell;
 }
@@ -91,7 +89,6 @@
         //blank
     }
 }
-
 
 #pragma mark - Table view delegate
 
@@ -106,6 +103,12 @@
      */
     switch (indexPath.row) {
         case 0:
+            
+            [self.sidePanelController toggleLeftPanel:nil];
+            break;
+            
+        case 1:
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"differenceViewController"]];
             [self.sidePanelController toggleLeftPanel:nil];
             break;
 

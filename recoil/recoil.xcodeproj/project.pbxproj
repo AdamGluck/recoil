@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
 		8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C7179F3AC700DA5556 /* UIKit.framework */; };
 		8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C9179F3AC700DA5556 /* Foundation.framework */; };
@@ -18,7 +19,7 @@
 		8D6D31DC179F3AC700DA5556 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D31DB179F3AC700DA5556 /* Default@2x.png */; };
 		8D6D31DE179F3AC700DA5556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D31DD179F3AC700DA5556 /* Default-568h@2x.png */; };
 		8D6D31E1179F3AC700DA5556 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */; };
-		8D6D31F417A0DC8200DA5556 /* BGCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D31F317A0DC8200DA5556 /* BGCMainViewController.m */; };
+		8D6D31F417A0DC8200DA5556 /* BGCShootingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D31F317A0DC8200DA5556 /* BGCShootingsViewController.m */; };
 		8D6D31F617A0DD1C00DA5556 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31F517A0DD1C00DA5556 /* MapKit.framework */; };
 		8D6D320017A0FC1100DA5556 /* BGCSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D31FF17A0FC1100DA5556 /* BGCSidebarViewController.m */; };
 		8D6D320217A0FEB600DA5556 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D320117A0FEB500DA5556 /* QuartzCore.framework */; };
@@ -139,6 +140,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCDifferenceViewController.h; sourceTree = "<group>"; };
+		0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCDifferenceViewController.m; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D6D31C4179F3AC700DA5556 /* recoil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recoil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +158,8 @@
 		8D6D31DB179F3AC700DA5556 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8D6D31DD179F3AC700DA5556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8D6D31E0179F3AC700DA5556 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		8D6D31F217A0DC8200DA5556 /* BGCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCMainViewController.h; sourceTree = "<group>"; };
-		8D6D31F317A0DC8200DA5556 /* BGCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCMainViewController.m; sourceTree = "<group>"; };
+		8D6D31F217A0DC8200DA5556 /* BGCShootingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCShootingsViewController.h; sourceTree = "<group>"; };
+		8D6D31F317A0DC8200DA5556 /* BGCShootingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCShootingsViewController.m; sourceTree = "<group>"; };
 		8D6D31F517A0DD1C00DA5556 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8D6D31FE17A0FC1100DA5556 /* BGCSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCSidebarViewController.h; sourceTree = "<group>"; };
 		8D6D31FF17A0FC1100DA5556 /* BGCSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCSidebarViewController.m; sourceTree = "<group>"; };
@@ -296,6 +299,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F98FC2817AB235600ABF50F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8D6D31FE17A0FC1100DA5556 /* BGCSidebarViewController.h */,
+				8D6D31FF17A0FC1100DA5556 /* BGCSidebarViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		8D6D31BB179F3AC700DA5556 = {
 			isa = PBXGroup;
 			children = (
@@ -332,15 +344,16 @@
 		8D6D31CD179F3AC700DA5556 /* recoil */ = {
 			isa = PBXGroup;
 			children = (
-				8D6D31F217A0DC8200DA5556 /* BGCMainViewController.h */,
-				8D6D31F317A0DC8200DA5556 /* BGCMainViewController.m */,
+				8D6D31F217A0DC8200DA5556 /* BGCShootingsViewController.h */,
+				8D6D31F317A0DC8200DA5556 /* BGCShootingsViewController.m */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
+				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
+				0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */,
 				8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */,
 				8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */,
 				8D6D320317A100B800DA5556 /* BGCLeftTableViewController.h */,
 				8D6D320417A100B800DA5556 /* BGCLeftTableViewController.m */,
-				8D6D31FE17A0FC1100DA5556 /* BGCSidebarViewController.h */,
-				8D6D31FF17A0FC1100DA5556 /* BGCSidebarViewController.m */,
+				0F98FC2817AB235600ABF50F /* Navigation */,
 				8D6D31CE179F3AC700DA5556 /* Supporting Files */,
 			);
 			path = recoil;
@@ -793,10 +806,11 @@
 			files = (
 				8D6D31D4179F3AC700DA5556 /* main.m in Sources */,
 				8D6D31D8179F3AC700DA5556 /* BGCAppDelegate.m in Sources */,
-				8D6D31F417A0DC8200DA5556 /* BGCMainViewController.m in Sources */,
+				8D6D31F417A0DC8200DA5556 /* BGCShootingsViewController.m in Sources */,
 				8D6D320017A0FC1100DA5556 /* BGCSidebarViewController.m in Sources */,
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
 				8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */,
+				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

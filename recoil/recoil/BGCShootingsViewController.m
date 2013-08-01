@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 BGC. All rights reserved.
 //
 
-#import "BGCMainViewController.h"
+#import "BGCShootingsViewController.h"
+#import "UIViewController+JASidePanel.h"
 
 typedef enum mapState {
     MAP_STATE_DEATHS,
@@ -15,13 +16,13 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCMainViewController ()
+@interface BGCShootingsViewController ()
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 
 @end
 
-@implementation BGCMainViewController
+@implementation BGCShootingsViewController
 
 #pragma mark - View Controller Lifecycle
 
@@ -58,9 +59,7 @@ typedef enum mapState {
     CLLocationCoordinate2D chicago;
     chicago.latitude = CHICAGO_LATITUDE;
     chicago.longitude = CHICAGO_LONGITUDE;
-    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(chicago, VIEW_REGION_RADIUS*METERS_PER_MILE, VIEW_REGION_RADIUS*METERS_PER_MILE);
-    
     [self.mapView setRegion:viewRegion];
 }
 
@@ -95,9 +94,7 @@ typedef enum mapState {
 }
 
 - (IBAction)leftSidebarButtonPressed:(id)sender {
-    if ([self.parentViewController isKindOfClass:[JASidePanelController class]]) {
-        [(JASidePanelController *)self.parentViewController toggleLeftPanel:nil];
-    }
+    [self.sidePanelController toggleLeftPanel:nil];
 }
 
 
