@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
+		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
 		8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C7179F3AC700DA5556 /* UIKit.framework */; };
 		8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C9179F3AC700DA5556 /* Foundation.framework */; };
@@ -142,6 +143,8 @@
 /* Begin PBXFileReference section */
 		0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCDifferenceViewController.h; sourceTree = "<group>"; };
 		0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCDifferenceViewController.m; sourceTree = "<group>"; };
+		0F98FC2917AB276800ABF50F /* BGCRecoilNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCRecoilNavigationBar.h; sourceTree = "<group>"; };
+		0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCRecoilNavigationBar.m; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D6D31C4179F3AC700DA5556 /* recoil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recoil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,10 +305,38 @@
 		0F98FC2817AB235600ABF50F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				8D6D320317A100B800DA5556 /* BGCLeftTableViewController.h */,
+				8D6D320417A100B800DA5556 /* BGCLeftTableViewController.m */,
 				8D6D31FE17A0FC1100DA5556 /* BGCSidebarViewController.h */,
 				8D6D31FF17A0FC1100DA5556 /* BGCSidebarViewController.m */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		0F98FC2C17AB27C400ABF50F /* ShootingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D6D31F217A0DC8200DA5556 /* BGCShootingsViewController.h */,
+				8D6D31F317A0DC8200DA5556 /* BGCShootingsViewController.m */,
+			);
+			name = ShootingsViewController;
+			sourceTree = "<group>";
+		};
+		0F98FC2D17AB338100ABF50F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F98FC2E17AB338800ABF50F /* RecoilNavigationBar */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0F98FC2E17AB338800ABF50F /* RecoilNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				0F98FC2917AB276800ABF50F /* BGCRecoilNavigationBar.h */,
+				0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */,
+			);
+			name = RecoilNavigationBar;
 			sourceTree = "<group>";
 		};
 		8D6D31BB179F3AC700DA5556 = {
@@ -344,15 +375,13 @@
 		8D6D31CD179F3AC700DA5556 /* recoil */ = {
 			isa = PBXGroup;
 			children = (
-				8D6D31F217A0DC8200DA5556 /* BGCShootingsViewController.h */,
-				8D6D31F317A0DC8200DA5556 /* BGCShootingsViewController.m */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
+				0F98FC2D17AB338100ABF50F /* Views */,
 				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
 				0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */,
 				8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */,
 				8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */,
-				8D6D320317A100B800DA5556 /* BGCLeftTableViewController.h */,
-				8D6D320417A100B800DA5556 /* BGCLeftTableViewController.m */,
+				0F98FC2C17AB27C400ABF50F /* ShootingsViewController */,
 				0F98FC2817AB235600ABF50F /* Navigation */,
 				8D6D31CE179F3AC700DA5556 /* Supporting Files */,
 			);
@@ -811,6 +840,7 @@
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
 				8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
+				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

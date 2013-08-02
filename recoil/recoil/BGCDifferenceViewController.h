@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BGCDifferenceViewController : UITableViewController
+@interface BGCDifferenceViewController : UIViewController
 
 @end
