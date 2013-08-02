@@ -16,10 +16,13 @@
 
 @implementation BGCRecoilNavigationBar
 
+#pragma mark - Lifecycle methods
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self configure];
     }
     return self;
 }
@@ -32,7 +35,14 @@
 
 -(void) layoutSubviews
 {
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    [self configure];
+}
+
+#pragma mark - Custom Configuration
+
+-(void) configure
+{
+    self.backgroundColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
     [self configureLeftBarButtonItem];
     [self configureRightBarButtonItem];
 }
@@ -46,11 +56,6 @@
     [self addSubview:leftButton];
 }
 
--(void)menuPressed
-{
-    NSLog(@"left item pressed");
-}
-
 -(void) configureRightBarButtonItem{
     UIImage * image = [UIImage imageNamed:@"notification.png"];
     UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 17.5, 0, image.size.width, image.size.height)];
@@ -60,22 +65,29 @@
     [self addSubview:rightButton];
 }
 
--(void)notificationPressed
+#pragma mark - selectors
+
+-(void)menuPressed
 {
-    NSLog(@"notification pressed");
+    [self callDelegateForOptionalSelector:@selector(menuPressed)];
 }
 
--(UINavigationItem *) navigationItem
+-(void)notificationPressed
 {
-    if (!_navigationItem){
-        for (id view in self.subviews){
-            if ([view class] == [UINavigationItem class])
-                _navigationItem = (UINavigationItem *) view;
-        }
-    }
-    
-    return _navigationItem;
+    [self callDelegateForOptionalSelector:@selector(notificationPressed)];
 }
+
+#pragma mark - delegate utilities
+
+-(void)callDelegateForOptionalSelector:(SEL) selector
+{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    // delegate methods do not return allocated objects, so mem management will be fine
+    if ([self.delegate respondsToSelector:selector]) [self.delegate performSelector:selector];
+#pragma clang diagnostic pop
+}
+
 
 
 

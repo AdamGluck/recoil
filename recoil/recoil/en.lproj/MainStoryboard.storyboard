@@ -110,14 +110,63 @@
             </objects>
             <point key="canvasLocation" x="1273" y="303"/>
         </scene>
-        <!--View Controller-->
+        <!--Difference View Controller-->
         <scene sceneID="lwE-Qt-5Nf">
             <objects>
-                <viewController storyboardIdentifier="differenceViewController" id="Prs-Aa-dJE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="differenceViewController" id="Prs-Aa-dJE" customClass="BGCDifferenceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fOw-7J-HtN">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X2J-G4-dCX">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="oiY-kt-PA7">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WHAT CAN YOU DO TO MAKE A DIFFERENCE?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-HX-PUg">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="267" id="beM-Sy-Luc"/>
+                                                <constraint firstAttribute="height" constant="43" id="doS-xy-bhJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.88235294117647056" green="0.72156862745098038" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="ZIp-hw-uZ2">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="61" id="dKA-hp-cpa"/>
+                                            </constraints>
+                                            <string key="text">Take a stand and make your voice heard! Many organizations are making a difference today.  Sign a petition, donate money, or volunteer.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="trailing" secondItem="yDc-HX-PUg" secondAttribute="trailing" type="default" id="3P5-oo-mCi"/>
+                                        <constraint firstItem="yDc-HX-PUg" firstAttribute="centerX" secondItem="oiY-kt-PA7" secondAttribute="centerX" type="default" id="X5C-AT-xTP"/>
+                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="top" secondItem="yDc-HX-PUg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YHW-v8-Oyu"/>
+                                        <constraint firstItem="yDc-HX-PUg" firstAttribute="top" secondItem="oiY-kt-PA7" secondAttribute="top" constant="10" id="fUQ-qA-VjF"/>
+                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="leading" secondItem="yDc-HX-PUg" secondAttribute="leading" type="default" id="ngp-MP-LWJ"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="78" id="haG-pN-XwX">
+                                        <rect key="frame" x="0.0" y="151" width="320" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Prs-Aa-dJE" id="QvC-K5-ygd"/>
+                                    <outlet property="delegate" destination="Prs-Aa-dJE" id="rPs-67-ZEJ"/>
+                                </connections>
+                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7U8-ZP-Fat" customClass="BGCRecoilNavigationBar">
                                 <items>
                                     <navigationItem title="Title" id="wXk-iD-5Jj"/>
@@ -127,14 +176,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7U8-ZP-Fat" firstAttribute="trailing" secondItem="fOw-7J-HtN" secondAttribute="trailing" type="default" id="0Oz-av-ep6"/>
+                            <constraint firstItem="X2J-G4-dCX" firstAttribute="top" secondItem="7U8-ZP-Fat" secondAttribute="bottom" type="default" id="Aqn-i2-9GO"/>
+                            <constraint firstItem="X2J-G4-dCX" firstAttribute="trailing" secondItem="fOw-7J-HtN" secondAttribute="trailing" type="default" id="Aza-pT-D4t"/>
                             <constraint firstItem="7U8-ZP-Fat" firstAttribute="top" secondItem="fOw-7J-HtN" secondAttribute="top" type="default" id="Czj-Jd-ypd"/>
+                            <constraint firstItem="X2J-G4-dCX" firstAttribute="bottom" secondItem="fOw-7J-HtN" secondAttribute="bottom" type="default" id="eXV-gO-sly"/>
+                            <constraint firstItem="X2J-G4-dCX" firstAttribute="leading" secondItem="fOw-7J-HtN" secondAttribute="leading" type="default" id="qcF-bA-c15"/>
                             <constraint firstItem="7U8-ZP-Fat" firstAttribute="leading" secondItem="fOw-7J-HtN" secondAttribute="leading" type="default" id="qeN-WF-zRM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoView" destination="oiY-kt-PA7" id="bYz-Sa-6lH"/>
+                        <outlet property="tableView" destination="X2J-G4-dCX" id="dg9-rQ-BE4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haD-hM-4NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="-358"/>
+            <point key="canvasLocation" x="790" y="-374"/>
         </scene>
         <!--Shootings View Controller-->
         <scene sceneID="5">
@@ -245,6 +302,40 @@
         <image name="notification_hover.png" width="16" height="16"/>
         <image name="shooting_toggle@2x.png" width="640" height="106"/>
     </resources>
+    <classes>
+        <class className="BGCDifferenceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCDifferenceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="BGCLeftBarButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCLeftBarButton.h"/>
+        </class>
+        <class className="BGCLeftTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCLeftTableViewController.h"/>
+        </class>
+        <class className="BGCRecoilNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCRecoilNavigationBar.h"/>
+        </class>
+        <class className="BGCShootingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCShootingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="BGCSidebarViewController" superclassName="JASidePanelController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCSidebarViewController.h"/>
+        </class>
+        <class className="JASidePanelController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -18,4 +18,5 @@
 @interface BGCRecoilNavigationBar : UINavigationBar
 
 @property (weak, nonatomic) id <RecoilNavigationBarDelegate> delegate;
+
 @end
