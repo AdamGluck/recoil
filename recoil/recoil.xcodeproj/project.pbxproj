@@ -24,6 +24,7 @@
 		8D4E558117B03C14007A10FD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558017B03C14007A10FD /* Accounts.framework */; };
 		8D4E558317B03C19007A10FD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558217B03C19007A10FD /* Social.framework */; };
 		8D4E558517B03C5E007A10FD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558417B03C5E007A10FD /* libsqlite3.dylib */; };
+		8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E558817B04174007A10FD /* BGCCasualty.m */; };
 		8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C7179F3AC700DA5556 /* UIKit.framework */; };
 		8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C9179F3AC700DA5556 /* Foundation.framework */; };
 		8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31CB179F3AC700DA5556 /* CoreGraphics.framework */; };
@@ -175,6 +176,8 @@
 		8D4E558017B03C14007A10FD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8D4E558217B03C19007A10FD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8D4E558417B03C5E007A10FD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8D4E558717B04174007A10FD /* BGCCasualty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCCasualty.h; sourceTree = "<group>"; };
+		8D4E558817B04174007A10FD /* BGCCasualty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCCasualty.m; sourceTree = "<group>"; };
 		8D6D31C4179F3AC700DA5556 /* recoil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recoil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6D31C7179F3AC700DA5556 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8D6D31C9179F3AC700DA5556 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -381,6 +384,15 @@
 			name = RecoilNavigationBar;
 			sourceTree = "<group>";
 		};
+		8D4E558617B0410E007A10FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D4E558717B04174007A10FD /* BGCCasualty.h */,
+				8D4E558817B04174007A10FD /* BGCCasualty.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8D6D31BB179F3AC700DA5556 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +443,7 @@
 		8D6D31CD179F3AC700DA5556 /* recoil */ = {
 			isa = PBXGroup;
 			children = (
+				8D4E558617B0410E007A10FD /* Models */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
 				0F98FC2D17AB338100ABF50F /* Views */,
 				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
@@ -897,6 +910,7 @@
 				8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
+				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
