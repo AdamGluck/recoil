@@ -6,6 +6,26 @@
 //  Copyright (c) 2013 BGC. All rights reserved.
 //
 
+// Various enums
+typedef NS_ENUM(NSInteger, BGCGender) {
+    MALE,
+    FEMALE,
+    UNKNOWN
+};
+
+typedef NS_ENUM(NSInteger, BGCCasualityType) {
+    DEATH,
+    INJURY,
+    OTHER
+};
+
+// Parse API key constants:
+static NSString * const kBGCParseLocationKey = @"location";
+static NSString * const kBGCParseNameKey = @"name";
+static NSString * const kBGCParseAgeKey = @"age";
+static NSString * const kBGCParseCasualtyTypeKey = @"casualty type";
+static NSString * const kBGCParseURLKey = @"news url";
+
 #import <UIKit/UIKit.h>
 
 @interface BGCAppDelegate : UIResponder <UIApplicationDelegate>
