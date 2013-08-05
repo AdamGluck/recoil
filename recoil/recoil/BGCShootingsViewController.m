@@ -8,7 +8,7 @@
 
 #import "BGCShootingsViewController.h"
 #import "UIViewController+JASidePanel.h"
-#import "BGCRecoilNavigationBar.h"
+#import <Parse/Parse.h>
 
 typedef enum mapState {
     MAP_STATE_DEATHS,
@@ -34,6 +34,7 @@ typedef enum mapState {
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     [self configureSlider];
     self.currentMapState = MAP_STATE_DEATHS;
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated

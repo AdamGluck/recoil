@@ -11,6 +11,21 @@
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
+		8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556A17B0353D007A10FD /* AudioToolbox.framework */; };
+		8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556C17B03547007A10FD /* CFNetwork.framework */; };
+		8D4E556F17B03556007A10FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556E17B03556007A10FD /* CoreLocation.framework */; };
+		8D4E557117B0355D007A10FD /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */; };
+		8D4E557317B03563007A10FD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557217B03563007A10FD /* MobileCoreServices.framework */; };
+		8D4E557517B0356F007A10FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557417B0356F007A10FD /* Security.framework */; };
+		8D4E557717B03574007A10FD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557617B03574007A10FD /* StoreKit.framework */; };
+		8D4E557917B0357A007A10FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557817B0357A007A10FD /* SystemConfiguration.framework */; };
+		8D4E557B17B03704007A10FD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557A17B03704007A10FD /* Parse.framework */; };
+		8D4E557D17B03A47007A10FD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557C17B03A47007A10FD /* FacebookSDK.framework */; };
+		8D4E557F17B03C0E007A10FD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557E17B03C0E007A10FD /* AdSupport.framework */; };
+		8D4E558117B03C14007A10FD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558017B03C14007A10FD /* Accounts.framework */; };
+		8D4E558317B03C19007A10FD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558217B03C19007A10FD /* Social.framework */; };
+		8D4E558517B03C5E007A10FD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E558417B03C5E007A10FD /* libsqlite3.dylib */; };
+		8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E558817B04174007A10FD /* BGCCasualty.m */; };
 		8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C7179F3AC700DA5556 /* UIKit.framework */; };
 		8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31C9179F3AC700DA5556 /* Foundation.framework */; };
 		8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6D31CB179F3AC700DA5556 /* CoreGraphics.framework */; };
@@ -149,6 +164,22 @@
 		0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCRecoilNavigationBar.m; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8D4E556A17B0353D007A10FD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8D4E556C17B03547007A10FD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8D4E556E17B03556007A10FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		8D4E557217B03563007A10FD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8D4E557417B0356F007A10FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8D4E557617B03574007A10FD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8D4E557817B0357A007A10FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8D4E557A17B03704007A10FD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../../Downloads/Parse.framework; sourceTree = "<group>"; };
+		8D4E557C17B03A47007A10FD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		8D4E557E17B03C0E007A10FD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8D4E558017B03C14007A10FD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8D4E558217B03C19007A10FD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8D4E558417B03C5E007A10FD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8D4E558717B04174007A10FD /* BGCCasualty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCCasualty.h; sourceTree = "<group>"; };
+		8D4E558817B04174007A10FD /* BGCCasualty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCCasualty.m; sourceTree = "<group>"; };
 		8D6D31C4179F3AC700DA5556 /* recoil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recoil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6D31C7179F3AC700DA5556 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8D6D31C9179F3AC700DA5556 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,12 +321,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D4E558517B03C5E007A10FD /* libsqlite3.dylib in Frameworks */,
+				8D4E558317B03C19007A10FD /* Social.framework in Frameworks */,
+				8D4E558117B03C14007A10FD /* Accounts.framework in Frameworks */,
+				8D4E557F17B03C0E007A10FD /* AdSupport.framework in Frameworks */,
+				8D4E557917B0357A007A10FD /* SystemConfiguration.framework in Frameworks */,
+				8D4E557717B03574007A10FD /* StoreKit.framework in Frameworks */,
+				8D4E557517B0356F007A10FD /* Security.framework in Frameworks */,
 				8D6D320217A0FEB600DA5556 /* QuartzCore.framework in Frameworks */,
+				8D4E557317B03563007A10FD /* MobileCoreServices.framework in Frameworks */,
+				8D4E557117B0355D007A10FD /* libz.1.1.3.dylib in Frameworks */,
+				8D4E556F17B03556007A10FD /* CoreLocation.framework in Frameworks */,
+				8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */,
+				8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */,
+				8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */,
 				8D6D31F617A0DD1C00DA5556 /* MapKit.framework in Frameworks */,
 				8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */,
 				8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */,
-				8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */,
 				464B0985398C4933BD68F465 /* libPods.a in Frameworks */,
+				8D4E557B17B03704007A10FD /* Parse.framework in Frameworks */,
+				8D4E557D17B03A47007A10FD /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +413,15 @@
 			name = RecoilNavigationBar;
 			sourceTree = "<group>";
 		};
+		8D4E558617B0410E007A10FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D4E558717B04174007A10FD /* BGCCasualty.h */,
+				8D4E558817B04174007A10FD /* BGCCasualty.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8D6D31BB179F3AC700DA5556 = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +445,20 @@
 		8D6D31C6179F3AC700DA5556 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D4E558417B03C5E007A10FD /* libsqlite3.dylib */,
+				8D4E558217B03C19007A10FD /* Social.framework */,
+				8D4E558017B03C14007A10FD /* Accounts.framework */,
+				8D4E557E17B03C0E007A10FD /* AdSupport.framework */,
+				8D4E557C17B03A47007A10FD /* FacebookSDK.framework */,
+				8D4E557A17B03704007A10FD /* Parse.framework */,
+				8D4E557817B0357A007A10FD /* SystemConfiguration.framework */,
+				8D4E557617B03574007A10FD /* StoreKit.framework */,
+				8D4E557417B0356F007A10FD /* Security.framework */,
+				8D4E557217B03563007A10FD /* MobileCoreServices.framework */,
+				8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */,
+				8D4E556E17B03556007A10FD /* CoreLocation.framework */,
+				8D4E556C17B03547007A10FD /* CFNetwork.framework */,
+				8D4E556A17B0353D007A10FD /* AudioToolbox.framework */,
 				8D6D320117A0FEB500DA5556 /* QuartzCore.framework */,
 				8D6D31F517A0DD1C00DA5556 /* MapKit.framework */,
 				8D6D31C7179F3AC700DA5556 /* UIKit.framework */,
@@ -404,6 +472,7 @@
 		8D6D31CD179F3AC700DA5556 /* recoil */ = {
 			isa = PBXGroup;
 			children = (
+				8D4E558617B0410E007A10FD /* Models */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
 				0F98FC2D17AB338100ABF50F /* Views */,
 				0F45616417B0474C00F8DD40 /* ViewControllers */,
@@ -865,6 +934,7 @@
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
+				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +1020,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58429E47FBC64949B81AC380 /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Downloads\"",
+					"\"$(SRCROOT)/../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
@@ -962,6 +1038,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58429E47FBC64949B81AC380 /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Downloads\"",
+					"\"$(SRCROOT)/../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
