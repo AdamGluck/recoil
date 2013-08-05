@@ -10,6 +10,7 @@
 
 @protocol RecoilNavigationBarDelegate <NSObject>
 
+@optional
 -(void) menuPressed;
 -(void) notificationPressed;
 
@@ -18,5 +19,7 @@
 @interface BGCRecoilNavigationBar : UINavigationBar
 
 @property (weak, nonatomic) id <RecoilNavigationBarDelegate> delegate;
+@property (strong, nonatomic) NSString * title;
+@property (strong, nonatomic) UINavigationItem * navItem;
 
 @end
