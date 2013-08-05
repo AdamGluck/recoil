@@ -11,10 +11,13 @@
 @interface BGCRecoilNavigationBar()
 
 @property (strong, nonatomic) UINavigationItem * navigationItem;
+@property (strong, nonatomic) UILabel * titleLabel;
 
 @end
 
 @implementation BGCRecoilNavigationBar
+
+@synthesize title = _title;
 
 #pragma mark - Lifecycle methods
 
@@ -26,12 +29,15 @@
     }
     return self;
 }
+
 -(void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColor(context, CGColorGetComponents([UIColor clearColor].CGColor));
     CGContextFillRect(context, rect);
+    
 }
+
 
 -(void) layoutSubviews
 {
@@ -63,6 +69,21 @@
     rightButton.center = CGPointMake(rightButton.center.x, self.center.y);
     [rightButton addTarget:self action:@selector(notificationPressed) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:rightButton];
+}
+
+-(void) setTitle:(NSString *)title
+{
+    _title = [title copy];
+    self.navigationItem = [[UINavigationItem alloc] initWithTitle:title];
+    [self pushNavigationItem:self.navigationItem animated:NO];
+}
+
+-(NSString *) title
+{
+    if (!_title){
+        _title = [[NSString alloc] init];
+    }
+    return _title;
 }
 
 #pragma mark - selectors

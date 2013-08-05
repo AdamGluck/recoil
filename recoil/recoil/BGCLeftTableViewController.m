@@ -7,6 +7,8 @@
 //
 
 #import "BGCLeftTableViewController.h"
+#import "BGCShootingsViewController.h"
+#import "BGCDifferenceViewController.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
@@ -72,49 +74,37 @@
             break;
 
     }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (cell){
         cell.imageView.image = cellImage;
         cell.imageView.highlightedImage = highlightedImage;
     }
-    
     return cell;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"toShootings"]) {
-        //blank
-    } else if ([segue.identifier isEqualToString:@"toDifference"]) {
-        //blank
-    }
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     switch (indexPath.row) {
         case 0:
-            
-            [self.sidePanelController toggleLeftPanel:nil];
+            if ([self.sidePanelController.centerPanel class] != [BGCShootingsViewController class]){
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"shootingsViewController"]];
+            }
             break;
-            
         case 1:
-            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"differenceViewController"]];
-            [self.sidePanelController toggleLeftPanel:nil];
+            if ([self.sidePanelController.centerPanel class] != [BGCDifferenceViewController class]){
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"differenceViewController"]];
+            }
             break;
-
+        case 2:
         default:
             break;
     }
+    [self.sidePanelController toggleLeftPanel:nil];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 @end

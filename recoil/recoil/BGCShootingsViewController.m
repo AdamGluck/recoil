@@ -17,9 +17,10 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController ()
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate>
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
 
 @end
 
@@ -27,23 +28,18 @@ typedef enum mapState {
 
 #pragma mark - View Controller Lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     [self configureSlider];
-    [self configureNavBar];
     self.currentMapState = MAP_STATE_DEATHS;
     
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [self configureNavBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,7 +72,8 @@ typedef enum mapState {
 
 -(void)configureNavBar
 {
-    
+    self.navBar.delegate = self;
+    self.navBar.title = @"Shootings";
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
@@ -92,14 +89,19 @@ typedef enum mapState {
         newValue = 2;
     }
     [sender setValue:newValue animated:YES];
-    
 }
 
-- (IBAction)leftSidebarButtonPressed:(id)sender {
+#pragma mark - navigation
+
+-(void) menuPressed
+{
     [self.sidePanelController toggleLeftPanel:nil];
 }
 
-
+-(void) notificationPressed
+{
+    [self.sidePanelController toggleRightPanel:nil];
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */; };
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
@@ -152,10 +153,11 @@
 		8D6D32F017A112F600DA5556 /* ticker_bckg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D328217A112F600DA5556 /* ticker_bckg@2x.png */; };
 		8D6D32F217A1284D00DA5556 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D32F117A1284900DA5556 /* Default.png */; };
 		8D6D32F417A1287600DA5556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D6D32F317A1287500DA5556 /* Default-568h@2x.png */; };
-		8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationsViewController.h; sourceTree = "<group>"; };
+		0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationsViewController.m; sourceTree = "<group>"; };
 		0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCDifferenceViewController.h; sourceTree = "<group>"; };
 		0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCDifferenceViewController.m; sourceTree = "<group>"; };
 		0F98FC2917AB276800ABF50F /* BGCRecoilNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCRecoilNavigationBar.h; sourceTree = "<group>"; };
@@ -312,8 +314,6 @@
 		8D6D328217A112F600DA5556 /* ticker_bckg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticker_bckg@2x.png"; sourceTree = "<group>"; };
 		8D6D32F117A1284900DA5556 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D6D32F317A1287500DA5556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCLeftBarButton.h; sourceTree = "<group>"; };
-		8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCLeftBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +347,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F45616217B0473400F8DD40 /* DifferenceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
+				0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */,
+			);
+			name = DifferenceViewController;
+			sourceTree = "<group>";
+		};
+		0F45616417B0474C00F8DD40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F45616517B0505700F8DD40 /* NotificationsViewController */,
+				0F45616217B0473400F8DD40 /* DifferenceViewController */,
+				0F98FC2C17AB27C400ABF50F /* ShootingsViewController */,
+				0F98FC2817AB235600ABF50F /* Navigation */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0F45616517B0505700F8DD40 /* NotificationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */,
+				0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */,
+			);
+			name = NotificationsViewController;
+			sourceTree = "<group>";
+		};
 		0F98FC2817AB235600ABF50F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,12 +475,7 @@
 				8D4E558617B0410E007A10FD /* Models */,
 				8D6D31DF179F3AC700DA5556 /* MainStoryboard.storyboard */,
 				0F98FC2D17AB338100ABF50F /* Views */,
-				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
-				0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */,
-				8D6D32F517A4984E00DA5556 /* BGCLeftBarButton.h */,
-				8D6D32F617A4985100DA5556 /* BGCLeftBarButton.m */,
-				0F98FC2C17AB27C400ABF50F /* ShootingsViewController */,
-				0F98FC2817AB235600ABF50F /* Navigation */,
+				0F45616417B0474C00F8DD40 /* ViewControllers */,
 				8D6D31CE179F3AC700DA5556 /* Supporting Files */,
 			);
 			path = recoil;
@@ -907,7 +931,6 @@
 				8D6D31F417A0DC8200DA5556 /* BGCShootingsViewController.m in Sources */,
 				8D6D320017A0FC1100DA5556 /* BGCSidebarViewController.m in Sources */,
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
-				8D6D32F717A4985700DA5556 /* BGCLeftBarButton.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
