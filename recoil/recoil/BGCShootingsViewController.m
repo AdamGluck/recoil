@@ -8,6 +8,7 @@
 
 #import "BGCShootingsViewController.h"
 #import "UIViewController+JASidePanel.h"
+#import <Parse/Parse.h>
 
 typedef enum mapState {
     MAP_STATE_DEATHS,
@@ -42,6 +43,7 @@ typedef enum mapState {
     [self configureSlider];
     [self configureNavBar];
     self.currentMapState = MAP_STATE_DEATHS;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
