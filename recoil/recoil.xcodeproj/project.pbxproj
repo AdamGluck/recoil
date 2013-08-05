@@ -933,6 +933,7 @@
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
+				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
