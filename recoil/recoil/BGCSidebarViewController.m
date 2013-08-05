@@ -24,7 +24,7 @@
 }
 
 #define LEFT_SIDEBAR_WIDTH 105
-#define RIGHT_SIDEBAR_WIDTH 220
+#define RIGHT_SIDEBAR_WIDTH 255
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -35,9 +35,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColor(context, CGColorGetComponents([UIColor clearColor].CGColor));
     CGContextFillRect(context, rect);
-    
 }
-
 
 -(void) layoutSubviews
 {
