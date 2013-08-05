@@ -88,7 +88,6 @@ typedef enum mapState {
         newValue = 2;
     }
     [sender setValue:newValue animated:YES];
-    
 }
 
 #pragma mark - navigation
@@ -96,6 +95,11 @@ typedef enum mapState {
 -(void) menuPressed
 {
     [self.sidePanelController toggleLeftPanel:nil];
+}
+
+-(void) notificationPressed
+{
+    [self.sidePanelController toggleRightPanel:nil];
 }
 
 - (void)didReceiveMemoryWarning

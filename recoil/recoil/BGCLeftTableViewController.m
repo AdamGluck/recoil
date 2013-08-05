@@ -74,22 +74,13 @@
             break;
 
     }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (cell){
         cell.imageView.image = cellImage;
         cell.imageView.highlightedImage = highlightedImage;
     }
-    
     return cell;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"toShootings"]) {
-        //blank
-    } else if ([segue.identifier isEqualToString:@"toDifference"]) {
-        //blank
-    }
 }
 
 #pragma mark - Table view delegate
@@ -108,11 +99,11 @@
             }
             break;
         case 2:
-            
         default:
             break;
     }
     [self.sidePanelController toggleLeftPanel:nil];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 
