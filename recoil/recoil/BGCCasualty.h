@@ -17,7 +17,7 @@
 
 // Main properties
 @property (strong, nonatomic) NSString *victimName;
-@property (nonatomic) NSUInteger victimAge;
+@property (strong, nonatomic) NSNumber *victimAge;
 @property (nonatomic) BGCGender victimGender;
 @property (nonatomic) BGCCasualityType casualtyType;
 @property (strong, nonatomic) NSURL *newsArticle;
@@ -30,6 +30,10 @@
 // Parse property
 @property (strong, nonatomic) PFObject *object;
 @property (strong, nonatomic) PFGeoPoint *geopoint;
+
+// Init methods
+//- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
+- (id)initWithPFObject:(PFObject *)object;
 
 
 

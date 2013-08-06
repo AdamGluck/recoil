@@ -177,6 +177,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="451" id="Lmt-8e-Rpg"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="9Vg-dX-qvZ"/>
+                                </connections>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shooting_toggle@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-8k-eYB">
                                 <constraints>

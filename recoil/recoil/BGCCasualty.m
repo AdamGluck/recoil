@@ -15,23 +15,32 @@
 @implementation BGCCasualty
 
 #pragma mark - Init methods
-- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate
-{
-    self = [super init];
-    if (self) {
-        self.coordinate = coordinate;
-    }
-    return self;
-}
+//- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate
+//{
+//    self = [super init];
+//    if (self) {
+//        self.coordinate = coordinate;
+//    }
+//    return self;
+//}
 
 - (id)initWithPFObject:(PFObject *)object {
-    self.object = object;
-    self.geopoint = [object objectForKey:kBGCParseLocationKey];
-    [object fetchIfNeeded];
+    self = [super init];
     
+    if (self) {
+        self.object = object;
+        self.geopoint = [object objectForKey:kBGCParseLocationKey];
+        [object fetchIfNeeded];
+        
+        // These will be nil if they don't exist -- and that's ok!
+        self.coordinate = CLLocationCoordinate2DMake(self.geopoint.latitude, self.geopoint.longitude);
+        self.victimAge = [object objectForKey:kBGCParseAgeKey];
+        self.victimName = [object objectForKey:kBGCParseNameKey];
+        
+    }
     
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.geopoint.latitude, self.geopoint.longitude);
-    return [self initWithCoordinate:coordinate];
+    return self;
+        
 }
 
 #pragma mark - Lazy instantiation

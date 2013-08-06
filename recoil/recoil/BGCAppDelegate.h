@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, BGCCasualityType) {
 };
 
 // Parse API key constants:
+static NSString * const kBGCParseClassName = @"Casualty";
 static NSString * const kBGCParseLocationKey = @"location";
 static NSString * const kBGCParseNameKey = @"name";
 static NSString * const kBGCParseAgeKey = @"age";
