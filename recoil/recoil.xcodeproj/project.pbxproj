@@ -11,6 +11,7 @@
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
+		8D1BF33E17B074370007D197 /* BGCCasualtyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BF33D17B074370007D197 /* BGCCasualtyLocation.m */; };
 		8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556A17B0353D007A10FD /* AudioToolbox.framework */; };
 		8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556C17B03547007A10FD /* CFNetwork.framework */; };
 		8D4E556F17B03556007A10FD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E556E17B03556007A10FD /* CoreLocation.framework */; };
@@ -164,6 +165,8 @@
 		0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCRecoilNavigationBar.m; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8D1BF33C17B074370007D197 /* BGCCasualtyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCCasualtyLocation.h; sourceTree = "<group>"; };
+		8D1BF33D17B074370007D197 /* BGCCasualtyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCCasualtyLocation.m; sourceTree = "<group>"; };
 		8D4E556A17B0353D007A10FD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8D4E556C17B03547007A10FD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8D4E556E17B03556007A10FD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -418,6 +421,8 @@
 			children = (
 				8D4E558717B04174007A10FD /* BGCCasualty.h */,
 				8D4E558817B04174007A10FD /* BGCCasualty.m */,
+				8D1BF33C17B074370007D197 /* BGCCasualtyLocation.h */,
+				8D1BF33D17B074370007D197 /* BGCCasualtyLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -935,6 +940,7 @@
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
+				8D1BF33E17B074370007D197 /* BGCCasualtyLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
