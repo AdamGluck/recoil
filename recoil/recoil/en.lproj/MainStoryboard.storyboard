@@ -205,13 +205,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="counter@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="a9e-na-Snx">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="0ZJ-qM-zfQ"/>
-                                    <constraint firstAttribute="height" constant="36" id="Gq1-JI-Xgv"/>
+                                    <constraint firstAttribute="height" constant="36" id="3SH-ux-YsL"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV1-iF-fgX">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="Rx7-jX-9e9"/>
                                     <constraint firstAttribute="width" constant="41" id="SVw-wN-dke"/>
+                                    <constraint firstAttribute="height" constant="37" id="luI-zc-bl5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="map_btn_active@2x.png">
@@ -221,6 +221,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mapViewToggle:" destination="2" eventType="touchUpInside" id="LFh-AP-NGQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iih-D6-rpe">
                                 <constraints>
@@ -234,34 +237,49 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="listViewToggle:" destination="2" eventType="touchUpInside" id="wRl-F8-yBt"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-8s-06o">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="SVd-2B-s4Z"/>
+                                    <constraint firstAttribute="width" constant="50" id="tqz-zn-ZM9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j3w-PV-DY4" firstAttribute="centerY" secondItem="iih-D6-rpe" secondAttribute="centerY" type="default" id="1GD-aL-z5G"/>
+                            <constraint firstItem="j3w-PV-DY4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="65" id="3is-a6-DPp"/>
                             <constraint firstItem="0st-ps-Bdv" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="4GC-8N-kgk"/>
-                            <constraint firstAttribute="trailing" secondItem="iih-D6-rpe" secondAttribute="trailing" constant="74" id="84J-Pf-POB"/>
                             <constraint firstItem="rCt-Zr-cYY" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="8DK-0T-9AU"/>
-                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="81" id="9ho-EJ-W5X"/>
-                            <constraint firstItem="j3w-PV-DY4" firstAttribute="top" secondItem="3" secondAttribute="top" constant="53" id="G3F-rj-IAd"/>
                             <constraint firstItem="Lt1-9L-k0b" firstAttribute="top" secondItem="0st-ps-Bdv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IBQ-dh-Kt1"/>
+                            <constraint firstItem="tdK-8s-06o" firstAttribute="centerY" secondItem="a9e-na-Snx" secondAttribute="centerY" type="default" id="K38-oA-VWk"/>
+                            <constraint firstAttribute="trailing" secondItem="iih-D6-rpe" secondAttribute="trailing" constant="74" id="PXP-ll-l6I"/>
+                            <constraint firstItem="iih-D6-rpe" firstAttribute="centerY" secondItem="j3w-PV-DY4" secondAttribute="centerY" type="default" id="Qph-Sn-c0d"/>
+                            <constraint firstItem="iih-D6-rpe" firstAttribute="top" secondItem="uV1-iF-fgX" secondAttribute="top" type="default" id="TNU-NH-Ky5"/>
                             <constraint firstItem="zfB-8k-eYB" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Uzt-Rx-4Wz"/>
                             <constraint firstItem="rCt-Zr-cYY" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="WYc-na-UjA"/>
-                            <constraint firstItem="uV1-iF-fgX" firstAttribute="bottom" secondItem="a9e-na-Snx" secondAttribute="bottom" type="default" id="X20-iE-zM4"/>
                             <constraint firstItem="zfB-8k-eYB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="489" id="Xvc-tW-Fcf"/>
-                            <constraint firstItem="iih-D6-rpe" firstAttribute="top" secondItem="uV1-iF-fgX" secondAttribute="top" type="default" id="ccJ-FL-G2l"/>
+                            <constraint firstItem="a9e-na-Snx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="68" id="Yzu-mp-xeb"/>
+                            <constraint firstItem="iih-D6-rpe" firstAttribute="bottom" secondItem="uV1-iF-fgX" secondAttribute="bottom" type="default" id="Zb3-Ar-O7f"/>
+                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="81" id="cYp-nW-gn7"/>
+                            <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="157" id="czu-al-WOT"/>
+                            <constraint firstItem="a9e-na-Snx" firstAttribute="bottom" secondItem="uV1-iF-fgX" secondAttribute="bottom" type="default" id="dfw-Yl-dTH"/>
                             <constraint firstItem="0st-ps-Bdv" firstAttribute="top" secondItem="rCt-Zr-cYY" secondAttribute="bottom" type="default" id="gYo-Fh-Fs0"/>
                             <constraint firstItem="rCt-Zr-cYY" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="kla-fh-eNb"/>
-                            <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="158" id="lNB-gc-Oh3"/>
-                            <constraint firstItem="iih-D6-rpe" firstAttribute="bottom" secondItem="uV1-iF-fgX" secondAttribute="bottom" type="default" id="nCZ-rA-p6w"/>
-                            <constraint firstItem="a9e-na-Snx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="68" id="qBI-YC-Efj"/>
-                            <constraint firstItem="j3w-PV-DY4" firstAttribute="centerX" secondItem="rCt-Zr-cYY" secondAttribute="centerX" type="default" id="sWD-PO-9Ml"/>
+                            <constraint firstItem="tdK-8s-06o" firstAttribute="centerX" secondItem="a9e-na-Snx" secondAttribute="centerX" type="default" id="oYO-95-pGl"/>
+                            <constraint firstItem="j3w-PV-DY4" firstAttribute="top" secondItem="3" secondAttribute="top" constant="53" id="omx-rG-27x"/>
                             <constraint firstItem="zfB-8k-eYB" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="sbh-9W-8jM"/>
                             <constraint firstItem="0st-ps-Bdv" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="vKb-cv-fMh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iD7-Om-egf"/>
                     <connections>
+                        <outlet property="crimeCount" destination="tdK-8s-06o" id="4Eo-pK-Sjp"/>
                         <outlet property="mapView" destination="0st-ps-Bdv" id="zUT-OH-lpO"/>
                         <outlet property="navBar" destination="rCt-Zr-cYY" id="iDa-sp-RrT"/>
                         <outlet property="slider" destination="Lt1-9L-k0b" id="NZy-UE-cRM"/>
@@ -362,7 +380,7 @@
         <class className="BGCShootingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCShootingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="sliderChanged:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="crimeCount" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="BGCRecoilNavigationBar"/>
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>

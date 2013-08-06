@@ -22,6 +22,7 @@ typedef enum mapState {
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UILabel *crimeCount;
 
 @end
 
@@ -104,11 +105,21 @@ typedef enum mapState {
     [self.sidePanelController toggleRightPanel:nil];
 }
 
+#pragma mark - ticker functions
+
+- (IBAction)listViewToggle:(id)sender {
+}
+
+- (IBAction)mapViewToggle:(id)sender {
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 

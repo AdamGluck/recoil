@@ -69,7 +69,6 @@
     UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
     cell.backgroundColor = [UIColor clearColor];
     [cell setBackgroundView:backgroundImage];
-        
     return cell;
 }
 
@@ -95,4 +94,8 @@
     [self.sidePanelController toggleLeftPanel:nil];
 }
 
+-(void)notificationPressed
+{
+    [self.sidePanelController toggleRightPanel:nil];
+}
 @end
