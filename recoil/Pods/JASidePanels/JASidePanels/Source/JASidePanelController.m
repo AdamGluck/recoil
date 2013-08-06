@@ -136,7 +136,7 @@ static char ja_kvoContext;
     self.rightGapPercentage = 0.8f;
     self.minimumMovePercentage = 0.15f;
     self.maximumAnimationDuration = 0.25f;
-    self.bounceDuration = 0.25f;
+    self.bounceDuration = 0.175f;
     self.bouncePercentage = 0.075f;
     self.panningLimitedToTopViewController = YES;
     self.recognizesPanGesture = YES;

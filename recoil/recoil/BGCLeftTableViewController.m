@@ -102,7 +102,7 @@
         default:
             break;
     }
-    [self.sidePanelController showCenterPanelAnimated:YES];
+    [self.sidePanelController toggleLeftPanel:nil];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }

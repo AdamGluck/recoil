@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */; };
 		0F45616A17B0730D00F8DD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45616917B0730D00F8DD40 /* FacebookSDK.framework */; };
+		0F45616F17B0820300F8DD40 /* BGCTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616E17B0820300F8DD40 /* BGCTickerView.m */; };
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
@@ -159,6 +160,8 @@
 		0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationsViewController.h; sourceTree = "<group>"; };
 		0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationsViewController.m; sourceTree = "<group>"; };
 		0F45616917B0730D00F8DD40 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		0F45616D17B0820300F8DD40 /* BGCTickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCTickerView.h; sourceTree = "<group>"; };
+		0F45616E17B0820300F8DD40 /* BGCTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCTickerView.m; sourceTree = "<group>"; };
 		0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCDifferenceViewController.h; sourceTree = "<group>"; };
 		0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCDifferenceViewController.m; sourceTree = "<group>"; };
 		0F98FC2917AB276800ABF50F /* BGCRecoilNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCRecoilNavigationBar.h; sourceTree = "<group>"; };
@@ -376,6 +379,15 @@
 			name = NotificationsViewController;
 			sourceTree = "<group>";
 		};
+		0F45617017B0820E00F8DD40 /* BGCTickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0F45616D17B0820300F8DD40 /* BGCTickerView.h */,
+				0F45616E17B0820300F8DD40 /* BGCTickerView.m */,
+			);
+			name = BGCTickerView;
+			sourceTree = "<group>";
+		};
 		0F98FC2817AB235600ABF50F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +411,7 @@
 		0F98FC2D17AB338100ABF50F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F45617017B0820E00F8DD40 /* BGCTickerView */,
 				0F98FC2E17AB338800ABF50F /* RecoilNavigationBar */,
 			);
 			name = Views;
@@ -935,6 +948,7 @@
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
+				0F45616F17B0820300F8DD40 /* BGCTickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

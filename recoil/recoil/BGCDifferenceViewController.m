@@ -67,7 +67,6 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
-    NSLog(@"background image");
     cell.backgroundColor = [UIColor clearColor];
     [cell setBackgroundView:backgroundImage];
         
