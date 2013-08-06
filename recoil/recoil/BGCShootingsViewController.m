@@ -7,6 +7,7 @@
 //
 
 #import "BGCShootingsViewController.h"
+#import "BGCRecoilNavigationBar.h"
 #import "UIViewController+JASidePanel.h"
 #import <Parse/Parse.h>
 
