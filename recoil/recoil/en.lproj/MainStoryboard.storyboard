@@ -156,6 +156,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="ZIp-hw-uZ2" id="e4K-w6-3D5"/>
+                        <outlet property="emphaticQuestion" destination="yDc-HX-PUg" id="DNT-cz-cW8"/>
                         <outlet property="infoView" destination="oiY-kt-PA7" id="bYz-Sa-6lH"/>
                         <outlet property="navBar" destination="7U8-ZP-Fat" id="mV5-g8-5a0"/>
                         <outlet property="tableView" destination="X2J-G4-dCX" id="dg9-rQ-BE4"/>
@@ -312,18 +314,19 @@
                                                 <constraint firstAttribute="width" constant="15" id="JDW-lB-XFd"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYX-wy-VTa">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYX-wy-VTa">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="195" id="4wl-VG-BQR"/>
                                                 <constraint firstAttribute="height" constant="22" id="TEa-QQ-PD5"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-FP-0cy">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-FP-0cy">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="202" id="C9b-4y-gca"/>
                                                 <constraint firstAttribute="height" constant="42" id="cwk-7b-pl6"/>
-                                                <constraint firstAttribute="width" constant="195" id="rGi-Hr-ovT"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -338,8 +341,7 @@
                                     <constraint firstItem="BYX-wy-VTa" firstAttribute="leading" secondItem="wmm-FP-0cy" secondAttribute="leading" type="default" id="DYJ-6I-cNg"/>
                                     <constraint firstItem="wmm-FP-0cy" firstAttribute="leading" secondItem="ENC-g2-zDj" secondAttribute="leading" constant="107" id="XFi-Tm-DDX"/>
                                     <constraint firstItem="ytY-PL-Lo6" firstAttribute="centerY" secondItem="wmm-FP-0cy" secondAttribute="centerY" type="default" id="Y8n-eu-Y3G"/>
-                                    <constraint firstAttribute="bottom" secondItem="BYX-wy-VTa" secondAttribute="bottom" constant="21" id="c3i-RL-DFL"/>
-                                    <constraint firstItem="wmm-FP-0cy" firstAttribute="trailing" secondItem="BYX-wy-VTa" secondAttribute="trailing" type="default" id="t20-GV-D1p"/>
+                                    <constraint firstAttribute="bottom" secondItem="BYX-wy-VTa" secondAttribute="bottom" constant="24" id="wQM-F1-AWg"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="notificationDescriptionView" destination="wmm-FP-0cy" id="uvB-uv-bsT"/>
@@ -370,6 +372,7 @@
         <class className="BGCDifferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCDifferenceViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="BGCRecoilNavigationBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
@@ -395,6 +398,9 @@
         <class className="BGCShootingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCShootingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="listViewToggle:"/>
+                <relationship kind="action" name="mapViewToggle:"/>
+                <relationship kind="action" name="sliderChanged:" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="crimeCount" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="BGCRecoilNavigationBar"/>

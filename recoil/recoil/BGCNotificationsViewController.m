@@ -63,13 +63,16 @@
             [cell prepareWithNotificationDescription:@"Tanishia Williams" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
             break;
         case 2:
-            [cell prepareWithNotificationDescription:@"Cease Fire Illinois" timeStamp:@"1 DAYS AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeColor];
+            [cell prepareWithNotificationDescription:@"Cease Fire Illinois" timeStamp:@"1 DAY AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeColor];
             break;
         case 3:
+            [cell prepareWithNotificationDescription:@"Change" timeStamp:@"5 DAYS AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeGray];
             break;
         case 4:
+            [cell prepareWithNotificationDescription:@"Lawrence Smith" timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
             break;
         case 5:
+            [cell prepareWithNotificationDescription:@"Lawrence Smith Jr." timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
             break;
         default:
             break;

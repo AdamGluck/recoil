@@ -29,8 +29,8 @@
     UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
     self.backgroundColor = [UIColor clearColor];
     [self setBackgroundView:backgroundImage];
-    self.timeStampView.font = [UIFont fontWithName:@"OpenSans-Regular.ttf" size:12.0f];
-    self.notificationDescriptionView.font = [UIFont fontWithName:@"OpenSans-Regular.ttf" size:12.0f];
+    self.timeStampView.font = [UIFont fontWithName:@"OpenSans-Regular.ttf" size:8.0f];
+    self.notificationDescriptionView.font = [UIFont fontWithName:@"OpenSans-Regular.ttf" size:10.0f];
 }
 
 -(void) prepareWithNotificationDescription: (NSString *) notificationDescription
@@ -42,9 +42,7 @@
     self.timeStampView.text = timeStamp;
     UIImage * cellImage;
     
-    NSMutableAttributedString * fullNotificationDescription;
-    NSMutableAttributedString * attNotificationDescription = [[NSMutableAttributedString alloc] initWithString:notificationDescription];
-    [attNotificationDescription addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(0, notificationDescription.length)];
+    NSAttributedString * fullNotificationDescription;
     
     switch (notificationType) {
         case NotificationTypeCrimeOccured:
@@ -53,7 +51,7 @@
             else
                 cellImage = [UIImage imageNamed:@"ribbon_active"];
             
-            fullNotificationDescription = [NSString stringWithFormat:@"%@, has died due to gun violence.", attNotificationDescription];
+            fullNotificationDescription = [self stringForCrimeOccuredFromName:notificationDescription];
             break;
         case NotificationTypeNewOrganization:
             if (colorType == ColorTypeGray)
@@ -61,16 +59,34 @@
             else
                 cellImage = [UIImage imageNamed:@"hand_active"];
             
-            //fullNotificationDescription = [NSMutableAttributedString ]
-            
-            //[NSString stringWithFormat:@"A new organization, %@, has been added to recoil.", attNotificationDescription];
+            fullNotificationDescription = [self stringForOrganizationAddedFromName:notificationDescription];
             break;
         default:
             break;
     }
-    self.notificationDescriptionView.attributedText = attNotificationDescription;
+    self.notificationDescriptionView.attributedText = fullNotificationDescription;
     self.notificationImageView.image = cellImage;
     [self setNeedsDisplay];
+}
+
+-(NSAttributedString *) stringForCrimeOccuredFromName:(NSString *) name
+{
+    NSMutableAttributedString * attNotificationDescription = [[NSMutableAttributedString alloc] initWithString:name];
+    [attNotificationDescription addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(0, name.length)];
+    NSMutableAttributedString * fullDescription = [[NSMutableAttributedString alloc] initWithString:@" has died due to gun violence."];
+    [fullDescription addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, fullDescription.length)];
+    [fullDescription insertAttributedString:attNotificationDescription atIndex:0];
+    return [fullDescription copy];
+}
+
+-(NSAttributedString *) stringForOrganizationAddedFromName:(NSString *) name
+{
+    NSMutableAttributedString * attNotificationDescription = [[NSMutableAttributedString alloc] initWithString:name];
+    [attNotificationDescription addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(0, name.length)];
+    NSMutableAttributedString * fullDescription = [[NSMutableAttributedString alloc] initWithString:@"A new organization, , has been added to Recoil."];
+    [fullDescription addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, fullDescription.length)];
+    [fullDescription insertAttributedString:attNotificationDescription atIndex:@"A new organization,".length + 1];
+    return [fullDescription copy];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
