@@ -9,20 +9,25 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, NotificationCellColorType){
-    ColorTypeGray,
-    ColorTypeColor
+    ColorTypeColor,
+    ColorTypeGray
 };
 
 typedef NS_ENUM(NSInteger, NotificationCellInfoType){
-    InfoTypeNewOrganization,
-    InfoTypeCrimeOccured
+    NotificationTypeCrimeOccured,
+    NotificationTypeNewOrganization
 };
 
 @interface BGCNotificationCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextView *notificationDescription;
-@property (weak, nonatomic) IBOutlet UITextView *timeStamp;
-@property (weak, nonatomic) IBOutlet UIImageView *notificationImage;
+@property (strong, nonatomic) IBOutlet UITextView *notificationDescriptionView;
+@property (strong, nonatomic) IBOutlet UITextView *timeStampView;
+@property (strong, nonatomic) IBOutlet UIImageView *notificationImageView;
 @property (assign) NotificationCellInfoType notificationType;
 @property (assign) NotificationCellColorType colorType;
+
+-(void) prepareWithNotificationDescription: (NSString *) notificationDescription
+                                 timeStamp: (NSString *) timeStamp
+                          notificationType: (NotificationCellInfoType) notificationType
+                              andColorType: (NotificationCellColorType) colorType;
 
 @end

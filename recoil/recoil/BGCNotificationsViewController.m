@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[BGCNotificationCell class] forCellReuseIdentifier:@"Cell"];
+    //[self.tableView registerClass:[BGCNotificationCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +53,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    switch (indexPath.row) {
+        case 0:
+            [cell prepareWithNotificationDescription:@"Aleksandra Hawkins" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+            break;
+        case 1:
+            [cell prepareWithNotificationDescription:@"Tanishia Williams" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+            break;
+        case 2:
+            [cell prepareWithNotificationDescription:@"Cease Fire Illinois" timeStamp:@"1 DAYS AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeColor];
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }

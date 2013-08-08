@@ -293,57 +293,58 @@
         <scene sceneID="5le-pD-tZV">
             <objects>
                 <tableViewController storyboardIdentifier="notificationsViewController" id="xnk-4q-7FI" customClass="BGCNotificationsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="ptF-zm-dmt">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" id="ptF-zm-dmt">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="101" id="ENC-g2-zDj" customClass="BGCNotificationCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="101"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="93" id="ENC-g2-zDj" customClass="BGCNotificationCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytY-PL-Lo6">
-                                            <color key="backgroundColor" red="0.88235294119999996" green="0.72156862749999995" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="D72-MZ-TqK"/>
-                                                <constraint firstAttribute="width" constant="60" id="jff-HF-gmE"/>
+                                                <constraint firstAttribute="height" constant="22" id="DKS-bh-hWY"/>
+                                                <constraint firstAttribute="width" constant="15" id="JDW-lB-XFd"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYX-wy-VTa">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYX-wy-VTa">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="TEa-QQ-PD5"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-FP-0cy">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-FP-0cy">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="38" id="I95-60-sWt"/>
-                                                <constraint firstAttribute="width" constant="166" id="Vdr-np-te3"/>
+                                                <constraint firstAttribute="height" constant="42" id="cwk-7b-pl6"/>
+                                                <constraint firstAttribute="width" constant="195" id="rGi-Hr-ovT"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="wmm-FP-0cy" firstAttribute="leading" secondItem="ENC-g2-zDj" secondAttribute="leading" constant="136" id="10C-9C-oTP"/>
-                                    <constraint firstItem="ytY-PL-Lo6" firstAttribute="leading" secondItem="ENC-g2-zDj" secondAttribute="leading" constant="65" id="1sP-aD-o1n"/>
-                                    <constraint firstItem="ytY-PL-Lo6" firstAttribute="top" secondItem="ENC-g2-zDj" secondAttribute="top" constant="8" id="Ffb-Mc-T1V"/>
-                                    <constraint firstAttribute="bottom" secondItem="BYX-wy-VTa" secondAttribute="bottom" constant="20" type="default" id="Q19-Jw-ROd"/>
-                                    <constraint firstItem="ytY-PL-Lo6" firstAttribute="top" secondItem="wmm-FP-0cy" secondAttribute="top" type="default" id="Rb0-xl-rVa"/>
-                                    <constraint firstItem="BYX-wy-VTa" firstAttribute="leading" secondItem="wmm-FP-0cy" secondAttribute="leading" type="default" id="nhZ-Wq-QoY"/>
+                                    <constraint firstItem="ytY-PL-Lo6" firstAttribute="leading" secondItem="ENC-g2-zDj" secondAttribute="leading" constant="78" id="0Kt-mj-pWA"/>
+                                    <constraint firstItem="wmm-FP-0cy" firstAttribute="top" secondItem="ENC-g2-zDj" secondAttribute="top" constant="8" id="7G8-Sg-gJV"/>
+                                    <constraint firstItem="BYX-wy-VTa" firstAttribute="leading" secondItem="wmm-FP-0cy" secondAttribute="leading" type="default" id="DYJ-6I-cNg"/>
+                                    <constraint firstItem="wmm-FP-0cy" firstAttribute="leading" secondItem="ENC-g2-zDj" secondAttribute="leading" constant="107" id="XFi-Tm-DDX"/>
+                                    <constraint firstItem="ytY-PL-Lo6" firstAttribute="centerY" secondItem="wmm-FP-0cy" secondAttribute="centerY" type="default" id="Y8n-eu-Y3G"/>
+                                    <constraint firstAttribute="bottom" secondItem="BYX-wy-VTa" secondAttribute="bottom" constant="21" id="c3i-RL-DFL"/>
                                     <constraint firstItem="wmm-FP-0cy" firstAttribute="trailing" secondItem="BYX-wy-VTa" secondAttribute="trailing" type="default" id="t20-GV-D1p"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="notificationDescription" destination="wmm-FP-0cy" id="391-Tf-JeU"/>
-                                    <outlet property="notificationImage" destination="ytY-PL-Lo6" id="7Di-DB-vrN"/>
-                                    <outlet property="timeStamp" destination="BYX-wy-VTa" id="TxN-IQ-1cA"/>
+                                    <outlet property="notificationDescriptionView" destination="wmm-FP-0cy" id="uvB-uv-bsT"/>
+                                    <outlet property="notificationImageView" destination="ytY-PL-Lo6" id="1Ax-uc-nd1"/>
+                                    <outlet property="timeStampView" destination="BYX-wy-VTa" id="XxU-pm-BMs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -380,9 +381,9 @@
         <class className="BGCNotificationCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCNotificationCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="notificationDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="notificationImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeStamp" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="notificationDescriptionView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="notificationImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="timeStampView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="BGCNotificationsViewController" superclassName="UITableViewController">
