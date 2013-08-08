@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UITextView *emphaticQuestionView;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionView;
+
 
 @end
 
@@ -26,10 +29,14 @@
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    self.emphaticQuestionView.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
+    self.descriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:12.0f];
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
+    
     [self configureNavBar];
 }
 
@@ -50,16 +57,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,14 +70,41 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
-    NSLog(@"background image");
     cell.backgroundColor = [UIColor clearColor];
     [cell setBackgroundView:backgroundImage];
-        
+    switch (indexPath.row) {
+        case 0:
+            [self configureCell:cell withTitleText:@"CHANGE.ORG" descriptionText:@"Empowering people everywhere to create the change they want to see." andImage:[UIImage imageNamed:@"org_change_icon"]];
+            break;
+        case 1:
+            [self configureCell:cell withTitleText:@"CEASEFIRE ILLINOIS" descriptionText:@"Treating Violence as an Infectious Disease" andImage:[UIImage imageNamed:@"org_Ceasefire_icon"]];
+            break;
+        case 2:
+            [self configureCell:cell withTitleText:@"STOP HANDGUN VIOLENCE" descriptionText:@"A non-profit organization committed to the prevention of gun violence" andImage:[UIImage imageNamed:@"org_STOP_icon"]];
+            break;
+        case 3:
+            [self configureCell:cell withTitleText:@"CAUSES.COM - PUT THE GUNS DOWN" descriptionText:@"A Pledge to Stop Gun Violence in Your Community" andImage:[UIImage imageNamed:@"org_BeyondBullets_icon"]];
+            break;
+        default:
+            break;
+    }
     return cell;
 }
 
-
+-(void) configureCell:(UITableViewCell*) cell withTitleText: (NSString *) titleText descriptionText: (NSString *) descriptionText andImage: (UIImage *) image
+{
+    UITextView * titleView = (UITextView *)[cell viewWithTag:1];
+    titleView.text = titleText;
+    titleView.font = [UIFont fontWithName:@"OpenSans-Bold" size:12.0f];
+    titleView.backgroundColor = [UIColor clearColor];
+    UITextView * descriptionView = (UITextView *)[cell viewWithTag:2];
+    descriptionView.text = descriptionText;
+    descriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:10.0f];
+    descriptionView.backgroundColor = [UIColor clearColor];
+    UIImageView * imageView = (UIImageView *)[cell viewWithTag:3];
+    imageView.image = image;
+    
+}
 
 #pragma mark - Table view delegate
 
@@ -96,4 +126,8 @@
     [self.sidePanelController toggleLeftPanel:nil];
 }
 
+-(void)notificationPressed
+{
+    [self.sidePanelController toggleRightPanel:nil];
+}
 @end

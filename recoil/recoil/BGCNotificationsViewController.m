@@ -7,6 +7,7 @@
 //
 
 #import "BGCNotificationsViewController.h"
+#import "BGCNotificationCell.h"
 
 @interface BGCNotificationsViewController ()
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,39 +40,46 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    switch (indexPath.row) {
+        case 0:
+            [cell prepareWithNotificationDescription:@"Aleksandra Hawkins" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+            break;
+        case 1:
+            [cell prepareWithNotificationDescription:@"Tanishia Williams" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+            break;
+        case 2:
+            [cell prepareWithNotificationDescription:@"Cease Fire Illinois" timeStamp:@"1 DAY AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeColor];
+            break;
+        case 3:
+            [cell prepareWithNotificationDescription:@"Change" timeStamp:@"5 DAYS AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeGray];
+            break;
+        case 4:
+            [cell prepareWithNotificationDescription:@"Lawrence Smith" timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
+            break;
+        case 5:
+            [cell prepareWithNotificationDescription:@"Lawrence Smith Jr." timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 @end

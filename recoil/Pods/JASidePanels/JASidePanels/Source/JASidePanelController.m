@@ -135,8 +135,8 @@ static char ja_kvoContext;
     self.leftGapPercentage = 0.8f;
     self.rightGapPercentage = 0.8f;
     self.minimumMovePercentage = 0.15f;
-    self.maximumAnimationDuration = 0.2f;
-    self.bounceDuration = 0.1f;
+    self.maximumAnimationDuration = 0.25f;
+    self.bounceDuration = 0.175f;
     self.bouncePercentage = 0.075f;
     self.panningLimitedToTopViewController = YES;
     self.recognizesPanGesture = YES;
@@ -872,8 +872,8 @@ static char ja_kvoContext;
     
     if (animated) {
         [self _animateCenterPanel:shouldBounce completion:^(__unused BOOL finished) {
-            self.leftPanelContainer.hidden = YES;
-            self.rightPanelContainer.hidden = YES;
+            //self.leftPanelContainer.hidden = YES;
+            //self.rightPanelContainer.hidden = YES;
             [self _unloadPanels];
         }];
     } else {

@@ -13,8 +13,6 @@
 
 @interface BGCCasualty : NSObject
 
-
-
 // Main properties
 @property (strong, nonatomic) NSString *victimName;
 @property (nonatomic) int victimAge;
@@ -25,7 +23,6 @@
 // Mapping properties
 @property (strong, nonatomic) NSString *address;
 @property CLLocationCoordinate2D coordinate;
-
 
 // Parse property
 @property (strong, nonatomic) PFObject *object;

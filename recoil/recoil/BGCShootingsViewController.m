@@ -7,6 +7,7 @@
 //
 
 #import "BGCShootingsViewController.h"
+#import "BGCRecoilNavigationBar.h"
 #import "UIViewController+JASidePanel.h"
 #import "BGCRecoilNavigationBar.h"
 #import "BGCCasualty.h"
@@ -24,6 +25,7 @@ typedef enum mapState {
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UILabel *crimeCount;
 
 @end
 
@@ -136,7 +138,7 @@ typedef enum mapState {
 -(void)configureNavBar
 {
     self.navBar.delegate = self;
-    self.navBar.title = @"Shootings";
+    self.navBar.title = @"Map";
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
@@ -166,11 +168,21 @@ typedef enum mapState {
     [self.sidePanelController toggleRightPanel:nil];
 }
 
+#pragma mark - ticker functions
+
+- (IBAction)listViewToggle:(id)sender {
+}
+
+- (IBAction)mapViewToggle:(id)sender {
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 

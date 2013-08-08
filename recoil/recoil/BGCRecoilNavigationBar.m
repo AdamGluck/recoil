@@ -35,9 +35,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColor(context, CGColorGetComponents([UIColor clearColor].CGColor));
     CGContextFillRect(context, rect);
-    
 }
-
 
 -(void) layoutSubviews
 {
@@ -53,7 +51,8 @@
     [self configureRightBarButtonItem];
 }
 
--(void) configureLeftBarButtonItem{
+-(void) configureLeftBarButtonItem
+{
     UIImage * image = [UIImage imageNamed:@"menu_icon.png"];
     UIButton * leftButton = [[UIButton alloc] initWithFrame:CGRectMake(17.5, 0, image.size.width, image.size.height)];
     leftButton.center = CGPointMake(leftButton.center.x, self.center.y);
@@ -62,7 +61,8 @@
     [self addSubview:leftButton];
 }
 
--(void) configureRightBarButtonItem{
+-(void) configureRightBarButtonItem
+{
     UIImage * image = [UIImage imageNamed:@"notification.png"];
     UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 17.5, 0, image.size.width, image.size.height)];
     [rightButton setBackgroundImage:image forState:UIControlStateNormal];
