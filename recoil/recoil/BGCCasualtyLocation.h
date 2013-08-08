@@ -13,9 +13,6 @@
 @interface BGCCasualtyLocation : NSObject <MKAnnotation>
 
 @property (strong, nonatomic) BGCCasualty *casualty;
-//@property (strong, nonatomic) NSString *title;
-//@property (nonatomic) CLLocationCoordinate2D coordinate;
-
 
 - (id)initWithCasualty:(BGCCasualty *)casualty;
 

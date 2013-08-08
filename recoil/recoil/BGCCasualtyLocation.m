@@ -29,8 +29,12 @@
 
 - (NSString *)title
 {
-    NSLog(@"Returning annotation title: %@", self.casualty.victimName);
-    return self.casualty.victimName;
+    return [NSString stringWithFormat:@"%@, %d", self.casualty.victimName, self.casualty.victimAge];
+}
+
+- (NSString *)subtitle
+{
+    return self.casualty.address;
 }
 
 #pragma mark - Lazy instantiation

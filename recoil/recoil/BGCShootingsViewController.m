@@ -78,7 +78,7 @@ typedef enum mapState {
     NSLog(@"About to plot casualties");
     // Set up query
     PFQuery *query = [PFQuery queryWithClassName:kBGCParseClassName];
-    query.limit = 10;
+    query.limit = 30;
 
     
     // Asynchronously plot objects
@@ -103,6 +103,8 @@ typedef enum mapState {
     [self.mapView addAnnotation:annotation];
 }
 
+#pragma mark - MKAnnotation Delegate
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"Casualty";
     if ([annotation isKindOfClass:[BGCCasualtyLocation class]]) {
@@ -112,7 +114,6 @@ typedef enum mapState {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            NSLog(@"Annotation title: %@", annotation.title);
         } else {
             annotationView.annotation = annotation;
         }

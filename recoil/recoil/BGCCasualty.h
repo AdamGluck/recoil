@@ -17,7 +17,7 @@
 
 // Main properties
 @property (strong, nonatomic) NSString *victimName;
-@property (strong, nonatomic) NSNumber *victimAge;
+@property (nonatomic) int victimAge;
 @property (nonatomic) BGCGender victimGender;
 @property (nonatomic) BGCCasualityType casualtyType;
 @property (strong, nonatomic) NSURL *newsArticle;
