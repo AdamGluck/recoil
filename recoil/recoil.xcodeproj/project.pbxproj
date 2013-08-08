@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F15C85B17B4221200EEFF10 /* BGCNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C85A17B4221200EEFF10 /* BGCNotificationCell.m */; };
 		0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */; };
 		0F45616A17B0730D00F8DD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45616917B0730D00F8DD40 /* FacebookSDK.framework */; };
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
@@ -156,6 +157,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F15C85917B4221200EEFF10 /* BGCNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationCell.h; sourceTree = "<group>"; };
+		0F15C85A17B4221200EEFF10 /* BGCNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationCell.m; sourceTree = "<group>"; };
 		0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationsViewController.h; sourceTree = "<group>"; };
 		0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationsViewController.m; sourceTree = "<group>"; };
 		0F45616917B0730D00F8DD40 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */,
 				0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */,
+				0F15C85917B4221200EEFF10 /* BGCNotificationCell.h */,
+				0F15C85A17B4221200EEFF10 /* BGCNotificationCell.m */,
 			);
 			name = NotificationsViewController;
 			sourceTree = "<group>";
@@ -935,6 +940,7 @@
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
+				0F15C85B17B4221200EEFF10 /* BGCNotificationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

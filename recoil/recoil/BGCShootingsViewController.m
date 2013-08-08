@@ -75,7 +75,7 @@ typedef enum mapState {
 -(void)configureNavBar
 {
     self.navBar.delegate = self;
-    self.navBar.title = @"Shootings";
+    self.navBar.title = @"Map";
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
