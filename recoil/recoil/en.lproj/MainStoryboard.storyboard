@@ -82,32 +82,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WHAT CAN YOU DO TO MAKE A DIFFERENCE?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-HX-PUg">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT CAN YOU DO TO MAKE A DIFFERENCE?" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-CL-Vmq">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="267" id="beM-Sy-Luc"/>
-                                                <constraint firstAttribute="height" constant="43" id="doS-xy-bhJ"/>
+                                                <constraint firstAttribute="width" constant="274" id="60Z-gU-GJ7"/>
+                                                <constraint firstAttribute="height" constant="60" id="R6T-Sb-Nh6"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <color key="textColor" red="0.88235294117647056" green="0.72156862745098038" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="267" translatesAutoresizingMaskIntoConstraints="NO" id="ZIp-hw-uZ2">
+                                            <color key="textColor" red="0.88235294119999996" green="0.72156862749999995" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-3n-cW7">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="61" id="dKA-hp-cpa"/>
+                                                <constraint firstAttribute="height" constant="65" id="OWD-T7-qfU"/>
                                             </constraints>
                                             <string key="text">Take a stand and make your voice heard! Many organizations are making a difference today.  Sign a petition, donate money, or volunteer.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="leading" secondItem="yDc-HX-PUg" secondAttribute="leading" type="default" id="QSe-Wb-lEs"/>
-                                        <constraint firstItem="yDc-HX-PUg" firstAttribute="top" secondItem="oiY-kt-PA7" secondAttribute="top" constant="10" id="fUQ-qA-VjF"/>
-                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="top" secondItem="oiY-kt-PA7" secondAttribute="top" constant="58" id="nhP-OS-k5e"/>
-                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="centerX" secondItem="oiY-kt-PA7" secondAttribute="centerX" type="default" id="oLj-Ro-HYD"/>
-                                        <constraint firstItem="ZIp-hw-uZ2" firstAttribute="trailing" secondItem="yDc-HX-PUg" secondAttribute="trailing" type="default" id="sLx-oX-ckH"/>
+                                        <constraint firstItem="Lbi-3n-cW7" firstAttribute="trailing" secondItem="fBI-CL-Vmq" secondAttribute="trailing" type="default" id="7k9-Jn-6m2"/>
+                                        <constraint firstItem="fBI-CL-Vmq" firstAttribute="top" secondItem="oiY-kt-PA7" secondAttribute="top" constant="8" id="UKx-iS-Ks2"/>
+                                        <constraint firstItem="fBI-CL-Vmq" firstAttribute="leading" secondItem="oiY-kt-PA7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aHz-R7-00u"/>
+                                        <constraint firstItem="Lbi-3n-cW7" firstAttribute="leading" secondItem="oiY-kt-PA7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pPJ-pi-oEV"/>
+                                        <constraint firstItem="Lbi-3n-cW7" firstAttribute="top" secondItem="oiY-kt-PA7" secondAttribute="top" constant="56" id="wUi-mF-OXP"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -156,8 +156,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="descriptionLabel" destination="ZIp-hw-uZ2" id="e4K-w6-3D5"/>
-                        <outlet property="emphaticQuestion" destination="yDc-HX-PUg" id="DNT-cz-cW8"/>
+                        <outlet property="descriptionView" destination="Lbi-3n-cW7" id="9Mi-hS-CYj"/>
+                        <outlet property="emphaticQuestionView" destination="fBI-CL-Vmq" id="rVN-dg-zpM"/>
                         <outlet property="infoView" destination="oiY-kt-PA7" id="bYz-Sa-6lH"/>
                         <outlet property="navBar" destination="7U8-ZP-Fat" id="mV5-g8-5a0"/>
                         <outlet property="tableView" destination="X2J-G4-dCX" id="dg9-rQ-BE4"/>
@@ -372,7 +372,8 @@
         <class className="BGCDifferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCDifferenceViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="emphaticQuestionView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="BGCRecoilNavigationBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>

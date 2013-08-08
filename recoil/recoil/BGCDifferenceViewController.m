@@ -16,8 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emphaticQuestion;
+@property (weak, nonatomic) IBOutlet UITextView *emphaticQuestionView;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionView;
+
 
 @end
 
@@ -28,10 +29,14 @@
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    self.emphaticQuestionView.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
+    self.descriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:12.0f];
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
+    
     [self configureNavBar];
 }
 
