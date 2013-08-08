@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.tableView registerClass:[BGCNotificationCell class] forCellReuseIdentifier:@"Cell"];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
 }
 
 - (void)didReceiveMemoryWarning

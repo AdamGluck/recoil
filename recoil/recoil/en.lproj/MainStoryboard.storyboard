@@ -78,6 +78,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X2J-G4-dCX">
+                                <color key="separatorColor" white="0.15801779197080293" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="oiY-kt-PA7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,17 +119,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spq-05-TAX">
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spq-05-TAX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="68" id="Sxd-GC-wso"/>
                                                         <constraint firstAttribute="height" constant="65" id="WkB-4X-f4j"/>
                                                     </constraints>
                                                 </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-N4-3gH">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="214" id="QwO-Dw-Pwz"/>
+                                                        <constraint firstAttribute="height" constant="27" id="eZA-pO-I26"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.88235294119999996" green="0.72156862749999995" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-ne-6on">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41" id="HH7-OU-rbX"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="spq-05-TAX" firstAttribute="leading" secondItem="haG-pN-XwX" secondAttribute="leading" constant="10" id="u7O-Ee-0Qj"/>
+                                            <constraint firstAttribute="trailing" secondItem="bbY-N4-3gH" secondAttribute="trailing" constant="20" type="default" id="eDn-ze-lNb"/>
+                                            <constraint firstItem="JJE-ne-6on" firstAttribute="bottom" secondItem="spq-05-TAX" secondAttribute="bottom" type="default" id="giU-kK-BE8"/>
+                                            <constraint firstAttribute="trailing" secondItem="JJE-ne-6on" secondAttribute="trailing" constant="20" type="default" id="n6H-Fw-S4Y"/>
+                                            <constraint firstItem="bbY-N4-3gH" firstAttribute="top" secondItem="haG-pN-XwX" secondAttribute="top" constant="14" id="sL8-ro-tRn"/>
+                                            <constraint firstItem="bbY-N4-3gH" firstAttribute="leading" secondItem="spq-05-TAX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="uXN-2p-DPc"/>
+                                            <constraint firstItem="JJE-ne-6on" firstAttribute="leading" secondItem="spq-05-TAX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wlI-Fd-HYY"/>
                                             <constraint firstItem="spq-05-TAX" firstAttribute="top" secondItem="haG-pN-XwX" secondAttribute="top" constant="13" id="xJ1-X3-cTS"/>
                                         </constraints>
                                     </tableViewCell>
