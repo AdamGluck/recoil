@@ -36,7 +36,6 @@ typedef enum mapState {
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     [self configureSlider];
     self.currentMapState = MAP_STATE_DEATHS;
-    
 }
 
 -(void) viewDidAppear:(BOOL)animated

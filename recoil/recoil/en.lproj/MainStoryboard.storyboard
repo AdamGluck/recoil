@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19P-Bf-epg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1177" y="-606"/>
+            <point key="canvasLocation" x="-410" y="946"/>
         </scene>
         <!--Left Table View Controller-->
         <scene sceneID="1jp-1v-RxC">
@@ -67,7 +67,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbh-Kl-5FE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-898" y="223"/>
+            <point key="canvasLocation" x="-868" y="223"/>
         </scene>
         <!--Difference View Controller-->
         <scene sceneID="lwE-Qt-5Nf">
@@ -83,7 +83,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT CAN YOU DO TO MAKE A DIFFERENCE?" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-CL-Vmq">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="WHAT CAN YOU DO TO MAKE A DIFFERENCE?" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-CL-Vmq">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="274" id="60Z-gU-GJ7"/>
                                                 <constraint firstAttribute="height" constant="60" id="R6T-Sb-Nh6"/>
@@ -92,7 +92,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-3n-cW7">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-3n-cW7">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="OWD-T7-qfU"/>
                                             </constraints>
@@ -125,7 +125,7 @@
                                                         <constraint firstAttribute="height" constant="65" id="WkB-4X-f4j"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-N4-3gH">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-N4-3gH">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="214" id="QwO-Dw-Pwz"/>
@@ -135,7 +135,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-ne-6on">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-ne-6on">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="HH7-OU-rbX"/>
@@ -268,7 +268,7 @@
                                     <action selector="listViewToggle:" destination="2" eventType="touchUpInside" id="wRl-F8-yBt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-8s-06o">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" text="200" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-8s-06o">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="SVd-2B-s4Z"/>
                                     <constraint firstAttribute="width" constant="50" id="tqz-zn-ZM9"/>
@@ -345,7 +345,7 @@
                                                 <constraint firstAttribute="height" constant="22" id="TEa-QQ-PD5"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="4"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-FP-0cy">
@@ -383,7 +383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afh-VH-ggT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="223"/>
+            <point key="canvasLocation" x="40" y="223"/>
         </scene>
     </scenes>
     <resources>
@@ -424,9 +424,6 @@
         <class className="BGCShootingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BGCShootingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="listViewToggle:"/>
-                <relationship kind="action" name="mapViewToggle:"/>
-                <relationship kind="action" name="sliderChanged:" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="crimeCount" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="BGCRecoilNavigationBar"/>
