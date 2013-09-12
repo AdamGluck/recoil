@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "JASidePanelController.h"
 
-@interface BGCShootingsViewController : UIViewController
+@interface BGCShootingsViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

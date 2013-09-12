@@ -10,4 +10,6 @@
 
 @interface BGCNotificationsViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *casualtyNotifs;
+
 @end
