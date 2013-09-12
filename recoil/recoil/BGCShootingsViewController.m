@@ -12,6 +12,7 @@
 #import "BGCRecoilNavigationBar.h"
 #import "BGCCasualty.h"
 #import "BGCCasualtyLocation.h"
+#import "BGCNotificationsViewController.h"
 #import <Parse/Parse.h>
 
 typedef enum mapState {
@@ -26,6 +27,7 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UILabel *crimeCount;
+@property (strong, nonatomic) NSMutableArray *casualties;
 
 @end
 
@@ -80,7 +82,8 @@ typedef enum mapState {
     NSLog(@"About to plot casualties");
     // Set up query
     PFQuery *query = [PFQuery queryWithClassName:kBGCParseClassName];
-    query.limit = 30;
+    //query.limit = 30;
+    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
 
     
     // Asynchronously plot objects
@@ -91,6 +94,7 @@ typedef enum mapState {
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
                 [self addMarkerForCasualty:casualty];
+                [self.casualties addObject:casualty];
             }
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -166,6 +170,16 @@ typedef enum mapState {
 -(void) notificationPressed
 {
     [self.sidePanelController toggleRightPanel:nil];
+    
+    // Sort casualties by date
+    NSArray *casualtyNotifs;
+    casualtyNotifs = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSDate *first = ((BGCCasualty *)obj1).dateOccured;
+        NSDate *second = ((BGCCasualty *)obj2).dateOccured;
+        return [second compare:first];
+    }];
+    
+    ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = casualtyNotifs;
 }
 
 #pragma mark - ticker functions
@@ -176,11 +190,19 @@ typedef enum mapState {
 - (IBAction)mapViewToggle:(id)sender {
 }
 
+#pragma mark - Lazy
+
+- (NSMutableArray *)casualties {
+    if (!_casualties) _casualties = [[NSMutableArray alloc] init];
+    return _casualties;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 

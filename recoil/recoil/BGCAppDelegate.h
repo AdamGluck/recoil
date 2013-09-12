@@ -27,6 +27,7 @@ static NSString * const kBGCParseAgeKey = @"age";
 static NSString * const kBGCParseLocationKey = @"location";
 static NSString * const kBGCParseNameKey = @"name";
 static NSString * const kBGCParseURLKey = @"storyUrl";
+static NSString * const kBGCParseDateKey = @"dateTime";
 
 #import <UIKit/UIKit.h>
 

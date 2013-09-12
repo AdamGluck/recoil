@@ -37,6 +37,7 @@
         self.victimAge = [[object objectForKey:kBGCParseAgeKey] intValue];
         self.victimName = [object objectForKey:kBGCParseNameKey];
         self.address = [object objectForKey:kBGCParseAddressKey];
+        self.dateOccured = [object objectForKey:kBGCParseDateKey];
         
     }
     
