@@ -14,6 +14,7 @@
 #import "BGCCasualtyLocation.h"
 #import "BGCNotificationsViewController.h"
 #import <Parse/Parse.h>
+#import "BGCAnnotationView.h"
 
 typedef enum mapState {
     MAP_STATE_DEATHS,
@@ -22,7 +23,7 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController () <RecoilNavigationBarDelegate>
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate>
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
@@ -68,6 +69,7 @@ typedef enum mapState {
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(chicago, VIEW_REGION_RADIUS*METERS_PER_MILE, VIEW_REGION_RADIUS*METERS_PER_MILE);
     [self.mapView setRegion:viewRegion];
     
+    NSLog(@"map configuration finished");
     // Plot casualties
     [self plotCasualties];
     
@@ -86,8 +88,9 @@ typedef enum mapState {
     // Asynchronously plot objects
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            NSLog(@"objects: %@", objects);
             // Do something with the found objects
-            NSLog(@"Objects: %@", objects[0]);
+            //NSLog(@"Objects: %@", objects[0]);
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
                 [self addMarkerForCasualty:casualty];
@@ -112,11 +115,13 @@ typedef enum mapState {
     static NSString *identifier = @"Casualty";
     if ([annotation isKindOfClass:[BGCCasualtyLocation class]]) {
         
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        BGCAnnotationView *annotationView = (BGCAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (!annotationView) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.enabled = YES;
-            annotationView.canShowCallout = YES;
+            annotationView = [[BGCAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView.delegate = self;
+            annotationView.enabled = NO;
+            annotationView.canShowCallout = NO;
+            annotationView.selected = NO;
         } else {
             annotationView.annotation = annotation;
         }
@@ -126,6 +131,25 @@ typedef enum mapState {
     
     return nil;
 }
+
+-(void)calloutTappedForView: (BGCAnnotationView *) view;
+{
+    NSLog(@"call out tapped");
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"selected");
+    if ([view isKindOfClass:[BGCAnnotationView class]]){
+        //view.selected = !view.selected;
+    }
+}
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"deselected");
+}
+
 
 #pragma mark - UI Methods
 
