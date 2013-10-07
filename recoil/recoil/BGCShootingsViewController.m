@@ -53,8 +53,9 @@ typedef enum mapState {
     self.headerView.backgroundColor = pattern;
     self.headerView.alpha = .99f;
     
-    // Fills self.casualty
+    // Fills self.casualty with killer data! (pun intended)
     [self fetchDataFromParse];
+    
 }
 
 static UIImage * girlImage;
@@ -78,10 +79,13 @@ static UIImage * babyImage;
 -(void) viewDidAppear:(BOOL)animated
 {
     [self configureNavBar];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
+    
     [self configureMap];
     // Plot casualties
     [self plotCasualtiesForMapState:self.currentMapState];
@@ -117,11 +121,12 @@ static UIImage * babyImage;
         if (!error) {
             NSLog(@"objects: %@", objects);
             // Do something with the found objects
-            //NSLog(@"Objects: %@", objects[0]);
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
                 [self.casualties addObject:casualty];
+                [self addMarkerForCasualty:casualty];
             }
+            self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
             [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
