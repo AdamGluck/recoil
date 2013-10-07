@@ -19,12 +19,18 @@
     UIImage * callOutImage = [UIImage imageNamed:@"victim_bubble"];
     self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, callOutImage.size.width, callOutImage.size.height)];
     if (self){
+        [self setImage:callOutImage forState:UIControlStateNormal];
+        [self addTarget:self action:@selector(tapped) forControlEvents:UIControlEventTouchUpInside];
+        self.userInteractionEnabled = YES;
+        NSLog(@"%@", self);
+        /*
         UIImageView * calloutImageView = [[UIImageView alloc] initWithImage:callOutImage];
         [self addSubview:calloutImageView];
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
         tap.delegate = self;
         [self addGestureRecognizer:tap];
+        */
     }
     return self;
 }
@@ -39,8 +45,7 @@
     return YES;
 }
 
--(void)tapped:(UIGestureRecognizer *) recognizer
-{
+-(void)tapped{
     NSLog(@"tapped: in calloutView class called");
     [self.delegate calloutWasTapped];
 }

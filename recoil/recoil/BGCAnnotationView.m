@@ -14,6 +14,8 @@
 
 @implementation BGCAnnotationView
 
+#define CALLOUT_HEIGHT 62.000000
+#define CALLOUT_WIDTH 219.000000
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
@@ -25,6 +27,7 @@
         pinButton.frame = self.bounds;
         [pinButton addTarget:self action:@selector(pinTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:pinButton];
+        
         self.image = nil;
         self.userInteractionEnabled = YES;
     }
@@ -44,10 +47,12 @@
         callOutView.center = CGPointMake(self.bounds.origin.x + (self.bounds.size.width / 2) - 2, self.bounds.origin.y - self.bounds.size.height + 7);
         callOutView.delegate = self;
         [self addSubview:callOutView];
+        
         /*
         // before
         NSLog(@"calloutView frame: %f, %f, %f, %f and calloutView bounds: %f, %f, %f, %f", callOutView.frame.origin.x, callOutView.frame.origin.y, callOutView.frame.size.width, callOutView.frame.size.height, callOutView.bounds.origin.x, callOutView.bounds.origin.y, callOutView.bounds.size.width, callOutView.bounds.size.height);
         NSLog(@"self.frame: %f, %f, %f, %f and self.bounds: %f, %f, %f, %f \n", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height, self.bounds.origin.x, self.bounds.origin.y , self.bounds.size.width, self.bounds.size.height);
+        
         
         // after
         NSLog(@"calloutView frame: %f, %f, %f, %f and calloutView bounds: %f, %f, %f, %f", callOutView.frame.origin.x, callOutView.frame.origin.y, callOutView.frame.size.width, callOutView.frame.size.height, callOutView.bounds.origin.x, callOutView.bounds.origin.y, callOutView.bounds.size.width, callOutView.bounds.size.height);

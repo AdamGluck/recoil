@@ -15,7 +15,7 @@
 
 @end
 
-@interface BGCCalloutView : UIView
+@interface BGCCalloutView : UIButton
 
 @property (weak, nonatomic) id <BGCCalloutViewDelegate> delegate;
 -(id)initWithFrame:(CGRect)frame andCasualty:(BGCCasualty *)casualty;
