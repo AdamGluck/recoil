@@ -2,25 +2,37 @@ import csv
 import json
 import httplib
 import re
+import os
 from datetime import datetime, date, time
+from flask import Flask
 from geopy import geocoders
 
-CSV_CRIME_DATA = "2013all.csv"
+app = Flask(__name__)
+CRIME_DATA_URL = "https://spreadsheets.google.com/pub?key=0Ak3IIavLYTovdHYxbDItQ255eWh1NzBiQXp5cmxRdmc&output=csv"
 
+@app.route('/')
 def run():
     ''' Returns all casualties from RedEye google doc file. 
     All this key-name finagling is because Parse doesn't accept spaces
     in its data type names, and it suggests a camelCase style.
+
+    The google doc file doesn't supply a unique ID for each casualty, and often times
+    data is incomplete (including the name of the victim). So, I'm making the assumption
+    that the data is being added in order. 
     '''
-    with open(CSV_CRIME_DATA, 'rb') as f:
+    with open(CRIME_DATA_URL, 'rb') as f:
         reader = csv.DictReader(f)
+        counter = 0
         for r in reader:
+            counter += 1
+
             casualty = {}
             casualty["address"] = r["Address"]
             casualty["age"] = get_age(r["Age"])
             casualty["cause"] = r["Cause"]
             casualty["chargesTrialsUrl"] = r["Charges and trials"]
             casualty["dateTime"] = get_datetime(r["Date"], r["Time"])
+            casualty["gdocRowNum"] = counter
             casualty["gender"] = r["Gender"]
             casualty["latitude"], casualty["longitude"] = get_latlong(r["Address"])
             casualty["locationType"] = r["Location"]
@@ -65,6 +77,7 @@ def post_to_parse(casualty):
     result = json.loads(connection.getresponse().read())
     print result
 
+def 
 
 def get_age(age):
     try:
@@ -134,6 +147,3 @@ def get_latlong(address):
     except TypeError: # If address can't be geocoded
         return '', ''
 
-
-if __name__ == "__main__":
-    run()
