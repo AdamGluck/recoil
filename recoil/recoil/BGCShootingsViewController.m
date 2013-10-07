@@ -17,9 +17,9 @@
 #import "BGCAnnotationView.h"
 
 typedef enum mapState {
-    MAP_STATE_DEATHS,
-    MAP_STATE_INJURIES,
-    MAP_STATE_HEAT
+    MAP_STATE_ADULTS,
+    MAP_STATE_CHILDREN,
+    MAP_STATE_ALL
 } BGCMapState;
 
 
@@ -42,7 +42,7 @@ typedef enum mapState {
 {
     [super viewDidLoad];
     [self configureSlider];
-    self.currentMapState = MAP_STATE_DEATHS;
+    self.currentMapState = MAP_STATE_ALL;
     
     UIColor * pattern = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     
@@ -50,6 +50,9 @@ typedef enum mapState {
     self.tableView.alpha = .99f;
     self.headerView.backgroundColor = pattern;
     self.headerView.alpha = .99f;
+    
+    // Fills self.casualty
+    [self fetchDataFromParse];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -60,6 +63,8 @@ typedef enum mapState {
 - (void)viewWillAppear:(BOOL)animated
 {
     [self configureMap];
+    // Plot casualties
+    [self plotCasualtiesForMapState:self.currentMapState];
 }
 
 #pragma mark - Map stuff
@@ -76,12 +81,9 @@ typedef enum mapState {
     chicago.longitude = CHICAGO_LONGITUDE;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(chicago, VIEW_REGION_RADIUS*METERS_PER_MILE, VIEW_REGION_RADIUS*METERS_PER_MILE);
     [self.mapView setRegion:viewRegion];
-    // Plot casualties
-    [self plotCasualties];
-    
 }
 
--(void)plotCasualties
+-(void)fetchDataFromParse
 {
     // Fetches data from Parse, and plots markers!
     NSLog(@"About to plot casualties");
@@ -98,7 +100,6 @@ typedef enum mapState {
             //NSLog(@"Objects: %@", objects[0]);
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
-                [self addMarkerForCasualty:casualty];
                 [self.casualties addObject:casualty];
             }
             [self.tableView reloadData];
@@ -107,6 +108,28 @@ typedef enum mapState {
         }
     }];
     
+}
+
+-(void)plotCasualtiesForMapState:(BGCMapState)mapState
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    if (mapState == MAP_STATE_ALL) {
+        for (BGCCasualty *casualty in self.casualties) {
+            [self addMarkerForCasualty:casualty];
+        }
+    } else if (mapState == MAP_STATE_ADULTS) {
+        for (BGCCasualty *casualty in self.casualties) {
+            if (casualty.victimAge >= 18) {
+                [self addMarkerForCasualty:casualty];
+            }
+        }
+    } else if (mapState == MAP_STATE_CHILDREN) {
+        for (BGCCasualty *casualty in self.casualties) {
+            if (casualty.victimAge < 18) {
+                [self addMarkerForCasualty:casualty];
+            }
+        }
+    }
 }
 
 -(void)addMarkerForCasualty:(BGCCasualty *)casualty
@@ -174,16 +197,17 @@ typedef enum mapState {
 - (IBAction)sliderChanged:(UISlider *)sender {
     float newValue;
     if (sender.value <= 0.5) {
-        self.currentMapState = MAP_STATE_DEATHS;
+        self.currentMapState = MAP_STATE_ALL;
         newValue = 0;
     } else if (sender.value > 0.5 && sender.value < 1.5) {
-        self.currentMapState = MAP_STATE_INJURIES;
+        self.currentMapState = MAP_STATE_ADULTS;
         newValue = 1;
     } else {
-        self.currentMapState = MAP_STATE_HEAT;
+        self.currentMapState = MAP_STATE_CHILDREN;
         newValue = 2;
     }
     [sender setValue:newValue animated:YES];
+    [self plotCasualtiesForMapState:self.currentMapState];
 }
 
 #pragma mark - navigation
