@@ -31,6 +31,8 @@ typedef enum mapState {
 @property (strong, nonatomic) NSMutableArray *casualties;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UIButton *mapButton;
 
 @end
 
@@ -45,11 +47,29 @@ typedef enum mapState {
     self.currentMapState = MAP_STATE_DEATHS;
     
     UIColor * pattern = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
-    
+
     self.tableView.backgroundColor = pattern;
     self.tableView.alpha = .99f;
     self.headerView.backgroundColor = pattern;
     self.headerView.alpha = .99f;
+}
+
+static UIImage * girlImage;
+static UIImage * boyImage;
+static UIImage * womanImage;
+static UIImage * manImage;
+static UIImage * babyImage;
+
++(void)initialize
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        babyImage = [UIImage imageNamed:@"baby_icon"];
+        girlImage = [UIImage imageNamed:@"girl_icon"];
+        boyImage = [UIImage imageNamed:@"boy_profile"];
+        manImage = [UIImage imageNamed:@"man_profile"];
+        womanImage = [UIImage imageNamed:@"woman_icon"];
+    });
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -154,8 +174,6 @@ typedef enum mapState {
     NSLog(@"deselected");
 }
 
-
-
 #pragma mark - UI Methods
 
 - (void)configureSlider
@@ -211,11 +229,15 @@ typedef enum mapState {
 #pragma mark - ticker functions
 
 - (IBAction)listViewToggle:(id)sender {
+    [self.menuButton setImage:[UIImage imageNamed:@"list_btn_active"] forState:UIControlStateNormal];
+    [self.mapButton setImage:[UIImage imageNamed:@"map_btn_deactive"] forState:UIControlStateNormal];
     self.headerView.hidden = NO;
     self.tableView.hidden = NO;
 }
 
 - (IBAction)mapViewToggle:(id)sender {
+    [self.menuButton setImage:[UIImage imageNamed:@"list_btn_deactive"] forState:UIControlStateNormal];
+    [self.mapButton setImage:[UIImage imageNamed:@"map_btn_active"] forState:UIControlStateNormal];
     self.headerView.hidden = YES;
     self.tableView.hidden = YES;
 }
@@ -225,12 +247,12 @@ typedef enum mapState {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.casualties.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.casualties.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -240,6 +262,36 @@ typedef enum mapState {
     cell.backgroundColor = [UIColor clearColor];
     backgroundImage.frame = CGRectMake(backgroundImage.frame.origin.x, backgroundImage.frame.origin.y, backgroundImage.frame.size.width - 20, backgroundImage.frame.size.height);
     [cell setBackgroundView:backgroundImage];
+    
+    BGCCasualty * casualty = self.casualties[indexPath.row];
+    
+    UITextField * nameField = (UITextField *)[cell viewWithTag:1];
+    nameField.text = casualty.victimName;
+    nameField.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
+    nameField.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
+    UITextField * detailsField = (UITextField *)[cell viewWithTag:2];
+    detailsField.text = casualty.address;
+    detailsField.font = [UIFont fontWithName:@"OpenSans" size:10.0f];
+    detailsField.textColor = [UIColor whiteColor];
+    //218, 180, 105
+    UIImageView * imageView = (UIImageView *)[cell viewWithTag:3];
+    imageView.image = nil;
+    if (casualty.victimAge <= 1){
+        imageView.image = babyImage;
+    } else if (casualty.victimGender == MALE){
+        if (casualty.victimAge < 18){
+            imageView.image = boyImage;
+        } else {
+            imageView.image = manImage;
+        }
+    } else if (casualty.victimGender == FEMALE){
+        if (casualty.victimAge < 18){
+            imageView.image = girlImage;
+        } else {
+            imageView.image = womanImage;
+        }
+    }
+    
     
     return cell;
 }

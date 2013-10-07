@@ -30,7 +30,7 @@
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.emphaticQuestionView.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
-    self.descriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:12.0f];
+    self.descriptionView.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     
 }
 
@@ -99,7 +99,7 @@
     titleView.backgroundColor = [UIColor clearColor];
     UITextView * descriptionView = (UITextView *)[cell viewWithTag:2];
     descriptionView.text = descriptionText;
-    descriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:10.0f];
+    descriptionView.font = [UIFont fontWithName:@"OpenSans" size:10.0f];
     descriptionView.backgroundColor = [UIColor clearColor];
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:3];
     imageView.image = image;

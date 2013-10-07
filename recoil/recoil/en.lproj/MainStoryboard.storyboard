@@ -250,12 +250,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="shooting_toggle.png" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-8k-eYB">
                                 <rect key="frame" x="0.0" y="509" width="320" height="65"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdD-4v-CKQ">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdD-4v-CKQ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-3U-vUe">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-3U-vUe">
                                 <rect key="frame" x="0.0" y="128" width="320" height="388"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,6 +266,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ERZ-H7-KCT" id="gP8-bu-PTc">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUM-RO-fdB">
+                                                    <rect key="frame" x="73" y="16" width="188" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giY-0z-LLf">
+                                                    <rect key="frame" x="73" y="34" width="188" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Tr-WN-eBh">
+                                                    <rect key="frame" x="25" y="18" width="23" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
@@ -347,7 +365,9 @@
                     <connections>
                         <outlet property="crimeCount" destination="J3t-g3-nSi" id="1be-hc-BSv"/>
                         <outlet property="headerView" destination="FdD-4v-CKQ" id="2kg-Fg-YGA"/>
+                        <outlet property="mapButton" destination="uV1-iF-fgX" id="Zps-Xb-yaS"/>
                         <outlet property="mapView" destination="0st-ps-Bdv" id="zUT-OH-lpO"/>
+                        <outlet property="menuButton" destination="iih-D6-rpe" id="YjK-TP-tHf"/>
                         <outlet property="navBar" destination="HMp-pU-8Ud" id="foT-BL-GH3"/>
                         <outlet property="slider" destination="Lt1-9L-k0b" id="NZy-UE-cRM"/>
                         <outlet property="tableView" destination="hXA-3U-vUe" id="tt1-Pb-dz2"/>
