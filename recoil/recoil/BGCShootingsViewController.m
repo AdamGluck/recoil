@@ -113,7 +113,7 @@ static UIImage * babyImage;
     NSLog(@"About to plot casualties");
     // Set up query
     PFQuery *query = [PFQuery queryWithClassName:kBGCParseClassName];
-    //query.limit = 30;
+    query.limit = 1000;
     //query.cachePolicy = kPFCachePolicyCacheElseNetwork;
 
     // Asynchronously plot objects
