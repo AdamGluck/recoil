@@ -76,10 +76,13 @@
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:39.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1.0f];
     if (cell){
-        cell.imageView.image = cellImage;
-        cell.imageView.highlightedImage = highlightedImage;
+        UIImageView * imageView = (UIImageView*)[cell.contentView viewWithTag:1];
+        imageView.image = cellImage;
+        imageView.highlightedImage = highlightedImage;
     }
+    
     return cell;
 }
 

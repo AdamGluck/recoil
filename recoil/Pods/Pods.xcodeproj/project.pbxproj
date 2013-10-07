@@ -1,932 +1,424 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>02D342FAD50B4988B7EE3F97</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4DA3643DDFCA40BA9A3D5B4B</string>
-				<string>1566B2044C114506B1BEFD91</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>05772A32A64F4FB6B938F097</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F9C4B2DA9AD6445EAE15C13A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>062CEB20A23645D89DACC3DC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A1230CDDC80D418BB1D13173</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>07C38A3402DF497BB511E560</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>09C2F7F5E38F4EC8B2E4C289</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-environment.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0AE7A0385FA640B199827E67</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0C394CA9F7E84AA0974C02DB</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>05772A32A64F4FB6B938F097</string>
-				<string>2F8D70DE66AB40A89818C86B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0D460C04BE4043388645E2A3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A1230CDDC80D418BB1D13173</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>11BD5843B9FD46E38D736F7D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>14E52EC03DA444C9BF6F4744</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>6D1868FC09744BF393D0CF15</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>82D2D9C499984E67B70A62A8</string>
-			<key>remoteInfo</key>
-			<string>Pods-JASidePanels</string>
-		</dict>
-		<key>1566B2044C114506B1BEFD91</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD7C1AEC95A1426F80F57F01</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>173E79A2991C4FBC8C3ED8E7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>76DA4154B1844193BBBBE6DF</string>
-				<string>236AB22B393247BB9051582D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>236AB22B393247BB9051582D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>2552F45D1C6F4A05BC1CE23B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6CD1FEC839D44106A6C830B1</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Pods-JASidePanels-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2E15AB7D156F4EF58AB38250</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JASidePanelController.m</string>
-			<key>path</key>
-			<string>JASidePanels/JASidePanels/Source/JASidePanelController.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2E84F77B3AFF4ACABB58B72E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2F8D70DE66AB40A89818C86B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F9C4B2DA9AD6445EAE15C13A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>332D055294834F969A43BA40</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-JASidePanels-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3A253CA7A763439F86FC5618</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>724608F025724BC59BA6F577</string>
-				<string>6CD1FEC839D44106A6C830B1</string>
-				<string>332D055294834F969A43BA40</string>
-				<string>FF7924B79E96458E9E982ADA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-JASidePanels</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>43EF99EFA2ED4C18AFBCE75C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>062CEB20A23645D89DACC3DC</string>
-				<string>A06005501B4B433783CB5385</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4DA3643DDFCA40BA9A3D5B4B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A32E7AA347134F1587CF93E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>50340D348F7B437396BBA7BA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5B2D4C1230DC489FA177CCD4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>536A8881DE434C04862E68BB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7EE0BB589EDC4FEC9D836713</string>
-				<string>5970FCFFE794494FB36E34ED</string>
-				<string>7CF9F64FD5A24B1DA20E3E4A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5970FCFFE794494FB36E34ED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A9B4632B645E4538BBF52C38</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>5972D5725701497FAE230D33</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5B2D4C1230DC489FA177CCD4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-dummy.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>64F2F772C59845C2AD14F831</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A32E7AA347134F1587CF93E9</string>
-				<string>2E15AB7D156F4EF58AB38250</string>
-				<string>CD7C1AEC95A1426F80F57F01</string>
-				<string>A9B4632B645E4538BBF52C38</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JASidePanels</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6CD1FEC839D44106A6C830B1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JASidePanels-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6D1868FC09744BF393D0CF15</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>C4967D3E421A4FD8A52D99E6</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>C1D2440B399F4590BC2BAEF3</string>
-			<key>productRefGroup</key>
-			<string>173E79A2991C4FBC8C3ED8E7</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>82D2D9C499984E67B70A62A8</string>
-				<string>E7988E34BFD24A1896EAD501</string>
-			</array>
-		</dict>
-		<key>724608F025724BC59BA6F577</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JASidePanels.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>76DA4154B1844193BBBBE6DF</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-JASidePanels.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>7CF9F64FD5A24B1DA20E3E4A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FF7924B79E96458E9E982ADA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7EE0BB589EDC4FEC9D836713</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2E15AB7D156F4EF58AB38250</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>82D2D9C499984E67B70A62A8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>FA479B4357F24AE7B32D8D41</string>
-			<key>buildPhases</key>
-			<array>
-				<string>536A8881DE434C04862E68BB</string>
-				<string>B148C09A761A47859C61B657</string>
-				<string>02D342FAD50B4988B7EE3F97</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-JASidePanels</string>
-			<key>productName</key>
-			<string>Pods-JASidePanels</string>
-			<key>productReference</key>
-			<string>76DA4154B1844193BBBBE6DF</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>86F36CB14C1F4EBC9E905C3F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>82D2D9C499984E67B70A62A8</string>
-			<key>targetProxy</key>
-			<string>14E52EC03DA444C9BF6F4744</string>
-		</dict>
-		<key>885F02AD5ED94B7B89C2BA99</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A1230CDDC80D418BB1D13173</string>
-				<string>11BD5843B9FD46E38D736F7D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A06005501B4B433783CB5385</key>
-		<dict>
-			<key>fileRef</key>
-			<string>76DA4154B1844193BBBBE6DF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A1230CDDC80D418BB1D13173</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>A28E48F89DE14E38B32449D7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6CD1FEC839D44106A6C830B1</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Pods-JASidePanels-prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A32E7AA347134F1587CF93E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JASidePanelController.h</string>
-			<key>path</key>
-			<string>JASidePanels/JASidePanels/Source/JASidePanelController.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A45D327D95754F6A8D92DDDA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A9B4632B645E4538BBF52C38</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIViewController+JASidePanel.m</string>
-			<key>path</key>
-			<string>JASidePanels/JASidePanels/Source/UIViewController+JASidePanel.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B148C09A761A47859C61B657</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0D460C04BE4043388645E2A3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C1D2440B399F4590BC2BAEF3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>885F02AD5ED94B7B89C2BA99</string>
-				<string>D6E3A395AB20455C96E16EBA</string>
-				<string>173E79A2991C4FBC8C3ED8E7</string>
-				<string>F0D18CA34DAD45EF90917852</string>
-				<string>07C38A3402DF497BB511E560</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C4967D3E421A4FD8A52D99E6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A45D327D95754F6A8D92DDDA</string>
-				<string>0AE7A0385FA640B199827E67</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C74FB1B289A74E1EA6BBD624</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>50340D348F7B437396BBA7BA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB6F561A1BD141DD9EF9A00F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F9C4B2DA9AD6445EAE15C13A</string>
-				<string>09C2F7F5E38F4EC8B2E4C289</string>
-				<string>2E84F77B3AFF4ACABB58B72E</string>
-				<string>D7B0C253F90C43BE9F95ACB7</string>
-				<string>5972D5725701497FAE230D33</string>
-				<string>5B2D4C1230DC489FA177CCD4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD7C1AEC95A1426F80F57F01</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIViewController+JASidePanel.h</string>
-			<key>path</key>
-			<string>JASidePanels/JASidePanels/Source/UIViewController+JASidePanel.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D6E3A395AB20455C96E16EBA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>64F2F772C59845C2AD14F831</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D7B0C253F90C43BE9F95ACB7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E7988E34BFD24A1896EAD501</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0C394CA9F7E84AA0974C02DB</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C74FB1B289A74E1EA6BBD624</string>
-				<string>43EF99EFA2ED4C18AFBCE75C</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>86F36CB14C1F4EBC9E905C3F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>236AB22B393247BB9051582D</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>F0D18CA34DAD45EF90917852</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A253CA7A763439F86FC5618</string>
-				<string>CB6F561A1BD141DD9EF9A00F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F9C4B2DA9AD6445EAE15C13A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>FA479B4357F24AE7B32D8D41</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A28E48F89DE14E38B32449D7</string>
-				<string>2552F45D1C6F4A05BC1CE23B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>FF7924B79E96458E9E982ADA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-JASidePanels-dummy.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>6D1868FC09744BF393D0CF15</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		062CEB20A23645D89DACC3DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1230CDDC80D418BB1D13173 /* Foundation.framework */; };
+		0D460C04BE4043388645E2A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1230CDDC80D418BB1D13173 /* Foundation.framework */; };
+		1566B2044C114506B1BEFD91 /* UIViewController+JASidePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7C1AEC95A1426F80F57F01 /* UIViewController+JASidePanel.h */; };
+		4DA3643DDFCA40BA9A3D5B4B /* JASidePanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = A32E7AA347134F1587CF93E9 /* JASidePanelController.h */; };
+		50340D348F7B437396BBA7BA /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D4C1230DC489FA177CCD4 /* Pods-dummy.m */; };
+		5970FCFFE794494FB36E34ED /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B4632B645E4538BBF52C38 /* UIViewController+JASidePanel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7CF9F64FD5A24B1DA20E3E4A /* Pods-JASidePanels-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7924B79E96458E9E982ADA /* Pods-JASidePanels-dummy.m */; };
+		7EE0BB589EDC4FEC9D836713 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15AB7D156F4EF58AB38250 /* JASidePanelController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A06005501B4B433783CB5385 /* libPods-JASidePanels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DA4154B1844193BBBBE6DF /* libPods-JASidePanels.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14E52EC03DA444C9BF6F4744 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D1868FC09744BF393D0CF15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82D2D9C499984E67B70A62A8;
+			remoteInfo = "Pods-JASidePanels";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07C38A3402DF497BB511E560 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		09C2F7F5E38F4EC8B2E4C289 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
+		11BD5843B9FD46E38D736F7D /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		236AB22B393247BB9051582D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E15AB7D156F4EF58AB38250 /* JASidePanelController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JASidePanelController.m; path = JASidePanels/JASidePanels/Source/JASidePanelController.m; sourceTree = SOURCE_ROOT; };
+		2E84F77B3AFF4ACABB58B72E /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
+		332D055294834F969A43BA40 /* Pods-JASidePanels-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JASidePanels-prefix.pch"; sourceTree = SOURCE_ROOT; };
+		5972D5725701497FAE230D33 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		5B2D4C1230DC489FA177CCD4 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
+		6CD1FEC839D44106A6C830B1 /* Pods-JASidePanels-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JASidePanels-Private.xcconfig"; sourceTree = SOURCE_ROOT; };
+		724608F025724BC59BA6F577 /* Pods-JASidePanels.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JASidePanels.xcconfig"; sourceTree = SOURCE_ROOT; };
+		76DA4154B1844193BBBBE6DF /* libPods-JASidePanels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JASidePanels.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1230CDDC80D418BB1D13173 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A32E7AA347134F1587CF93E9 /* JASidePanelController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JASidePanelController.h; path = JASidePanels/JASidePanels/Source/JASidePanelController.h; sourceTree = SOURCE_ROOT; };
+		A9B4632B645E4538BBF52C38 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+JASidePanel.m"; path = "JASidePanels/JASidePanels/Source/UIViewController+JASidePanel.m"; sourceTree = SOURCE_ROOT; };
+		CD7C1AEC95A1426F80F57F01 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+JASidePanel.h"; path = "JASidePanels/JASidePanels/Source/UIViewController+JASidePanel.h"; sourceTree = SOURCE_ROOT; };
+		D7B0C253F90C43BE9F95ACB7 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		F9C4B2DA9AD6445EAE15C13A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		FF7924B79E96458E9E982ADA /* Pods-JASidePanels-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JASidePanels-dummy.m"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43EF99EFA2ED4C18AFBCE75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				062CEB20A23645D89DACC3DC /* Foundation.framework in Frameworks */,
+				A06005501B4B433783CB5385 /* libPods-JASidePanels.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B148C09A761A47859C61B657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D460C04BE4043388645E2A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		173E79A2991C4FBC8C3ED8E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76DA4154B1844193BBBBE6DF /* libPods-JASidePanels.a */,
+				236AB22B393247BB9051582D /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A253CA7A763439F86FC5618 /* Pods-JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				724608F025724BC59BA6F577 /* Pods-JASidePanels.xcconfig */,
+				6CD1FEC839D44106A6C830B1 /* Pods-JASidePanels-Private.xcconfig */,
+				332D055294834F969A43BA40 /* Pods-JASidePanels-prefix.pch */,
+				FF7924B79E96458E9E982ADA /* Pods-JASidePanels-dummy.m */,
+			);
+			name = "Pods-JASidePanels";
+			sourceTree = "<group>";
+		};
+		64F2F772C59845C2AD14F831 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				A32E7AA347134F1587CF93E9 /* JASidePanelController.h */,
+				2E15AB7D156F4EF58AB38250 /* JASidePanelController.m */,
+				CD7C1AEC95A1426F80F57F01 /* UIViewController+JASidePanel.h */,
+				A9B4632B645E4538BBF52C38 /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanels;
+			sourceTree = "<group>";
+		};
+		885F02AD5ED94B7B89C2BA99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1230CDDC80D418BB1D13173 /* Foundation.framework */,
+				11BD5843B9FD46E38D736F7D /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1D2440B399F4590BC2BAEF3 = {
+			isa = PBXGroup;
+			children = (
+				885F02AD5ED94B7B89C2BA99 /* Frameworks */,
+				D6E3A395AB20455C96E16EBA /* Pods */,
+				173E79A2991C4FBC8C3ED8E7 /* Products */,
+				F0D18CA34DAD45EF90917852 /* Targets Support Files */,
+				07C38A3402DF497BB511E560 /* Podfile */,
+			);
+			sourceTree = "<group>";
+		};
+		CB6F561A1BD141DD9EF9A00F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9C4B2DA9AD6445EAE15C13A /* Pods.xcconfig */,
+				09C2F7F5E38F4EC8B2E4C289 /* Pods-environment.h */,
+				2E84F77B3AFF4ACABB58B72E /* Pods-resources.sh */,
+				D7B0C253F90C43BE9F95ACB7 /* Pods-acknowledgements.plist */,
+				5972D5725701497FAE230D33 /* Pods-acknowledgements.markdown */,
+				5B2D4C1230DC489FA177CCD4 /* Pods-dummy.m */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D6E3A395AB20455C96E16EBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64F2F772C59845C2AD14F831 /* JASidePanels */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0D18CA34DAD45EF90917852 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A253CA7A763439F86FC5618 /* Pods-JASidePanels */,
+				CB6F561A1BD141DD9EF9A00F /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		02D342FAD50B4988B7EE3F97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DA3643DDFCA40BA9A3D5B4B /* JASidePanelController.h in Headers */,
+				1566B2044C114506B1BEFD91 /* UIViewController+JASidePanel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		82D2D9C499984E67B70A62A8 /* Pods-JASidePanels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA479B4357F24AE7B32D8D41 /* Build configuration list for PBXNativeTarget "Pods-JASidePanels" */;
+			buildPhases = (
+				536A8881DE434C04862E68BB /* Sources */,
+				B148C09A761A47859C61B657 /* Frameworks */,
+				02D342FAD50B4988B7EE3F97 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JASidePanels";
+			productName = "Pods-JASidePanels";
+			productReference = 76DA4154B1844193BBBBE6DF /* libPods-JASidePanels.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E7988E34BFD24A1896EAD501 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C394CA9F7E84AA0974C02DB /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				C74FB1B289A74E1EA6BBD624 /* Sources */,
+				43EF99EFA2ED4C18AFBCE75C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86F36CB14C1F4EBC9E905C3F /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 236AB22B393247BB9051582D /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D1868FC09744BF393D0CF15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = C4967D3E421A4FD8A52D99E6 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C1D2440B399F4590BC2BAEF3;
+			productRefGroup = 173E79A2991C4FBC8C3ED8E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82D2D9C499984E67B70A62A8 /* Pods-JASidePanels */,
+				E7988E34BFD24A1896EAD501 /* Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		536A8881DE434C04862E68BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE0BB589EDC4FEC9D836713 /* JASidePanelController.m in Sources */,
+				5970FCFFE794494FB36E34ED /* UIViewController+JASidePanel.m in Sources */,
+				7CF9F64FD5A24B1DA20E3E4A /* Pods-JASidePanels-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74FB1B289A74E1EA6BBD624 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50340D348F7B437396BBA7BA /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86F36CB14C1F4EBC9E905C3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82D2D9C499984E67B70A62A8 /* Pods-JASidePanels */;
+			targetProxy = 14E52EC03DA444C9BF6F4744 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05772A32A64F4FB6B938F097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9C4B2DA9AD6445EAE15C13A /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AE7A0385FA640B199827E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		2552F45D1C6F4A05BC1CE23B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CD1FEC839D44106A6C830B1 /* Pods-JASidePanels-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-JASidePanels-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F8D70DE66AB40A89818C86B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9C4B2DA9AD6445EAE15C13A /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A28E48F89DE14E38B32449D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CD1FEC839D44106A6C830B1 /* Pods-JASidePanels-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-JASidePanels-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A45D327D95754F6A8D92DDDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C394CA9F7E84AA0974C02DB /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05772A32A64F4FB6B938F097 /* Release */,
+				2F8D70DE66AB40A89818C86B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4967D3E421A4FD8A52D99E6 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45D327D95754F6A8D92DDDA /* Release */,
+				0AE7A0385FA640B199827E67 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA479B4357F24AE7B32D8D41 /* Build configuration list for PBXNativeTarget "Pods-JASidePanels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A28E48F89DE14E38B32449D7 /* Release */,
+				2552F45D1C6F4A05BC1CE23B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D1868FC09744BF393D0CF15 /* Project object */;
+}

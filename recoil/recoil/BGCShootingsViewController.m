@@ -23,12 +23,14 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate>
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UILabel *crimeCount;
 @property (strong, nonatomic) NSMutableArray *casualties;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -39,9 +41,15 @@ typedef enum mapState {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     [self configureSlider];
     self.currentMapState = MAP_STATE_DEATHS;
+    
+    UIColor * pattern = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    
+    self.tableView.backgroundColor = pattern;
+    self.tableView.alpha = .99f;
+    self.headerView.backgroundColor = pattern;
+    self.headerView.alpha = .99f;
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -68,8 +76,6 @@ typedef enum mapState {
     chicago.longitude = CHICAGO_LONGITUDE;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(chicago, VIEW_REGION_RADIUS*METERS_PER_MILE, VIEW_REGION_RADIUS*METERS_PER_MILE);
     [self.mapView setRegion:viewRegion];
-    
-    NSLog(@"map configuration finished");
     // Plot casualties
     [self plotCasualties];
     
@@ -82,9 +88,8 @@ typedef enum mapState {
     // Set up query
     PFQuery *query = [PFQuery queryWithClassName:kBGCParseClassName];
     //query.limit = 30;
-    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
+    //query.cachePolicy = kPFCachePolicyCacheElseNetwork;
 
-    
     // Asynchronously plot objects
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -96,6 +101,7 @@ typedef enum mapState {
                 [self addMarkerForCasualty:casualty];
                 [self.casualties addObject:casualty];
             }
+            [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -109,12 +115,12 @@ typedef enum mapState {
     [self.mapView addAnnotation:annotation];
 }
 
+#pragma mark - --MapKit Methods--
 #pragma mark - MKAnnotation Delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"Casualty";
     if ([annotation isKindOfClass:[BGCCasualtyLocation class]]) {
-        
         BGCAnnotationView *annotationView = (BGCAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (!annotationView) {
             annotationView = [[BGCAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
@@ -125,10 +131,8 @@ typedef enum mapState {
         } else {
             annotationView.annotation = annotation;
         }
-        
         return annotationView;
     }
-    
     return nil;
 }
 
@@ -149,6 +153,7 @@ typedef enum mapState {
 {
     NSLog(@"deselected");
 }
+
 
 
 #pragma mark - UI Methods
@@ -200,15 +205,50 @@ typedef enum mapState {
         return [second compare:first];
     }];
     
-    ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = casualtyNotifs;
+    ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
 }
 
 #pragma mark - ticker functions
 
 - (IBAction)listViewToggle:(id)sender {
+    self.headerView.hidden = NO;
+    self.tableView.hidden = NO;
 }
 
 - (IBAction)mapViewToggle:(id)sender {
+    self.headerView.hidden = YES;
+    self.tableView.hidden = YES;
+}
+
+#pragma mark - -- UITableView Methods --
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.casualties.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
+    cell.backgroundColor = [UIColor clearColor];
+    backgroundImage.frame = CGRectMake(backgroundImage.frame.origin.x, backgroundImage.frame.origin.y, backgroundImage.frame.size.width - 20, backgroundImage.frame.size.height);
+    [cell setBackgroundView:backgroundImage];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 67.0;
 }
 
 #pragma mark - Lazy

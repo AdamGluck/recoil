@@ -28,10 +28,20 @@
     }
     return self;
 }
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    NSLog(@"should receive");
+    return YES;
+}
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"shouldBegin");
+    return YES;
+}
 
 -(void)tapped:(UIGestureRecognizer *) recognizer
 {
+    NSLog(@"tapped: in calloutView class called");
     [self.delegate calloutWasTapped];
 }
 

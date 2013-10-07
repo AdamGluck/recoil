@@ -49,13 +49,18 @@
     self.backgroundColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
     [self configureLeftBarButtonItem];
     [self configureRightBarButtonItem];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 -(void) configureLeftBarButtonItem
 {
     UIImage * image = [UIImage imageNamed:@"menu_icon.png"];
-    UIButton * leftButton = [[UIButton alloc] initWithFrame:CGRectMake(17.5, 0, image.size.width, image.size.height)];
-    leftButton.center = CGPointMake(leftButton.center.x, self.center.y);
+    UIButton * leftButton = [[UIButton alloc] initWithFrame:CGRectMake(15.0, 0, image.size.width, image.size.height)];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        leftButton.center = CGPointMake(leftButton.center.x, self.center.y);
+    } else {
+        leftButton.center = CGPointMake(leftButton.center.x, self.frame.origin.y + 2.5);
+    }
     [leftButton setBackgroundImage:image forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(menuPressed) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:leftButton];
@@ -64,9 +69,13 @@
 -(void) configureRightBarButtonItem
 {
     UIImage * image = [UIImage imageNamed:@"notification.png"];
-    UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 17.5, 0, image.size.width, image.size.height)];
+    UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 15.0, 0, image.size.width, image.size.height)];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        rightButton.center = CGPointMake(rightButton.center.x, self.center.y);
+    } else {
+        rightButton.center = CGPointMake(rightButton.center.x, self.frame.origin.y + 2.5);
+    }
     [rightButton setBackgroundImage:image forState:UIControlStateNormal];
-    rightButton.center = CGPointMake(rightButton.center.x, self.center.y);
     [rightButton addTarget:self action:@selector(notificationPressed) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:rightButton];
 }
