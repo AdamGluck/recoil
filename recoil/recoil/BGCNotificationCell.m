@@ -25,8 +25,8 @@
     UIImageView * backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"org_list_bar"]];
     self.backgroundColor = [UIColor clearColor];
     [self setBackgroundView:backgroundImage];
-    self.timeStampView.font = [UIFont fontWithName:@"OpenSans-Regular" size:4.0f];
-    self.notificationDescriptionView.font = [UIFont fontWithName:@"OpenSans-Regular" size:10.0f];
+    self.timeStampView.font = [UIFont fontWithName:@"OpenSans" size:4.0f];
+    self.notificationDescriptionView.font = [UIFont fontWithName:@"OpenSans" size:10.0f];
 }
 
 -(void) prepareWithNotificationDescription: (NSString *) notificationDescription
