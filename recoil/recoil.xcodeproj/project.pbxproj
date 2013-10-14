@@ -18,6 +18,7 @@
 		0F15C86C17B42C2A00EEFF10 /* ribbon_deactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86417B42C2A00EEFF10 /* ribbon_deactive@2x.png */; };
 		0F15C86E17B436DF00EEFF10 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86D17B436DF00EEFF10 /* OpenSans-Regular.ttf */; };
 		0F15C87017B4458800EEFF10 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86F17B4458800EEFF10 /* OpenSans-Bold.ttf */; };
+		0F2B4E42180BCD0D0033C186 /* BGCVictimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B4E41180BCD0D0033C186 /* BGCVictimViewController.m */; };
 		0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */; };
 		0F45616A17B0730D00F8DD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45616917B0730D00F8DD40 /* FacebookSDK.framework */; };
 		0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23C17E271A900270D04 /* BGCAnnotationView.m */; };
@@ -263,6 +264,8 @@
 		0F15C86417B42C2A00EEFF10 /* ribbon_deactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_deactive@2x.png"; sourceTree = "<group>"; };
 		0F15C86D17B436DF00EEFF10 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		0F15C86F17B4458800EEFF10 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		0F2B4E40180BCD0D0033C186 /* BGCVictimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCVictimViewController.h; sourceTree = "<group>"; };
+		0F2B4E41180BCD0D0033C186 /* BGCVictimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCVictimViewController.m; sourceTree = "<group>"; };
 		0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationsViewController.h; sourceTree = "<group>"; };
 		0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationsViewController.m; sourceTree = "<group>"; };
 		0F45616917B0730D00F8DD40 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -557,6 +560,15 @@
 			path = notifications;
 			sourceTree = "<group>";
 		};
+		0F2B4E3F180BCCE80033C186 /* VictimViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F2B4E40180BCD0D0033C186 /* BGCVictimViewController.h */,
+				0F2B4E41180BCD0D0033C186 /* BGCVictimViewController.m */,
+			);
+			name = VictimViewController;
+			sourceTree = "<group>";
+		};
 		0F45616217B0473400F8DD40 /* DifferenceViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +581,7 @@
 		0F45616417B0474C00F8DD40 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F2B4E3F180BCCE80033C186 /* VictimViewController */,
 				0F45616517B0505700F8DD40 /* NotificationsViewController */,
 				0F45616217B0473400F8DD40 /* DifferenceViewController */,
 				0F98FC2C17AB27C400ABF50F /* ShootingsViewController */,
@@ -1327,6 +1340,7 @@
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
+				0F2B4E42180BCD0D0033C186 /* BGCVictimViewController.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
 				0F15C85B17B4221200EEFF10 /* BGCNotificationCell.m in Sources */,

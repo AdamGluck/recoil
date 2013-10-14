@@ -38,7 +38,11 @@
         self.victimName = [object objectForKey:kBGCParseNameKey];
         self.address = [object objectForKey:kBGCParseAddressKey];
         self.dateOccured = [object objectForKey:kBGCParseDateKey];
-        
+        self.locationType = [object objectForKey:kBGCLocationType];
+        self.cause = [object objectForKey:kBGCCause];
+        self.neighborhood = [object objectForKey:kBGCNeighborhood];
+        self.genderString = [object objectForKey:@"gender"];
+        self.newsArticle = [NSURL URLWithString:[object objectForKey:@"storyUrl"]];
     }
     
     return self;

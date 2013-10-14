@@ -21,6 +21,7 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         self.image = [UIImage imageNamed:@"death_pin"];
+        /*
         UIButton * pinButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [pinButton setBackgroundImage:[UIImage imageNamed:@"death_pin"] forState:UIControlStateNormal];
         pinButton.adjustsImageWhenHighlighted = NO;
@@ -30,6 +31,7 @@
         
         self.image = nil;
         self.userInteractionEnabled = YES;
+        */
     }
     return self;
 }
@@ -46,13 +48,10 @@
         BGCCalloutView * callOutView = [[BGCCalloutView alloc] initWithFrame:CGRectZero andCasualty:[[BGCCasualty alloc] init]];
         callOutView.center = CGPointMake(self.bounds.origin.x + (self.bounds.size.width / 2) - 2, self.bounds.origin.y - self.bounds.size.height + 7);
         callOutView.delegate = self;
+        [callOutView addTarget:self action:@selector(calloutWasTapped) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:callOutView];
         
-        /*
-        // before
-        NSLog(@"calloutView frame: %f, %f, %f, %f and calloutView bounds: %f, %f, %f, %f", callOutView.frame.origin.x, callOutView.frame.origin.y, callOutView.frame.size.width, callOutView.frame.size.height, callOutView.bounds.origin.x, callOutView.bounds.origin.y, callOutView.bounds.size.width, callOutView.bounds.size.height);
-        NSLog(@"self.frame: %f, %f, %f, %f and self.bounds: %f, %f, %f, %f \n", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height, self.bounds.origin.x, self.bounds.origin.y , self.bounds.size.width, self.bounds.size.height);
-        
+        /*        
         
         // after
         NSLog(@"calloutView frame: %f, %f, %f, %f and calloutView bounds: %f, %f, %f, %f", callOutView.frame.origin.x, callOutView.frame.origin.y, callOutView.frame.size.width, callOutView.frame.size.height, callOutView.bounds.origin.x, callOutView.bounds.origin.y, callOutView.bounds.size.width, callOutView.bounds.size.height);

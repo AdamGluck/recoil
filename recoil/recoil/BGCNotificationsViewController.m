@@ -10,10 +10,11 @@
 #import "BGCNotificationCell.h"
 #import <Parse/Parse.h>
 #import "BGCCasualty.h"
+#import "BGCVictimViewController.h"
 
 @interface BGCNotificationsViewController ()
 
-
+@property (strong, nonatomic) BGCCasualty * selectedCasualty;
 
 @end
 
@@ -59,36 +60,39 @@
 {
     static NSString *CellIdentifier = @"Cell";
     BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-//    switch (indexPath.row) {
-//        case 0:
-//            [cell prepareWithNotificationDescription:@"Aleksandra Hawkins" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
-//            break;
-//        case 1:
-//            [cell prepareWithNotificationDescription:@"Tanishia Williams" timeStamp:@"2 MINS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
-//            break;
-//        case 2:
-//            [cell prepareWithNotificationDescription:@"Cease Fire Illinois" timeStamp:@"1 DAY AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeColor];
-//            break;
-//        case 3:
-//            [cell prepareWithNotificationDescription:@"Change" timeStamp:@"5 DAYS AGO" notificationType:NotificationTypeNewOrganization andColorType:ColorTypeGray];
-//            break;
-//        case 4:
-//            [cell prepareWithNotificationDescription:@"Lawrence Smith" timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
-//            break;
-//        case 5:
-//            [cell prepareWithNotificationDescription:@"Lawrence Smith Jr." timeStamp:@"7 DAYS AGO" notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
-//            break;
-//        default:
-//            break;
-//    }
     BGCCasualty *casualty = self.casualtyNotifs[indexPath.row];
     [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
     
     return cell;
 }
 
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BGCCasualty * casualty = (BGCCasualty *)self.casualtyNotifs[indexPath.row];
+    self.selectedCasualty = casualty;
+    [self performSegueWithIdentifier:@"notificationCrimeInfo" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"notificationCrimeInfo"]){
+        UINavigationController * nav = (UINavigationController *)segue.destinationViewController;
+        BGCVictimViewController * dst = (BGCVictimViewController *)nav.topViewController;
+        dst.casualty = self.selectedCasualty;
+    }
+}
 #pragma mark -- Lazy instantiation
+
+-(BGCCasualty *)selectedCasualty
+{
+    if (!_selectedCasualty)
+        _selectedCasualty = [[BGCCasualty alloc] init];
+    return _selectedCasualty;
+}
 - (NSMutableArray *)casualtyNotifs
 {
     if (!_casualtyNotifs) _casualtyNotifs = [[NSMutableArray alloc] init];
