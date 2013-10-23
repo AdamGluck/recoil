@@ -26,7 +26,9 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>{
+    BOOL rightRevealed;
+}
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
@@ -278,11 +280,14 @@ static UIImage * babyImage;
 
 -(void) notificationPressed
 {
-    if (self.sidePanelController.state == JASidePanelRightVisible){
+    if (rightRevealed){
+        NSLog(@"right revealed");
         NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
         [defaults setObject:[NSDate date] forKey:@"last_notification_viewed"];
     }
     [self.sidePanelController toggleRightPanel:nil];
+    
+    rightRevealed = !rightRevealed;
 
     NSArray *casualtyNotifs;
     casualtyNotifs = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -291,7 +296,10 @@ static UIImage * babyImage;
         return [second compare:first];
     }];
     
-    ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
+    if (self.sidePanelController.rightPanel){
+        ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
+        [((BGCNotificationsViewController *)self.sidePanelController.rightPanel) reload];
+    }
 }
 
 #pragma mark - ticker functions
@@ -372,8 +380,6 @@ static UIImage * babyImage;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"didSelectRow");
-    
     BGCCasualty * casualty = self.casualties[indexPath.row];
     self.selectedCasualty = casualty;
     [self performSegueWithIdentifier:@"crimeInfo" sender:self];

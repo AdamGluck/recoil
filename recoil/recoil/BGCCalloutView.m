@@ -28,6 +28,7 @@
         name.numberOfLines = 2;
         name.textColor = [UIColor whiteColor];
         name.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
+        name.backgroundColor = [UIColor clearColor];
         [self insertSubview:name aboveSubview:imageView];
         
         UIImageView * personIcon = [[UIImageView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x + 17, imageView.frame.origin.y + 10, 25, 36)];

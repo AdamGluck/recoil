@@ -31,12 +31,10 @@
     self.infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.emphaticQuestionView.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
     self.descriptionView.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
-    
 }
 
--(void) viewDidAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    
     [self configureNavBar];
 }
 
@@ -62,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 13;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,20 +72,49 @@
     [cell setBackgroundView:backgroundImage];
     switch (indexPath.row) {
         case 0:
-            [self configureCell:cell withTitleText:@"CHANGE.ORG" descriptionText:@"Empowering people everywhere to create the change they want to see." andImage:[UIImage imageNamed:@"org_change_icon"]];
+            [self configureCell:cell withTitleText:@"Ceasefire Illinois" descriptionText:@"Treating Violence as an Infectious Disease" andImage:[UIImage imageNamed:@"org_Ceasefire_icon"]];
             break;
         case 1:
-            [self configureCell:cell withTitleText:@"CEASEFIRE ILLINOIS" descriptionText:@"Treating Violence as an Infectious Disease" andImage:[UIImage imageNamed:@"org_Ceasefire_icon"]];
+            [self configureCell:cell withTitleText:@"Stop Handgun Violence" descriptionText:@"A non-profit organization committed to the prevention of gun violence" andImage:[UIImage imageNamed:@"org_STOP_icon"]];
+            
             break;
         case 2:
-            [self configureCell:cell withTitleText:@"STOP HANDGUN VIOLENCE" descriptionText:@"A non-profit organization committed to the prevention of gun violence" andImage:[UIImage imageNamed:@"org_STOP_icon"]];
+            [self configureCell:cell withTitleText:@"Project Safe Neighborhoods" descriptionText:@"America's network against gun violence - Chicago" andImage:[UIImage imageNamed:@"org_ProjectSafe_icon"]];
             break;
         case 3:
-            [self configureCell:cell withTitleText:@"CAUSES.COM - PUT THE GUNS DOWN" descriptionText:@"A Pledge to Stop Gun Violence in Your Community" andImage:[UIImage imageNamed:@"org_BeyondBullets_icon"]];
+            [self configureCell:cell withTitleText:@"Beyond Bullets" descriptionText:@"Americans using media to stop gun violence" andImage:[UIImage imageNamed:@"org_BeyondBullets_icon"]];
+            break;
+        case 4:
+            [self configureCell:cell withTitleText:@"Illinois Council Against Handgun Violence" descriptionText:@"Hangun violence prevention" andImage:[UIImage imageNamed:@"org_IllinoisCouncil_icon"]];
+            break;
+        case 5:
+            [self configureCell:cell withTitleText:@"Coalition to Stop Gun Violence" descriptionText:@"We seek to secure freedom from gun violence through research, strategic engagement and effective policy advocacy" andImage:[UIImage imageNamed:@"org_STOP_icon"]];
+            break;
+        case 6:
+            [self configureCell:cell withTitleText:@"States United to Prevent Gun Violence" descriptionText:@"Empowering state advocates to save lives" andImage:[UIImage imageNamed:@"org_United_icon"]];
+            break;
+        case 7:
+            [self configureCell:cell withTitleText:@"Safer Foundation" descriptionText:@"Promoting successful reentry and reducing recidivism" andImage:[UIImage imageNamed:@"org_Safer_icon"]];
+            break;
+        case 8:
+            [self configureCell:cell withTitleText:@"Teamwork Englewood" descriptionText:@"Together, each achieves more" andImage:[UIImage imageNamed:@"org_TeamEnglewood_icon"]];
+            break;
+        case 9:
+            [self configureCell:cell withTitleText:@"Chicago Area Project" descriptionText:@"Strengthening neighborhoods. Helping young people." andImage:[UIImage imageNamed:@"org_CAP_profile"]];
+            break;
+        case 10:
+            [self configureCell:cell withTitleText:@"Youth Guidance" descriptionText:@"Guiding kids to bright futures" andImage:[UIImage imageNamed:@"org_YouthGuidance_icon"]];
+            break;
+        case 11:
+            [self configureCell:cell withTitleText:@"Chicago Youth Centers’" descriptionText:@"Investing in youth" andImage:[UIImage imageNamed:@"org_CYC_icon"]];
+            break;
+        case 12:
+            [self configureCell:cell withTitleText:@"Youth Outreach Services" descriptionText:@"Committed to caring. Inspiring change." andImage:[UIImage imageNamed:@"org_YouthOutreach_icon"]];
             break;
         default:
             break;
     }
+    
     return cell;
 }
 
@@ -110,13 +137,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    NSArray * links = @[@"http://cureviolence.org/",
+                        @"http://www.stophandgunviolence.org/‎",
+                        @"http://www.psnchicago.org/",
+                        @"http://www.beyondbullets.org/",
+                        @"http://www.ichv.org/",
+                        @"http://www.csgv.org/",
+                        @"http://www.supgv.org/",
+                        @"http://www.saferfoundation.org/",
+                        @"http://www.teamworkenglewood.org",
+                        @"http://www.chicagoareaproject.org",
+                        @"http://www.youth-guidance.org/",
+                        @"http://www.chicagoyouthcenters.org/",
+                        @"http://www.yos.org/"];
+    
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:links[indexPath.row]]];
 }
 
 #pragma mark - RecoilNavigationBarDelegate

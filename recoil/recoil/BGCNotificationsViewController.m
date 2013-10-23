@@ -45,6 +45,11 @@
 
 #pragma mark - Table view data source
 
+-(void)reload
+{
+    [self.tableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
