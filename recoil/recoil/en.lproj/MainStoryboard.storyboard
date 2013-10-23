@@ -143,6 +143,9 @@
                     <navigationItem key="navigationItem" id="Udp-r6-PMc">
                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="N9e-U8-Vdx">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="N2z-DA-fib" id="jnZ-nL-Egj"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -519,7 +522,6 @@
         <!--Navigation Controller-->
         <scene sceneID="gJF-kl-WBp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R7X-fd-1WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bYg-qK-frs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
@@ -532,6 +534,7 @@
                         <segue destination="N2z-DA-fib" kind="relationship" relationship="rootViewController" id="8If-9V-Dtr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7X-fd-1WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-861" y="-454"/>
         </scene>
@@ -551,6 +554,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tbx-P6-RwS"/>
+        <segue reference="9Ks-yq-jL5"/>
     </inferredMetricsTieBreakers>
 </document>

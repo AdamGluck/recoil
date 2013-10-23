@@ -7,6 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
+#import "BGCAnnotationView.h"
 
 @class BGCAnnotationView;
 @protocol BGCAnnotationViewDelegate <NSObject>
@@ -17,7 +18,7 @@
 
 @interface BGCAnnotationView : MKAnnotationView
 
-@property (weak, nonatomic) id <BGCAnnotationViewDelegate> delegate;
+@property (assign, nonatomic) BOOL showingCallout;
 -(id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

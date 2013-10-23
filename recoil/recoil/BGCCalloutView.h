@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "BGCCasualtyLocation.h"
 
-@protocol BGCCalloutViewDelegate <NSObject>
+@interface BGCCalloutView : MKAnnotationView
 
--(void)calloutWasTapped;
-
-@end
-
-@interface BGCCalloutView : UIButton
-
-@property (weak, nonatomic) id <BGCCalloutViewDelegate> delegate;
--(id)initWithFrame:(CGRect)frame andCasualty:(BGCCasualty *)casualty;
+-(id)initWithCasualty:(BGCCasualty *)casualty andAnnotation:(id<MKAnnotation>)annotation;
 
 @end

@@ -15,6 +15,7 @@
 @interface BGCNotificationsViewController ()
 
 @property (strong, nonatomic) BGCCasualty * selectedCasualty;
+@property (strong, nonatomic) NSDate * lastViewed;
 
 @end
 
@@ -61,8 +62,16 @@
     static NSString *CellIdentifier = @"Cell";
     BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     BGCCasualty *casualty = self.casualtyNotifs[indexPath.row];
-    [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
     
+    if (self.lastViewed){
+        if ([self.lastViewed earlierDate:[NSDate date]]){
+            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
+        } else {
+            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+        }
+    } else {
+        [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+    }
     return cell;
 }
 
@@ -86,6 +95,21 @@
     }
 }
 #pragma mark -- Lazy instantiation
+
+-(NSDate *)lastViewed
+{
+    if (!_lastViewed){
+        NSUserDefaults * defauts = [[NSUserDefaults alloc] init];
+        if ([defauts objectForKey:@"last_notification_viewed"]){
+            NSLog(@"defaults object for key last_viewed");
+            _lastViewed = (NSDate *) [defauts objectForKey:@"last_notification_viewed"];
+        } else {
+            NSLog(@"else");
+            _lastViewed = nil;
+        }
+    }
+    return _lastViewed;
+}
 
 -(BGCCasualty *)selectedCasualty
 {

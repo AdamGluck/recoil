@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F124D0B1816271000473E80 /* BGCCalloutAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F124D0A1816271000473E80 /* BGCCalloutAnnotation.m */; };
 		0F15C85B17B4221200EEFF10 /* BGCNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C85A17B4221200EEFF10 /* BGCNotificationCell.m */; };
 		0F15C86517B42C2A00EEFF10 /* hand_active@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C85D17B42C2A00EEFF10 /* hand_active@1x.png */; };
 		0F15C86617B42C2A00EEFF10 /* hand_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C85E17B42C2A00EEFF10 /* hand_active@2x.png */; };
@@ -252,6 +253,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F124D091816271000473E80 /* BGCCalloutAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCCalloutAnnotation.h; sourceTree = "<group>"; };
+		0F124D0A1816271000473E80 /* BGCCalloutAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCCalloutAnnotation.m; sourceTree = "<group>"; };
 		0F15C85917B4221200EEFF10 /* BGCNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationCell.h; sourceTree = "<group>"; };
 		0F15C85A17B4221200EEFF10 /* BGCNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCNotificationCell.m; sourceTree = "<group>"; };
 		0F15C85D17B42C2A00EEFF10 /* hand_active@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hand_active@1x.png"; sourceTree = "<group>"; };
@@ -743,6 +746,8 @@
 				8D4E558817B04174007A10FD /* BGCCasualty.m */,
 				8D1BF33C17B074370007D197 /* BGCCasualtyLocation.h */,
 				8D1BF33D17B074370007D197 /* BGCCasualtyLocation.m */,
+				0F124D091816271000473E80 /* BGCCalloutAnnotation.h */,
+				0F124D0A1816271000473E80 /* BGCCalloutAnnotation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1345,6 +1350,7 @@
 				8D4E558917B04174007A10FD /* BGCCasualty.m in Sources */,
 				0F15C85B17B4221200EEFF10 /* BGCNotificationCell.m in Sources */,
 				8D1BF33E17B074370007D197 /* BGCCasualtyLocation.m in Sources */,
+				0F124D0B1816271000473E80 /* BGCCalloutAnnotation.m in Sources */,
 				8D84530417E2409E00DB1F45 /* NSDate+Helper.m in Sources */,
 				0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */,
 				0F62F24017E271F300270D04 /* BGCCalloutView.m in Sources */,

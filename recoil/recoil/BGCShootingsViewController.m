@@ -17,6 +17,7 @@
 #import "BGCAnnotationView.h"
 #import "BGCCalloutView.h"
 #import "BGCVictimViewController.h"
+#import "BGCCalloutAnnotation.h"
 
 typedef enum mapState {
     MAP_STATE_ADULTS,
@@ -36,6 +37,7 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (strong, nonatomic) BGCCasualty * selectedCasualty;
+@property (strong, nonatomic) BGCCalloutAnnotation * callout;
 
 @end
 
@@ -171,27 +173,26 @@ static UIImage * babyImage;
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"Casualty";
     if ([annotation isKindOfClass:[BGCCasualtyLocation class]]) {
-       // MKAnnotationView * annotationView = (MKAnnotationView*) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         BGCAnnotationView *annotationView = (BGCAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (!annotationView) {
-            /*
-            annotationView.enabled = YES;
-            annotationView.canShowCallout = YES;
-            */
-            
             annotationView = [[BGCAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.delegate = self;
             annotationView.enabled = YES;
-            annotationView.canShowCallout = YES;
+            annotationView.canShowCallout = NO;
             annotationView.selected = NO;
             
         } else {
             annotationView.annotation = annotation;
         }
-        annotationView.image = [UIImage imageNamed:@"death_pin"];
 
         return annotationView;
     }
+    
+    if ([annotation isKindOfClass:[BGCCalloutAnnotation class]]){
+        self.callout = (BGCCalloutAnnotation *)annotation;
+        BGCCalloutView * calloutView = [[BGCCalloutView alloc] initWithCasualty:self.callout.casualty andAnnotation:annotation];
+        return calloutView;
+    }
+    
     return nil;
 }
 
@@ -200,15 +201,41 @@ static UIImage * babyImage;
     NSLog(@"call out tapped");
 }
 
+#define CALLOUT_HEIGHT 62.000000
+#define CALLOUT_WIDTH 219.000000
+
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"selected");
-
+    if ([view isKindOfClass:[BGCCalloutView class]]){
+        BGCCalloutAnnotation * annotation = ((BGCCalloutView *) view).annotation;
+        self.selectedCasualty = annotation.casualty;
+        [self performSegueWithIdentifier:@"crimeInfo" sender:self];
+        return;
+    }
+    
+    if ([view isKindOfClass:[BGCAnnotationView class]]){
+        if (_callout){
+            [self.mapView removeAnnotation:_callout];
+            self.callout = nil;
+        }
+        
+        BGCCasualtyLocation * annotation = (BGCCasualtyLocation *)view.annotation;
+        BGCCalloutAnnotation * callout = [[BGCCalloutAnnotation alloc] initWithCasualty:annotation.casualty];
+        [self.mapView addAnnotation:callout];
+        return;
+    }
 }
+
+
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"deselected");
+    if ([view isKindOfClass:[BGCCalloutView class]] && !self.presentedViewController){
+        if (_callout){
+            [self.mapView removeAnnotation:_callout];
+            self.callout = nil;
+        }
+    }
 }
 
 #pragma mark - UI Methods
@@ -251,9 +278,12 @@ static UIImage * babyImage;
 
 -(void) notificationPressed
 {
+    if (self.sidePanelController.state == JASidePanelRightVisible){
+        NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
+        [defaults setObject:[NSDate date] forKey:@"last_notification_viewed"];
+    }
     [self.sidePanelController toggleRightPanel:nil];
-    
-    // Sort casualties by date
+
     NSArray *casualtyNotifs;
     casualtyNotifs = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSDate *first = ((BGCCasualty *)obj1).dateOccured;

@@ -55,6 +55,10 @@
     [[UIApplication sharedApplication] openURL:self.casualty.newsArticle];
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(BGCCasualty *) casualty
 {
     if (!_casualty)
