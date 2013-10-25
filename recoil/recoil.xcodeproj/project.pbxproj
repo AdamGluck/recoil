@@ -24,6 +24,9 @@
 		0F45616A17B0730D00F8DD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F45616917B0730D00F8DD40 /* FacebookSDK.framework */; };
 		0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23C17E271A900270D04 /* BGCAnnotationView.m */; };
 		0F62F24017E271F300270D04 /* BGCCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23F17E271F300270D04 /* BGCCalloutView.m */; };
+		0F765AFE181A106B00E0E919 /* BGCOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F765AFD181A106B00E0E919 /* BGCOrganizationViewController.m */; };
+		0F765B01181A194D00E0E919 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F765B00181A194D00E0E919 /* MessageUI.framework */; };
+		0F765B03181A19FA00E0E919 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F765B02181A19FA00E0E919 /* StoreKit.framework */; };
 		0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */; };
 		0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98FC2A17AB276800ABF50F /* BGCRecoilNavigationBar.m */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
@@ -120,7 +123,6 @@
 		8D4E557117B0355D007A10FD /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */; };
 		8D4E557317B03563007A10FD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557217B03563007A10FD /* MobileCoreServices.framework */; };
 		8D4E557517B0356F007A10FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557417B0356F007A10FD /* Security.framework */; };
-		8D4E557717B03574007A10FD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557617B03574007A10FD /* StoreKit.framework */; };
 		8D4E557917B0357A007A10FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557817B0357A007A10FD /* SystemConfiguration.framework */; };
 		8D4E557B17B03704007A10FD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557A17B03704007A10FD /* Parse.framework */; };
 		8D4E557F17B03C0E007A10FD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4E557E17B03C0E007A10FD /* AdSupport.framework */; };
@@ -276,6 +278,10 @@
 		0F62F23C17E271A900270D04 /* BGCAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCAnnotationView.m; sourceTree = "<group>"; };
 		0F62F23E17E271F300270D04 /* BGCCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCCalloutView.h; sourceTree = "<group>"; };
 		0F62F23F17E271F300270D04 /* BGCCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCCalloutView.m; sourceTree = "<group>"; };
+		0F765AFC181A106B00E0E919 /* BGCOrganizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCOrganizationViewController.h; sourceTree = "<group>"; };
+		0F765AFD181A106B00E0E919 /* BGCOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCOrganizationViewController.m; sourceTree = "<group>"; };
+		0F765B00181A194D00E0E919 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0F765B02181A19FA00E0E919 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCDifferenceViewController.h; sourceTree = "<group>"; };
 		0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCDifferenceViewController.m; sourceTree = "<group>"; };
 		0F98FC2917AB276800ABF50F /* BGCRecoilNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCRecoilNavigationBar.h; sourceTree = "<group>"; };
@@ -376,7 +382,6 @@
 		8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		8D4E557217B03563007A10FD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8D4E557417B0356F007A10FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8D4E557617B03574007A10FD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8D4E557817B0357A007A10FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8D4E557A17B03704007A10FD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../../Downloads/Parse.framework; sourceTree = "<group>"; };
 		8D4E557E17B03C0E007A10FD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -522,12 +527,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F765B01181A194D00E0E919 /* MessageUI.framework in Frameworks */,
 				8D4E558517B03C5E007A10FD /* libsqlite3.dylib in Frameworks */,
 				8D4E558317B03C19007A10FD /* Social.framework in Frameworks */,
 				8D4E558117B03C14007A10FD /* Accounts.framework in Frameworks */,
 				8D4E557F17B03C0E007A10FD /* AdSupport.framework in Frameworks */,
 				8D4E557917B0357A007A10FD /* SystemConfiguration.framework in Frameworks */,
-				8D4E557717B03574007A10FD /* StoreKit.framework in Frameworks */,
 				8D4E557517B0356F007A10FD /* Security.framework in Frameworks */,
 				8D6D320217A0FEB600DA5556 /* QuartzCore.framework in Frameworks */,
 				8D4E557317B03563007A10FD /* MobileCoreServices.framework in Frameworks */,
@@ -537,6 +542,7 @@
 				8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */,
 				8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */,
 				8D6D31F617A0DD1C00DA5556 /* MapKit.framework in Frameworks */,
+				0F765B03181A19FA00E0E919 /* StoreKit.framework in Frameworks */,
 				8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */,
 				8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */,
 				464B0985398C4933BD68F465 /* libPods.a in Frameworks */,
@@ -577,6 +583,8 @@
 			children = (
 				0F98FC2517AB225200ABF50F /* BGCDifferenceViewController.h */,
 				0F98FC2617AB225200ABF50F /* BGCDifferenceViewController.m */,
+				0F765AFC181A106B00E0E919 /* BGCOrganizationViewController.h */,
+				0F765AFD181A106B00E0E919 /* BGCOrganizationViewController.m */,
 			);
 			name = DifferenceViewController;
 			sourceTree = "<group>";
@@ -775,6 +783,8 @@
 		8D6D31C6179F3AC700DA5556 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F765B02181A19FA00E0E919 /* StoreKit.framework */,
+				0F765B00181A194D00E0E919 /* MessageUI.framework */,
 				0F45616917B0730D00F8DD40 /* FacebookSDK.framework */,
 				8D4E558417B03C5E007A10FD /* libsqlite3.dylib */,
 				8D4E558217B03C19007A10FD /* Social.framework */,
@@ -782,7 +792,6 @@
 				8D4E557E17B03C0E007A10FD /* AdSupport.framework */,
 				8D4E557A17B03704007A10FD /* Parse.framework */,
 				8D4E557817B0357A007A10FD /* SystemConfiguration.framework */,
-				8D4E557617B03574007A10FD /* StoreKit.framework */,
 				8D4E557417B0356F007A10FD /* Security.framework */,
 				8D4E557217B03563007A10FD /* MobileCoreServices.framework */,
 				8D4E557017B0355D007A10FD /* libz.1.1.3.dylib */,
@@ -1065,6 +1074,16 @@
 				CLASSPREFIX = BGC;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = BGC;
+				TargetAttributes = {
+					8D6D31C3179F3AC700DA5556 = {
+						DevelopmentTeam = 96JD5L2L35;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 8D6D31BF179F3AC700DA5556 /* Build configuration list for PBXProject "recoil" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1353,6 +1372,7 @@
 				0F124D0B1816271000473E80 /* BGCCalloutAnnotation.m in Sources */,
 				8D84530417E2409E00DB1F45 /* NSDate+Helper.m in Sources */,
 				0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */,
+				0F765AFE181A106B00E0E919 /* BGCOrganizationViewController.m in Sources */,
 				0F62F24017E271F300270D04 /* BGCCalloutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1439,6 +1459,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58429E47FBC64949B81AC380 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1449,6 +1471,7 @@
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1457,6 +1480,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58429E47FBC64949B81AC380 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1467,6 +1492,7 @@
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
