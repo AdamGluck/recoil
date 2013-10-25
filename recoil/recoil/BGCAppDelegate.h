@@ -28,6 +28,9 @@ static NSString * const kBGCParseLocationKey = @"location";
 static NSString * const kBGCParseNameKey = @"name";
 static NSString * const kBGCParseURLKey = @"storyUrl";
 static NSString * const kBGCParseDateKey = @"dateTime";
+static NSString * const kBGCLocationType = @"locationType";
+static NSString * const kBGCNeighborhood = @"neighborhood";
+static NSString * const kBGCCause = @"cause";
 
 #import <UIKit/UIKit.h>
 

@@ -15,6 +15,9 @@
 #import "BGCNotificationsViewController.h"
 #import <Parse/Parse.h>
 #import "BGCAnnotationView.h"
+#import "BGCCalloutView.h"
+#import "BGCVictimViewController.h"
+#import "BGCCalloutAnnotation.h"
 
 typedef enum mapState {
     MAP_STATE_ADULTS,
@@ -23,7 +26,9 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>{
+    BOOL rightRevealed;
+}
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
@@ -33,6 +38,8 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
+@property (strong, nonatomic) BGCCasualty * selectedCasualty;
+@property (strong, nonatomic) BGCCalloutAnnotation * callout;
 
 @end
 
@@ -51,7 +58,7 @@ typedef enum mapState {
     self.tableView.backgroundColor = pattern;
     self.tableView.alpha = .99f;
     self.headerView.backgroundColor = pattern;
-    self.headerView.alpha = .99f;
+    self.headerView.alpha = .98f;
     
     // Fills self.casualty with killer data! (pun intended)
     [self fetchDataFromParse];
@@ -68,7 +75,7 @@ static UIImage * babyImage;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        babyImage = [UIImage imageNamed:@"baby_icon"];
+        babyImage = [UIImage imageNamed:@"baby_profile"];
         girlImage = [UIImage imageNamed:@"girl_icon"];
         boyImage = [UIImage imageNamed:@"boy_profile"];
         manImage = [UIImage imageNamed:@"man_profile"];
@@ -79,12 +86,11 @@ static UIImage * babyImage;
 -(void) viewDidAppear:(BOOL)animated
 {
     [self configureNavBar];
-    
+    self.crimeCount.font = [UIFont fontWithName:@"OpenSans-Bold" size:20.0f];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-
     
     [self configureMap];
     // Plot casualties
@@ -172,15 +178,23 @@ static UIImage * babyImage;
         BGCAnnotationView *annotationView = (BGCAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (!annotationView) {
             annotationView = [[BGCAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.delegate = self;
-            annotationView.enabled = NO;
+            annotationView.enabled = YES;
             annotationView.canShowCallout = NO;
             annotationView.selected = NO;
+            
         } else {
             annotationView.annotation = annotation;
         }
+
         return annotationView;
     }
+    
+    if ([annotation isKindOfClass:[BGCCalloutAnnotation class]]){
+        self.callout = (BGCCalloutAnnotation *)annotation;
+        BGCCalloutView * calloutView = [[BGCCalloutView alloc] initWithCasualty:self.callout.casualty andAnnotation:annotation];
+        return calloutView;
+    }
+    
     return nil;
 }
 
@@ -189,17 +203,41 @@ static UIImage * babyImage;
     NSLog(@"call out tapped");
 }
 
+#define CALLOUT_HEIGHT 62.000000
+#define CALLOUT_WIDTH 219.000000
+
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"selected");
+    if ([view isKindOfClass:[BGCCalloutView class]]){
+        BGCCalloutAnnotation * annotation = ((BGCCalloutView *) view).annotation;
+        self.selectedCasualty = annotation.casualty;
+        [self performSegueWithIdentifier:@"crimeInfo" sender:self];
+        return;
+    }
+    
     if ([view isKindOfClass:[BGCAnnotationView class]]){
-        //view.selected = !view.selected;
+        if (_callout){
+            [self.mapView removeAnnotation:_callout];
+            self.callout = nil;
+        }
+        
+        BGCCasualtyLocation * annotation = (BGCCasualtyLocation *)view.annotation;
+        BGCCalloutAnnotation * callout = [[BGCCalloutAnnotation alloc] initWithCasualty:annotation.casualty];
+        [self.mapView addAnnotation:callout];
+        return;
     }
 }
 
+
+
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"deselected");
+    if ([view isKindOfClass:[BGCCalloutView class]] && !self.presentedViewController){
+        if (_callout){
+            [self.mapView removeAnnotation:_callout];
+            self.callout = nil;
+        }
+    }
 }
 
 #pragma mark - UI Methods
@@ -245,9 +283,15 @@ static UIImage * babyImage;
 
 -(void) notificationPressed
 {
+    if (rightRevealed){
+        NSLog(@"right revealed");
+        NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
+        [defaults setObject:[NSDate date] forKey:@"last_notification_viewed"];
+    }
     [self.sidePanelController toggleRightPanel:nil];
     
-    // Sort casualties by date
+    rightRevealed = !rightRevealed;
+
     NSArray *casualtyNotifs;
     casualtyNotifs = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSDate *first = ((BGCCasualty *)obj1).dateOccured;
@@ -255,7 +299,10 @@ static UIImage * babyImage;
         return [second compare:first];
     }];
     
-    ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
+    if (self.sidePanelController.rightPanel){
+        ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
+        [((BGCNotificationsViewController *)self.sidePanelController.rightPanel) reload];
+    }
 }
 
 #pragma mark - ticker functions
@@ -298,14 +345,14 @@ static UIImage * babyImage;
     BGCCasualty * casualty = self.casualties[indexPath.row];
     
     UITextField * nameField = (UITextField *)[cell viewWithTag:1];
-    nameField.text = casualty.victimName;
+    nameField.text = [NSString stringWithFormat:@"%@, %i", casualty.victimName, casualty.victimAge];
     nameField.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     nameField.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
     UITextField * detailsField = (UITextField *)[cell viewWithTag:2];
     detailsField.text = casualty.address;
     detailsField.font = [UIFont fontWithName:@"OpenSans" size:10.0f];
     detailsField.textColor = [UIColor whiteColor];
-    //218, 180, 105
+
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:3];
     imageView.image = nil;
     if (casualty.victimAge <= 1){
@@ -324,7 +371,6 @@ static UIImage * babyImage;
         }
     }
     
-    
     return cell;
 }
 
@@ -335,7 +381,33 @@ static UIImage * babyImage;
     return 67.0;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BGCCasualty * casualty = self.casualties[indexPath.row];
+    self.selectedCasualty = casualty;
+    [self performSegueWithIdentifier:@"crimeInfo" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"crimeInfo"]){
+        UINavigationController * nav = (UINavigationController *)segue.destinationViewController;
+        BGCVictimViewController * dst = (BGCVictimViewController *)nav.topViewController;
+        dst.casualty = self.selectedCasualty;
+    }
+}
+
 #pragma mark - Lazy
+
+-(BGCCasualty *) selectedCasualty
+{
+    if (!_selectedCasualty){
+        _selectedCasualty = [[BGCCasualty alloc] init];
+    }
+    
+    return _selectedCasualty;
+}
 
 - (NSMutableArray *)casualties {
     if (!_casualties) _casualties = [[NSMutableArray alloc] init];

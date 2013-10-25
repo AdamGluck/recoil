@@ -11,5 +11,6 @@
 @interface BGCNotificationsViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *casualtyNotifs;
+-(void)reload;
 
 @end

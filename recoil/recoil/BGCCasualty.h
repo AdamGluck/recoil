@@ -20,6 +20,10 @@
 @property (nonatomic) BGCCasualityType casualtyType;
 @property (strong, nonatomic) NSURL *newsArticle;
 @property (strong, nonatomic) NSDate *dateOccured;
+@property (strong, nonatomic) NSString * locationType;
+@property (strong, nonatomic) NSString * neighborhood;
+@property (strong, nonatomic) NSString * cause;
+@property (strong, nonatomic) NSString * genderString;
 
 // Mapping properties
 @property (strong, nonatomic) NSString *address;
