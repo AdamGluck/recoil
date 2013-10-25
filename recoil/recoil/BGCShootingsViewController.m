@@ -216,7 +216,7 @@ static UIImage * babyImage;
     self.navBar.delegate = self;
     self.navBar.title = @"Map";
     
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"OpenSans" size:16.0f], NSFontAttributeName, nil];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"OpenSans-Bold" size:16.0f], NSFontAttributeName, nil];
     self.navBar.titleTextAttributes = attributes;
 }
 
