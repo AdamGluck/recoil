@@ -21,5 +21,6 @@
 @property (weak, nonatomic) id <RecoilNavigationBarDelegate> delegate;
 @property (strong, nonatomic) NSString * title;
 @property (strong, nonatomic) UINavigationItem * navItem;
+-(void)centerTitle;
 
 @end

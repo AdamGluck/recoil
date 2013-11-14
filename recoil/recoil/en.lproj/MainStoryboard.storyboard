@@ -78,6 +78,20 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Share" rowHeight="103" id="tfO-aC-pzL">
+                                <rect key="frame" x="0.0" y="331" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tfO-aC-pzL" id="cIJ-zi-otU">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVS-2T-288">
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -434,7 +448,7 @@
                                     <outlet property="delegate" destination="2" id="9Vg-dX-qvZ"/>
                                 </connections>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shooting_toggle.png" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-8k-eYB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="toggle.png" translatesAutoresizingMaskIntoConstraints="NO" id="zfB-8k-eYB">
                                 <rect key="frame" x="0.0" y="509" width="320" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="mIX-l4-vMP"/>
@@ -737,8 +751,8 @@
         <image name="list_btn_deactive.png" width="40" height="35"/>
         <image name="map_btn_active.png" width="40" height="35"/>
         <image name="menu_icon.png" width="17" height="14"/>
-        <image name="shooting_toggle.png" width="320" height="53"/>
         <image name="ticker_bckg.png" width="187" height="44"/>
+        <image name="toggle.png" width="320" height="53"/>
         <image name="visit_btn.png" width="266" height="54"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

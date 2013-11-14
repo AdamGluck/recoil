@@ -9,13 +9,6 @@
 #import <MapKit/MapKit.h>
 #import "BGCAnnotationView.h"
 
-@class BGCAnnotationView;
-@protocol BGCAnnotationViewDelegate <NSObject>
-
--(void)calloutTappedForView: (BGCAnnotationView *) view;
-
-@end
-
 @interface BGCAnnotationView : MKAnnotationView
 
 @property (assign, nonatomic) BOOL showingCallout;

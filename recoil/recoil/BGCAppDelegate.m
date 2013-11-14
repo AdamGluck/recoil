@@ -8,8 +8,16 @@
 
 #import "BGCAppDelegate.h"
 #import <Parse/Parse.h>
+#import <Sterling/CloseFriendsDataAccess.h>
 
 @implementation BGCAppDelegate
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBSession.activeSession handleOpenURL:url];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -46,6 +54,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[CloseFriendsDataAccess sharedSterling] sterlingUserLogin];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

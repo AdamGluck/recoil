@@ -26,9 +26,11 @@ typedef enum mapState {
 } BGCMapState;
 
 
-@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, BGCAnnotationViewDelegate, UITableViewDataSource, UITableViewDelegate>{
+@interface BGCShootingsViewController () <RecoilNavigationBarDelegate, UITableViewDataSource, UITableViewDelegate>
+{
     BOOL rightRevealed;
 }
+
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
@@ -75,17 +77,16 @@ static UIImage * babyImage;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        babyImage = [UIImage imageNamed:@"baby_profile"];
-        girlImage = [UIImage imageNamed:@"girl_icon"];
-        boyImage = [UIImage imageNamed:@"boy_profile"];
-        manImage = [UIImage imageNamed:@"man_profile"];
-        womanImage = [UIImage imageNamed:@"woman_icon"];
+        babyImage = [UIImage imageNamed:@"Baby_50x72"];
+        girlImage = [UIImage imageNamed:@"Boy_50x72"];
+        boyImage = [UIImage imageNamed:@"Girl_50x72"];
+        manImage = [UIImage imageNamed:@"Man_50x72"];
+        womanImage = [UIImage imageNamed:@"Woman_50x72"];
     });
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self configureNavBar];
     self.crimeCount.font = [UIFont fontWithName:@"OpenSans-Bold" size:20.0f];
 }
 
@@ -93,6 +94,7 @@ static UIImage * babyImage;
 {
     
     [self configureMap];
+    [self configureNavBar];
     // Plot casualties
     [self plotCasualtiesForMapState:self.currentMapState];
 }
@@ -181,11 +183,9 @@ static UIImage * babyImage;
             annotationView.enabled = YES;
             annotationView.canShowCallout = NO;
             annotationView.selected = NO;
-            
         } else {
             annotationView.annotation = annotation;
         }
-
         return annotationView;
     }
     
@@ -196,11 +196,6 @@ static UIImage * babyImage;
     }
     
     return nil;
-}
-
--(void)calloutTappedForView: (BGCAnnotationView *) view;
-{
-    NSLog(@"call out tapped");
 }
 
 #define CALLOUT_HEIGHT 62.000000
@@ -217,26 +212,49 @@ static UIImage * babyImage;
     
     if ([view isKindOfClass:[BGCAnnotationView class]]){
         if (_callout){
-            [self.mapView removeAnnotation:_callout];
+            [self.mapView removeAnnotation:self.callout];
             self.callout = nil;
         }
         
         BGCCasualtyLocation * annotation = (BGCCasualtyLocation *)view.annotation;
         BGCCalloutAnnotation * callout = [[BGCCalloutAnnotation alloc] initWithCasualty:annotation.casualty];
         [self.mapView addAnnotation:callout];
+        
+        for (id mapAnnotation in mapView.annotations){
+            if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
+                BGCAnnotationView * view = (BGCAnnotationView *)[mapView viewForAnnotation:mapAnnotation];
+                view.enabled = NO;
+            }
+        }
         return;
     }
 }
 
 
-
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
+    if ([view isKindOfClass:[BGCAnnotationView class]]){
+        for (id mapAnnotation in mapView.annotations){
+            if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
+                BGCAnnotationView * view = (BGCAnnotationView *)[mapView viewForAnnotation:mapAnnotation];
+                view.enabled = YES;
+            }
+        }
+        [self performSelector:@selector(handleDeselect) withObject:nil afterDelay:.01];
+    }
+    
     if ([view isKindOfClass:[BGCCalloutView class]] && !self.presentedViewController){
         if (_callout){
             [self.mapView removeAnnotation:_callout];
             self.callout = nil;
         }
+    }
+}
+
+-(void)handleDeselect
+{
+    if (_callout){
+        [self.mapView removeAnnotation:_callout];
     }
 }
 
@@ -252,8 +270,7 @@ static UIImage * babyImage;
 -(void)configureNavBar
 {
     self.navBar.delegate = self;
-    self.navBar.title = @"Map";
-    
+    self.navBar.title = @"SHOOTINGS";
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"OpenSans-Bold" size:16.0f], NSFontAttributeName, nil];
     self.navBar.titleTextAttributes = attributes;
 }
@@ -284,7 +301,6 @@ static UIImage * babyImage;
 -(void) notificationPressed
 {
     if (rightRevealed){
-        NSLog(@"right revealed");
         NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
         [defaults setObject:[NSDate date] forKey:@"last_notification_viewed"];
     }
@@ -348,6 +364,7 @@ static UIImage * babyImage;
     nameField.text = [NSString stringWithFormat:@"%@, %i", casualty.victimName, casualty.victimAge];
     nameField.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     nameField.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
+    
     UITextField * detailsField = (UITextField *)[cell viewWithTag:2];
     detailsField.text = casualty.address;
     detailsField.font = [UIFont fontWithName:@"OpenSans" size:10.0f];
@@ -370,7 +387,6 @@ static UIImage * babyImage;
             imageView.image = womanImage;
         }
     }
-    
     return cell;
 }
 
@@ -405,12 +421,13 @@ static UIImage * babyImage;
     if (!_selectedCasualty){
         _selectedCasualty = [[BGCCasualty alloc] init];
     }
-    
     return _selectedCasualty;
 }
 
 - (NSMutableArray *)casualties {
-    if (!_casualties) _casualties = [[NSMutableArray alloc] init];
+    if (!_casualties){
+        _casualties = [[NSMutableArray alloc] init];
+    }
     return _casualties;
 }
 
@@ -419,13 +436,5 @@ static UIImage * babyImage;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
-
-
-
-
 
 @end

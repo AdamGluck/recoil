@@ -54,8 +54,8 @@
 
 -(void) configureLeftBarButtonItem
 {
-    UIImage * image = [UIImage imageNamed:@"menu_icon.png"];
-    UIButton * leftButton = [[UIButton alloc] initWithFrame:CGRectMake(15.0, 0, image.size.width, image.size.height)];
+    UIImage * image = [UIImage imageNamed:@"menu_btn.png"];
+    UIButton * leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         leftButton.center = CGPointMake(leftButton.center.x, self.center.y);
     } else {
@@ -85,6 +85,17 @@
     _title = [title copy];
     self.navigationItem = [[UINavigationItem alloc] initWithTitle:title];
     [self pushNavigationItem:self.navigationItem animated:NO];
+    [self centerTitle];
+}
+
+-(void)centerTitle
+{
+    self.navigationItem.titleView.center = CGPointMake(self.center.x, self.center.y);
+    /*
+    NSLog(@"centerTitle called");
+    [self popNavigationItemAnimated:YES];
+    */
+    
 }
 
 -(NSString *) title

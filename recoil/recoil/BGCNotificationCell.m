@@ -98,7 +98,6 @@
         [fullDescription insertAttributedString:attNotificationDescription atIndex:@"A new organization,".length + 1];
         return [fullDescription copy];
     }
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -52,11 +52,10 @@
 -(void) configureNavBar
 {
     self.navBar.delegate = self;
-    self.navBar.title = @"Difference";
-    
-    // Font is too small here, and overflows if I make it bigger
-//    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"OpenSans-Bold" size:12.0f], NSFontAttributeName, nil];
-//    self.navBar.titleTextAttributes = attributes;
+    self.navBar.title = @"DIFFERENCE";
+    [self.navBar centerTitle];
+
+
 }
 
 #pragma mark - Table view data source

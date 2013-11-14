@@ -11,8 +11,11 @@
 #import "BGCDifferenceViewController.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import <Sterling/CloseFriendsDataAccess.h>
+#import <Sterling/FriendSuggestionViewController.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface BGCLeftTableViewController () <UITableViewDelegate, UITableViewDelegate>
+@interface BGCLeftTableViewController () <UITableViewDelegate, UITableViewDelegate, CloseFriendsDataAccessDelegate>
 
 @end
 
@@ -43,7 +46,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,6 +71,11 @@
             cellIdentifier = @"Settings";
             cellImage = [UIImage imageNamed:@"settings_btn.png"];
             break;
+        case 3:
+            highlightedImage = [UIImage imageNamed:@"inform_btn.png"];
+            cellIdentifier = @"Share";
+            cellImage = [UIImage imageNamed:@"inform_btn.png"];
+            break;
         default:
             cellIdentifier = nil;
             cellImage = nil;
@@ -90,6 +98,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    BOOL shouldToggle = YES;
     switch (indexPath.row) {
         case 0:
             if ([self.sidePanelController.centerPanel class] != [BGCShootingsViewController class]){
@@ -100,14 +109,56 @@
             if ([self.sidePanelController.centerPanel class] != [BGCDifferenceViewController class]){
                 [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"differenceViewController"]];
             }
+        
             break;
         case 2:
+            break;
+        case 3:
+            shouldToggle = NO;
+            if ([CloseFriendsDataAccess loggedIn]){
+                [self configureAndPresentFriendsController];
+            } else {
+                if (!FBSession.activeSession.isOpen){
+                    [FBSession openActiveSessionWithReadPermissions:@[@"read_stream"] allowLoginUI:YES completionHandler:^(FBSession * session, FBSessionState status, NSError * error){
+                        if (!error){
+                            [CloseFriendsDataAccess sharedSterling].delegate = self;
+                            [[CloseFriendsDataAccess sharedSterling] sterlingUserLogin];
+                        } else {
+                            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error with your FBLogin, please login to share." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                            [alert show];
+                        }
+                    }];
+                }
+            }
+            break;
         default:
             break;
     }
-    [self.sidePanelController toggleLeftPanel:nil];
+    if (shouldToggle) [self.sidePanelController toggleLeftPanel:nil];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 }
+
+-(void)sterlingServerResponse:(SterlingRequestServerResponse)response
+{
+    NSLog(@"sterlingserverresponse");
+    if (response != SterlingFacebookSessionFailedToOpen && response != SterlingFacebookSessionIsNotTokenLoaded)
+    {
+        [self configureAndPresentFriendsController];
+    }
+}
+
+-(void)configureAndPresentFriendsController
+{
+    FriendSuggestionViewController * dst = [FriendSuggestionViewController initializeFriendSuggestionViewController];
+    dst.navigationBar.barTintColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
+    dst.navigationBar.titleTextAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
+    dst.backgroundView.backgroundColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
+    dst.cancelButton.tintColor = [UIColor whiteColor];
+    dst.searchButton.tintColor = [UIColor whiteColor];
+    dst.selectionColors = @[[UIColor grayColor], [UIColor lightGrayColor],[UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f]];
+    [self presentViewController: dst animated:YES completion:nil];
+}
+
+
 
 @end

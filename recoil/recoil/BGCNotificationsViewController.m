@@ -106,10 +106,8 @@
     if (!_lastViewed){
         NSUserDefaults * defauts = [[NSUserDefaults alloc] init];
         if ([defauts objectForKey:@"last_notification_viewed"]){
-            NSLog(@"defaults object for key last_viewed");
             _lastViewed = (NSDate *) [defauts objectForKey:@"last_notification_viewed"];
         } else {
-            NSLog(@"else");
             _lastViewed = nil;
         }
     }

@@ -42,6 +42,7 @@
 	
     self.imageView.image = [UIImage imageNamed:self.organizationIcon];
 }
+
 - (IBAction)visitWeb:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.organizationURL]];
 }
