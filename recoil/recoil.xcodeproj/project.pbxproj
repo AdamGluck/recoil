@@ -59,7 +59,6 @@
 		0F4A68941824965D00961ADF /* Woman_50x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A686A1824965C00961ADF /* Woman_50x72.png */; };
 		0F4A689C1824B82E00961ADF /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A68991824B82E00961ADF /* checkmark.png */; };
 		0F4A689D1824B82E00961ADF /* SterlingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A689A1824B82E00961ADF /* SterlingStoryboard.storyboard */; };
-		0F4A689E1824B82E00961ADF /* Sterling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4A689B1824B82E00961ADF /* Sterling.framework */; };
 		0F4A68A01824BBF400961ADF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4A689F1824BBF400961ADF /* FacebookSDK.framework */; };
 		0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23C17E271A900270D04 /* BGCAnnotationView.m */; };
 		0F62F24017E271F300270D04 /* BGCCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23F17E271F300270D04 /* BGCCalloutView.m */; };
@@ -83,6 +82,7 @@
 		0F9E1DB718344677000AA4E4 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F9E1DAA18344677000AA4E4 /* launch640x960.png */; };
 		0F9E1DB918345092000AA4E4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DB818345092000AA4E4 /* StoreKit.framework */; };
 		0F9E1DBB18345099000AA4E4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DBA18345099000AA4E4 /* Social.framework */; };
+		0F9E1DBD1834597D000AA4E4 /* Sterling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DBC1834597D000AA4E4 /* Sterling.framework */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
 		8D17424B17B4509100F55146 /* org_BBF_icon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D1741F517B4509100F55146 /* org_BBF_icon@1x.png */; };
 		8D17424C17B4509100F55146 /* org_BBF_icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D1741F617B4509100F55146 /* org_BBF_icon_2x.png */; };
@@ -354,7 +354,6 @@
 		0F4A686A1824965C00961ADF /* Woman_50x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Woman_50x72.png; sourceTree = "<group>"; };
 		0F4A68991824B82E00961ADF /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		0F4A689A1824B82E00961ADF /* SterlingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SterlingStoryboard.storyboard; sourceTree = "<group>"; };
-		0F4A689B1824B82E00961ADF /* Sterling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sterling.framework; sourceTree = "<group>"; };
 		0F4A689F1824BBF400961ADF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		0F62F23B17E271A900270D04 /* BGCAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCAnnotationView.h; sourceTree = "<group>"; };
 		0F62F23C17E271A900270D04 /* BGCAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCAnnotationView.m; sourceTree = "<group>"; };
@@ -383,6 +382,7 @@
 		0F9E1DAA18344677000AA4E4 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
 		0F9E1DB818345092000AA4E4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F9E1DBA18345099000AA4E4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0F9E1DBC1834597D000AA4E4 /* Sterling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sterling.framework; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D1741F517B4509100F55146 /* org_BBF_icon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "org_BBF_icon@1x.png"; sourceTree = "<group>"; };
@@ -627,8 +627,8 @@
 				8D4E556F17B03556007A10FD /* CoreLocation.framework in Frameworks */,
 				8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */,
 				8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */,
+				0F9E1DBD1834597D000AA4E4 /* Sterling.framework in Frameworks */,
 				8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */,
-				0F4A689E1824B82E00961ADF /* Sterling.framework in Frameworks */,
 				8D6D31F617A0DD1C00DA5556 /* MapKit.framework in Frameworks */,
 				8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */,
 				8D6D31CA179F3AC700DA5556 /* Foundation.framework in Frameworks */,
@@ -780,8 +780,8 @@
 		0F4A68971824B82E00961ADF /* Sterling Framework */ = {
 			isa = PBXGroup;
 			children = (
+				0F9E1DBC1834597D000AA4E4 /* Sterling.framework */,
 				0F4A68981824B82E00961ADF /* Assets */,
-				0F4A689B1824B82E00961ADF /* Sterling.framework */,
 			);
 			path = "Sterling Framework";
 			sourceTree = "<group>";

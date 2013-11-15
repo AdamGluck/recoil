@@ -74,13 +74,12 @@
         case 3:
             highlightedImage = [UIImage imageNamed:@"inform_btn.png"];
             cellIdentifier = @"Share";
-            cellImage = [UIImage imageNamed:@"inform_btn.png"];
+            cellImage = [UIImage imageNamed:@"inform_btn_hover.png"];
             break;
         default:
             cellIdentifier = nil;
             cellImage = nil;
             break;
-
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -140,7 +139,6 @@
 
 -(void)sterlingServerResponse:(SterlingRequestServerResponse)response
 {
-    NSLog(@"sterlingserverresponse");
     if (response != SterlingFacebookSessionFailedToOpen && response != SterlingFacebookSessionIsNotTokenLoaded)
     {
         [self configureAndPresentFriendsController];
@@ -156,6 +154,7 @@
     dst.cancelButton.tintColor = [UIColor whiteColor];
     dst.searchButton.tintColor = [UIColor whiteColor];
     dst.selectionColors = @[[UIColor grayColor], [UIColor lightGrayColor],[UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f]];
+    dst.backgroundView.alpha = .8f;
     [self presentViewController: dst animated:YES completion:nil];
 }
 

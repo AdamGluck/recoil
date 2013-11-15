@@ -36,6 +36,7 @@
 {
     [self basicConfiguration];
     self.timeStampView.text = timeStamp;
+    self.timeStampView.textColor = [UIColor darkGrayColor];
     UIImage * cellImage;
     NSAttributedString * fullNotificationDescription;
     switch (notificationType) {

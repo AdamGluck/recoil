@@ -95,7 +95,6 @@ static UIImage * babyImage;
     
     [self configureMap];
     [self configureNavBar];
-    // Plot casualties
     [self plotCasualtiesForMapState:self.currentMapState];
 }
 
@@ -127,14 +126,15 @@ static UIImage * babyImage;
     // Asynchronously plot objects
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"objects: %@", objects);
+            //NSLog(@"objects: %@", objects);
             // Do something with the found objects
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
                 [self.casualties addObject:casualty];
                 [self addMarkerForCasualty:casualty];
             }
-            self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
+            [self.navBar configureAlertCountAt:0];
+            //self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
             [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -289,6 +289,13 @@ static UIImage * babyImage;
     }
     [sender setValue:newValue animated:YES];
     [self plotCasualtiesForMapState:self.currentMapState];
+    
+    for (id mapAnnotation in self.mapView.annotations){
+        if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
+            BGCAnnotationView * view = (BGCAnnotationView *)[self.mapView viewForAnnotation:mapAnnotation];
+            view.enabled = YES;
+        }
+    }
 }
 
 #pragma mark - navigation

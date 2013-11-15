@@ -53,9 +53,6 @@
 {
     self.navBar.delegate = self;
     self.navBar.title = @"DIFFERENCE";
-    [self.navBar centerTitle];
-
-
 }
 
 #pragma mark - Table view data source

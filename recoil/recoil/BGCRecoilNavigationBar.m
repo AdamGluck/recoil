@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UINavigationItem * navigationItem;
 @property (strong, nonatomic) UILabel * titleLabel;
+@property (strong, nonatomic) UIButton * rightButton;
+@property (strong, nonatomic) UIButton * leftButton;
+@property (strong, nonatomic) UIImageView * notificationCountImage;
 
 @end
 
@@ -63,11 +66,13 @@
     }
     [leftButton setBackgroundImage:image forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(menuPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.leftButton = leftButton;
     [self addSubview:leftButton];
 }
 
 -(void) configureRightBarButtonItem
 {
+    NSLog(@"configure Right button");
     UIImage * image = [UIImage imageNamed:@"notification.png"];
     UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 15.0, 0, image.size.width, image.size.height)];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
@@ -77,25 +82,30 @@
     }
     [rightButton setBackgroundImage:image forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(notificationPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:rightButton];
+    if (!_rightButton){
+        self.rightButton = rightButton;
+        [self addSubview:rightButton];
+    }
 }
+
+-(void) configureAlertCountAt: (NSInteger) count
+{
+    UIImage * alertCircle = [UIImage imageNamed:@"notifications_icon"];
+    self.notificationCountImage = [[UIImageView alloc] initWithFrame:CGRectMake(294, self.rightButton.frame.origin.y - 18, 28, 28)];
+    self.notificationCountImage.image = alertCircle;
+    [self insertSubview:self.notificationCountImage atIndex:0];
+}
+
+#pragma mark - setters and getters
 
 -(void) setTitle:(NSString *)title
 {
     _title = [title copy];
+    if (_navigationItem){
+        [self popNavigationItemAnimated:YES];
+    }
     self.navigationItem = [[UINavigationItem alloc] initWithTitle:title];
     [self pushNavigationItem:self.navigationItem animated:NO];
-    [self centerTitle];
-}
-
--(void)centerTitle
-{
-    self.navigationItem.titleView.center = CGPointMake(self.center.x, self.center.y);
-    /*
-    NSLog(@"centerTitle called");
-    [self popNavigationItemAnimated:YES];
-    */
-    
 }
 
 -(NSString *) title
@@ -104,6 +114,22 @@
         _title = [[NSString alloc] init];
     }
     return _title;
+}
+
+-(UIButton *)rightButton
+{
+    if (!_rightButton){
+        _rightButton = [[UIButton alloc] init];
+    }
+    return _rightButton;
+}
+
+-(UIButton *)leftButton
+{
+    if (!_leftButton){
+        _leftButton = [[UIButton alloc] init];
+    }
+    return _leftButton;
 }
 
 #pragma mark - selectors

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Sterling. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+@class FriendSuggestionViewController;
 
 /*!
  @discussion Delegate protocol to handle responses from the Sterling server.  The DataAccessObject calls sterlingServerResponse: on the delegate in response to actions from the server.  Possible values for the SterlingRequestServerResponse type are
@@ -89,6 +90,14 @@ In order to guarantee that these functions work properly make sure that you have
 @discussion If this property is set to NO and sterlingUserLogin is called, it will not prompt the user ever.  Defaults to YES.
  */
 @property (assign, nonatomic) BOOL shouldPrompt;
+
+/*!
+ @abstract class friendSuggestionViewController
+ @discussion Set this to maintain the viewController automatically presented.
+ */
+@property (strong, nonatomic) FriendSuggestionViewController * suggestionController;
+
+
 /*!
 @abstract Returns the facebookID of the current user.
 */

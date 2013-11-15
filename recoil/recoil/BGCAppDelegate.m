@@ -9,6 +9,7 @@
 #import "BGCAppDelegate.h"
 #import <Parse/Parse.h>
 #import <Sterling/CloseFriendsDataAccess.h>
+#import <Sterling/FriendSuggestionViewController.h>
 
 @implementation BGCAppDelegate
 - (BOOL)application:(UIApplication *)application
@@ -54,7 +55,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [CloseFriendsDataAccess sharedSterling].suggestionController = [self configureSuggestionController];
     [[CloseFriendsDataAccess sharedSterling] sterlingUserLogin];
+}
+
+-(FriendSuggestionViewController *) configureSuggestionController
+{
+    FriendSuggestionViewController * dst = [FriendSuggestionViewController initializeFriendSuggestionViewController];
+    dst.navigationBar.barTintColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
+    dst.navigationBar.titleTextAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
+    dst.backgroundView.backgroundColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f];
+    dst.cancelButton.tintColor = [UIColor whiteColor];
+    dst.searchButton.tintColor = [UIColor whiteColor];
+    dst.selectionColors = @[[UIColor grayColor], [UIColor lightGrayColor],[UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f]];
+    dst.backgroundView.alpha = .8f;
+    return dst;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
