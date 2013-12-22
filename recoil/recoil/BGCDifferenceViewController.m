@@ -37,7 +37,7 @@
     self.imageStrings = @[@"org_Ceasefire_icon", @"org_STOP_icon", @"org_ProjectSafe_icon", @"org_BeyondBullets_icon", @"org_IllinoisCouncil_icon", @"org_STOP_icon", @"org_United_icon", @"org_Safer_icon", @"org_TeamEnglewood_icon", @"org_CAP_profile", @"org_YouthGuidance_icon", @"org_CYC_icon", @"org_YouthOutreach_icon"];
 }
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
     [self configureNavBar];
 }

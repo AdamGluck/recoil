@@ -90,10 +90,19 @@
 
 -(void) configureAlertCountAt: (NSInteger) count
 {
-    UIImage * alertCircle = [UIImage imageNamed:@"notifications_icon"];
-    self.notificationCountImage = [[UIImageView alloc] initWithFrame:CGRectMake(294, self.rightButton.frame.origin.y - 18, 28, 28)];
-    self.notificationCountImage.image = alertCircle;
-    [self insertSubview:self.notificationCountImage atIndex:0];
+    if (count){
+        UIImage * alertCircle = [UIImage imageNamed:@"notifications_icon"];
+        self.notificationCountImage = [[UIImageView alloc] initWithFrame:CGRectMake(292, self.rightButton.frame.origin.y - 13, 28, 28)];
+        self.notificationCountImage.image = alertCircle;
+        [self insertSubview:self.notificationCountImage atIndex:5];
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 14, 14)];
+        label.text = [NSString stringWithFormat:@"%i", count];
+        label.font = [UIFont fontWithName:@"OpenSans-Bold" size:7.0f];
+        label.textColor = [UIColor whiteColor];
+        [label sizeToFit];
+        label.center = self.notificationCountImage.center;
+        [self insertSubview:label aboveSubview:self.notificationCountImage];
+    }
 }
 
 #pragma mark - setters and getters
