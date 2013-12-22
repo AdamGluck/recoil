@@ -62,10 +62,15 @@ typedef enum mapState {
     self.headerView.backgroundColor = pattern;
     self.headerView.alpha = .98f;
     
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sliderTapped:)];
+    [self.slider addGestureRecognizer:gr];
+    
     // Fills self.casualty with killer data! (pun intended)
     [self fetchDataFromParse];
-    
 }
+
+
+
 
 static UIImage * girlImage;
 static UIImage * boyImage;
@@ -117,24 +122,22 @@ static UIImage * babyImage;
 -(void)fetchDataFromParse
 {
     // Fetches data from Parse, and plots markers!
-    NSLog(@"About to plot casualties");
-    // Set up query
     PFQuery *query = [PFQuery queryWithClassName:kBGCParseClassName];
     query.limit = 1000;
-    //query.cachePolicy = kPFCachePolicyCacheElseNetwork;
-
+    
     // Asynchronously plot objects
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            //NSLog(@"objects: %@", objects);
             // Do something with the found objects
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
                 [self.casualties addObject:casualty];
                 [self addMarkerForCasualty:casualty];
             }
+#warning self.navBar is not set up to configure alert count according to incoming data
+            //TODO: Fix this
             [self.navBar configureAlertCountAt:0];
-            //self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
+            self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
             [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -172,6 +175,18 @@ static UIImage * babyImage;
 }
 
 #pragma mark - --MapKit Methods--
+#pragma mark - MKAnnotation Utility Methods
+
+-(void)makeAllMapAnnotationsEnabledState:(BOOL)enabled
+{
+    for (id mapAnnotation in self.mapView.annotations){
+        if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
+            BGCAnnotationView * view = (BGCAnnotationView *)[self.mapView viewForAnnotation:mapAnnotation];
+            view.enabled = enabled;
+        }
+    }
+}
+
 #pragma mark - MKAnnotation Delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -190,6 +205,7 @@ static UIImage * babyImage;
     }
     
     if ([annotation isKindOfClass:[BGCCalloutAnnotation class]]){
+        // add a callout to the map
         self.callout = (BGCCalloutAnnotation *)annotation;
         BGCCalloutView * calloutView = [[BGCCalloutView alloc] initWithCasualty:self.callout.casualty andAnnotation:annotation];
         return calloutView;
@@ -215,17 +231,11 @@ static UIImage * babyImage;
             [self.mapView removeAnnotation:self.callout];
             self.callout = nil;
         }
-        
         BGCCasualtyLocation * annotation = (BGCCasualtyLocation *)view.annotation;
         BGCCalloutAnnotation * callout = [[BGCCalloutAnnotation alloc] initWithCasualty:annotation.casualty];
         [self.mapView addAnnotation:callout];
-        
-        for (id mapAnnotation in mapView.annotations){
-            if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
-                BGCAnnotationView * view = (BGCAnnotationView *)[mapView viewForAnnotation:mapAnnotation];
-                view.enabled = NO;
-            }
-        }
+        // so that callout can be selected and gesture isn't overriden by other pins
+        [self makeAllMapAnnotationsEnabledState:NO];
         return;
     }
 }
@@ -234,15 +244,12 @@ static UIImage * babyImage;
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
     if ([view isKindOfClass:[BGCAnnotationView class]]){
-        for (id mapAnnotation in mapView.annotations){
-            if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
-                BGCAnnotationView * view = (BGCAnnotationView *)[mapView viewForAnnotation:mapAnnotation];
-                view.enabled = YES;
-            }
-        }
+        // once it is deselected make it so that other pins can be selected
+        [self makeAllMapAnnotationsEnabledState:YES];
+        // this gives time for didSelectAnnotationView to trigger and properly reformat
         [self performSelector:@selector(handleDeselect) withObject:nil afterDelay:.01];
     }
-    
+
     if ([view isKindOfClass:[BGCCalloutView class]] && !self.presentedViewController){
         if (_callout){
             [self.mapView removeAnnotation:_callout];
@@ -253,6 +260,7 @@ static UIImage * babyImage;
 
 -(void)handleDeselect
 {
+    // makes it so that if the _callout is still there then it deselects
     if (_callout){
         [self.mapView removeAnnotation:_callout];
     }
@@ -275,6 +283,31 @@ static UIImage * babyImage;
     self.navBar.titleTextAttributes = attributes;
 }
 
+- (void)sliderTapped:(UIGestureRecognizer *)g {
+    UISlider* s = (UISlider*)g.view;
+    if (g.state == UIGestureRecognizerStateEnded){
+        CGPoint pt = [g locationInView: s];
+        CGFloat percentage = pt.x / s.bounds.size.width;
+        CGFloat delta = percentage * (s.maximumValue - s.minimumValue);
+        CGFloat value = s.minimumValue + delta;
+        
+        float newValue;
+        if (value <= 0.5) {
+            self.currentMapState = MAP_STATE_ALL;
+            newValue = 0;
+        } else if (value > 0.5 && value < 1.5) {
+            self.currentMapState = MAP_STATE_ADULTS;
+            newValue = 1;
+        } else {
+            self.currentMapState = MAP_STATE_CHILDREN;
+            newValue = 2;
+        }
+        [s setValue:newValue animated:YES];
+        [self plotCasualtiesForMapState:self.currentMapState];
+        [self makeAllMapAnnotationsEnabledState:YES];
+    }
+}
+
 - (IBAction)sliderChanged:(UISlider *)sender {
     float newValue;
     if (sender.value <= 0.5) {
@@ -289,13 +322,7 @@ static UIImage * babyImage;
     }
     [sender setValue:newValue animated:YES];
     [self plotCasualtiesForMapState:self.currentMapState];
-    
-    for (id mapAnnotation in self.mapView.annotations){
-        if ([mapAnnotation isKindOfClass:[BGCCasualtyLocation class]]){
-            BGCAnnotationView * view = (BGCAnnotationView *)[self.mapView viewForAnnotation:mapAnnotation];
-            view.enabled = YES;
-        }
-    }
+    [self makeAllMapAnnotationsEnabledState:YES];
 }
 
 #pragma mark - navigation

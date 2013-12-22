@@ -57,8 +57,6 @@
 		0F4A68921824965D00961ADF /* Girl_50x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A68681824965C00961ADF /* Girl_50x72.png */; };
 		0F4A68931824965D00961ADF /* Man_50x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A68691824965C00961ADF /* Man_50x72.png */; };
 		0F4A68941824965D00961ADF /* Woman_50x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A686A1824965C00961ADF /* Woman_50x72.png */; };
-		0F4A689C1824B82E00961ADF /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A68991824B82E00961ADF /* checkmark.png */; };
-		0F4A689D1824B82E00961ADF /* SterlingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A689A1824B82E00961ADF /* SterlingStoryboard.storyboard */; };
 		0F4A68A01824BBF400961ADF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4A689F1824BBF400961ADF /* FacebookSDK.framework */; };
 		0F62F23D17E271A900270D04 /* BGCAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23C17E271A900270D04 /* BGCAnnotationView.m */; };
 		0F62F24017E271F300270D04 /* BGCCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F62F23F17E271F300270D04 /* BGCCalloutView.m */; };
@@ -82,7 +80,9 @@
 		0F9E1DB718344677000AA4E4 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F9E1DAA18344677000AA4E4 /* launch640x960.png */; };
 		0F9E1DB918345092000AA4E4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DB818345092000AA4E4 /* StoreKit.framework */; };
 		0F9E1DBB18345099000AA4E4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DBA18345099000AA4E4 /* Social.framework */; };
-		0F9E1DBD1834597D000AA4E4 /* Sterling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DBC1834597D000AA4E4 /* Sterling.framework */; };
+		0FF6F4B51835C4C300C1188A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF6F4AF1835C4C300C1188A /* libTestFlight.a */; };
+		0FF6F4B61835C4C300C1188A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6F4B01835C4C300C1188A /* README.md */; };
+		0FF6F4B71835C4C300C1188A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6F4B11835C4C300C1188A /* release_notes.md */; };
 		464B0985398C4933BD68F465 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56883EBE8AC4445A8F9EA1D0 /* libPods.a */; };
 		8D17424B17B4509100F55146 /* org_BBF_icon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D1741F517B4509100F55146 /* org_BBF_icon@1x.png */; };
 		8D17424C17B4509100F55146 /* org_BBF_icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D1741F617B4509100F55146 /* org_BBF_icon_2x.png */; };
@@ -352,8 +352,6 @@
 		0F4A68681824965C00961ADF /* Girl_50x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Girl_50x72.png; sourceTree = "<group>"; };
 		0F4A68691824965C00961ADF /* Man_50x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Man_50x72.png; sourceTree = "<group>"; };
 		0F4A686A1824965C00961ADF /* Woman_50x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Woman_50x72.png; sourceTree = "<group>"; };
-		0F4A68991824B82E00961ADF /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
-		0F4A689A1824B82E00961ADF /* SterlingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SterlingStoryboard.storyboard; sourceTree = "<group>"; };
 		0F4A689F1824BBF400961ADF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		0F62F23B17E271A900270D04 /* BGCAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCAnnotationView.h; sourceTree = "<group>"; };
 		0F62F23C17E271A900270D04 /* BGCAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCAnnotationView.m; sourceTree = "<group>"; };
@@ -382,7 +380,12 @@
 		0F9E1DAA18344677000AA4E4 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
 		0F9E1DB818345092000AA4E4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F9E1DBA18345099000AA4E4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		0F9E1DBC1834597D000AA4E4 /* Sterling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sterling.framework; sourceTree = "<group>"; };
+		0FF6F4AF1835C4C300C1188A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		0FF6F4B01835C4C300C1188A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0FF6F4B11835C4C300C1188A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		0FF6F4B21835C4C300C1188A /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		0FF6F4B31835C4C300C1188A /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		0FF6F4B41835C4C300C1188A /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		56883EBE8AC4445A8F9EA1D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58429E47FBC64949B81AC380 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8D1741F517B4509100F55146 /* org_BBF_icon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "org_BBF_icon@1x.png"; sourceTree = "<group>"; };
@@ -618,6 +621,7 @@
 				0F765B01181A194D00E0E919 /* MessageUI.framework in Frameworks */,
 				8D4E558517B03C5E007A10FD /* libsqlite3.dylib in Frameworks */,
 				8D4E558117B03C14007A10FD /* Accounts.framework in Frameworks */,
+				0FF6F4B51835C4C300C1188A /* libTestFlight.a in Frameworks */,
 				8D4E557F17B03C0E007A10FD /* AdSupport.framework in Frameworks */,
 				8D4E557917B0357A007A10FD /* SystemConfiguration.framework in Frameworks */,
 				8D4E557517B0356F007A10FD /* Security.framework in Frameworks */,
@@ -627,7 +631,6 @@
 				8D4E556F17B03556007A10FD /* CoreLocation.framework in Frameworks */,
 				8D6D31CC179F3AC700DA5556 /* CoreGraphics.framework in Frameworks */,
 				8D4E556D17B03547007A10FD /* CFNetwork.framework in Frameworks */,
-				0F9E1DBD1834597D000AA4E4 /* Sterling.framework in Frameworks */,
 				8D4E556B17B0353D007A10FD /* AudioToolbox.framework in Frameworks */,
 				8D6D31F617A0DD1C00DA5556 /* MapKit.framework in Frameworks */,
 				8D6D31C8179F3AC700DA5556 /* UIKit.framework in Frameworks */,
@@ -777,24 +780,6 @@
 			path = "../../../../Assets-round-2/People_icons/50x72";
 			sourceTree = "<group>";
 		};
-		0F4A68971824B82E00961ADF /* Sterling Framework */ = {
-			isa = PBXGroup;
-			children = (
-				0F9E1DBC1834597D000AA4E4 /* Sterling.framework */,
-				0F4A68981824B82E00961ADF /* Assets */,
-			);
-			path = "Sterling Framework";
-			sourceTree = "<group>";
-		};
-		0F4A68981824B82E00961ADF /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				0F4A68991824B82E00961ADF /* checkmark.png */,
-				0F4A689A1824B82E00961ADF /* SterlingStoryboard.storyboard */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		0F98FC2817AB235600ABF50F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +830,19 @@
 			);
 			name = Launch;
 			path = "../../Assets-round-2/remaining_assets/Launch";
+			sourceTree = "<group>";
+		};
+		0FF6F4AE1835C4C300C1188A /* TestFlightSDK2-3 */ = {
+			isa = PBXGroup;
+			children = (
+				0FF6F4AF1835C4C300C1188A /* libTestFlight.a */,
+				0FF6F4B01835C4C300C1188A /* README.md */,
+				0FF6F4B11835C4C300C1188A /* release_notes.md */,
+				0FF6F4B21835C4C300C1188A /* TestFlight+AsyncLogging.h */,
+				0FF6F4B31835C4C300C1188A /* TestFlight+ManualSessions.h */,
+				0FF6F4B41835C4C300C1188A /* TestFlight.h */,
+			);
+			path = "TestFlightSDK2-3";
 			sourceTree = "<group>";
 		};
 		8D1741F417B4509100F55146 /* organizations */ = {
@@ -975,10 +973,10 @@
 		8D6D31C6179F3AC700DA5556 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FF6F4AE1835C4C300C1188A /* TestFlightSDK2-3 */,
 				0F9E1DBA18345099000AA4E4 /* Social.framework */,
 				0F9E1DB818345092000AA4E4 /* StoreKit.framework */,
 				0F4A689F1824BBF400961ADF /* FacebookSDK.framework */,
-				0F4A68971824B82E00961ADF /* Sterling Framework */,
 				0F765B00181A194D00E0E919 /* MessageUI.framework */,
 				8D4E558417B03C5E007A10FD /* libsqlite3.dylib */,
 				8D4E558017B03C14007A10FD /* Accounts.framework */,
@@ -1366,6 +1364,7 @@
 				8D6D32B417A112F600DA5556 /* notification@1x.png in Resources */,
 				8D6D32B517A112F600DA5556 /* notification@2x.png in Resources */,
 				8D6D32B617A112F600DA5556 /* notification_hover@1x.png in Resources */,
+				0FF6F4B71835C4C300C1188A /* release_notes.md in Resources */,
 				8D6D32B717A112F600DA5556 /* notification_hover@2x.png in Resources */,
 				8D6D32BE17A112F600DA5556 /* baby_icon@1x.jpg in Resources */,
 				8D6D32BF17A112F600DA5556 /* baby_icon@2x.jpg in Resources */,
@@ -1398,7 +1397,6 @@
 				8D6D32D217A112F600DA5556 /* load_bckg@2x.png in Resources */,
 				8D6D32D317A112F600DA5556 /* death_pin@1x.png in Resources */,
 				8D6D32D417A112F600DA5556 /* death_pin@2x.png in Resources */,
-				0F4A689C1824B82E00961ADF /* checkmark.png in Resources */,
 				0F765B21181B213500E0E919 /* Images.xcassets in Resources */,
 				0F9E1DAC18344677000AA4E4 /* AppIcon512x512@2x.png in Resources */,
 				8D6D32D917A112F600DA5556 /* toggle_control@1x.png in Resources */,
@@ -1461,6 +1459,7 @@
 				0F4A686F1824965D00961ADF /* AppIcon29x29@2x.png in Resources */,
 				8D17425917B4509100F55146 /* org_Ceasefire_profile@1x.png in Resources */,
 				0F9E1DB218344677000AA4E4 /* inform_btn@2x.png in Resources */,
+				0FF6F4B61835C4C300C1188A /* README.md in Resources */,
 				8D17425A17B4509100F55146 /* org_Ceasefire_profile@2x.png in Resources */,
 				8D17425B17B4509100F55146 /* org_change_icon@1x.png in Resources */,
 				8D17425C17B4509100F55146 /* org_change_icon@2x.png in Resources */,
@@ -1468,7 +1467,6 @@
 				0F4A688D1824965D00961ADF /* Girl_46x60.png in Resources */,
 				8D17425E17B4509100F55146 /* org_Cure_icon@2x.png in Resources */,
 				8D17425F17B4509100F55146 /* org_Cure_profile@1x.png in Resources */,
-				0F4A689D1824B82E00961ADF /* SterlingStoryboard.storyboard in Resources */,
 				0F4A687A1824965D00961ADF /* menu_btn@1x.png in Resources */,
 				0F4A68851824965D00961ADF /* Woman_23x30.png in Resources */,
 				8D17426017B4509100F55146 /* org_Cure_profile@2x.png in Resources */,
@@ -1708,6 +1706,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
+					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/TestFlightSDK2-3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "89907421-0D17-40D2-B376-988928E16788";
 				WRAPPER_EXTENSION = app;
@@ -1733,6 +1736,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
+					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/TestFlightSDK2-3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "89907421-0D17-40D2-B376-988928E16788";
 				WRAPPER_EXTENSION = app;
