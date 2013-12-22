@@ -1268,7 +1268,7 @@
 				ORGANIZATIONNAME = BGC;
 				TargetAttributes = {
 					8D6D31C3179F3AC700DA5556 = {
-						DevelopmentTeam = 96JD5L2L35;
+						DevelopmentTeam = GJ85G29XHZ;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -1695,8 +1695,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Gluck (697DR5EQ7V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Gluck (697DR5EQ7V)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1709,7 +1709,7 @@
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "89907421-0D17-40D2-B376-988928E16788";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1720,8 +1720,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Gluck (697DR5EQ7V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adam Gluck (697DR5EQ7V)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1734,7 +1734,7 @@
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "89907421-0D17-40D2-B376-988928E16788";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
