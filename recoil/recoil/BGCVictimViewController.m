@@ -23,11 +23,30 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     
-    self.nameLabel.text = [NSString stringWithFormat:@"%@, %i", self.casualty.victimName, self.casualty.victimAge];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@%@", [self.casualty.victimName length] != 0 ? self.casualty.victimName : @"(Name unknown)", self.casualty.victimAge ? [NSString stringWithFormat:@", %i", self.casualty.victimAge] : @""];
     self.nameLabel.font = [UIFont fontWithName:@"OpenSans-Bold" size:20.0f];
     self.nameLabel.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
+
+    NSString *descriptionLabelText = @"";
+    if ([self.casualty.victimName length] != 0) {
+        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@"%@'s", self.casualty.victimName]];
+    }
+    if ([self.casualty.cause length] != 0) {
+        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" death was caused by %@", self.casualty.cause.lowercaseString]];
+    }
+    if ([self.casualty.locationType length] != 0) {
+        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" in a %@", self.casualty.locationType.lowercaseString]];
+    }
+    if ([self.casualty.neighborhood length] != 0) {
+        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" in the neighborhood of %@", self.casualty.neighborhood]];
+    }
     
-    self.descriptionLabel.text = [NSString stringWithFormat:@"%@'s death was caused by %@ in a %@ in the neighborhood of %@", self.casualty.victimName, self.casualty.cause.lowercaseString, self.casualty.locationType.lowercaseString, self.casualty.neighborhood];
+    // Trim whitespace and capitalize first letter
+    descriptionLabelText = [descriptionLabelText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSLog(@"%@", descriptionLabelText);
+    descriptionLabelText = [descriptionLabelText stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[descriptionLabelText substringToIndex:1] uppercaseString]];
+    
+    self.descriptionLabel.text = descriptionLabelText;
     self.descriptionLabel.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     
     if (self.casualty.victimAge <= 1){

@@ -67,7 +67,7 @@
 -(NSAttributedString *) stringForCrimeOccuredFromName:(NSString *) name andColor: (NotificationCellColorType) color
 {
     NSMutableAttributedString * attNotificationDescription;
-    if (!name.length) name = @"Not yet identified";
+    if (!name.length) name = @"Someone (name unknown)";
     if (color == ColorTypeGray){
         NSString * notificationString = [NSString stringWithFormat:@"%@ has died due to gun violence.", name];
         attNotificationDescription = [[NSMutableAttributedString alloc] initWithString:notificationString];

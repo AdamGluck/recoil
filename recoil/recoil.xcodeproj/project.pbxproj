@@ -1693,26 +1693,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Beinstein (WMSCVR3WH9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\"$(SRCROOT)/../../../../Downloads\\\"",
-					"\\\"$(SRCROOT)/../../../FacebookSDK\\\"",
-					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/Sterling\\ Framework",
-					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
-					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/TestFlightSDK2-3",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5FEB47EA-3A15-462A-A0F1-82718E2FB803";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1723,26 +1712,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Beinstein (WMSCVR3WH9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)",
-					"\\\"$(SRCROOT)/../../../../Downloads\\\"",
-					"\\\"$(SRCROOT)/../../../FacebookSDK\\\"",
-					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/Sterling\\ Framework",
-					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "recoil/recoil-Prefix.pch";
 				INFOPLIST_FILE = "recoil/recoil-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil,
-					"/Users/adamgluck/Desktop/DDeveloper/Consulting/recoil/recoil/TestFlightSDK2-3",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5FEB47EA-3A15-462A-A0F1-82718E2FB803";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

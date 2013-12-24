@@ -64,12 +64,12 @@
     
     if (self.lastViewed){
         if ([self.lastViewed earlierDate:[NSDate date]]){
-            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
+            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
         } else {
-            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
         }
     } else {
-        [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgo] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+        [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
     }
     return cell;
 }
