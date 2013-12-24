@@ -62,14 +62,16 @@ typedef enum mapState {
     self.headerView.backgroundColor = pattern;
     self.headerView.alpha = .98f;
     
+    // enables tapping to select
     UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sliderTapped:)];
     [self.slider addGestureRecognizer:gr];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived:) name:@"pushNotification" object:nil];
+
     // Fills self.casualty with killer data! (pun intended)
+    // This is a sick joke
     [self fetchDataFromParse];
 }
-
-
 
 
 static UIImage * girlImage;
@@ -97,10 +99,14 @@ static UIImage * babyImage;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     [self configureMap];
     [self configureNavBar];
     [self plotCasualtiesForMapState:self.currentMapState];
+}
+
+-(void)pushNotificationRecieved:(NSNotification *)notification
+{
+    [self fetchDataFromParse];
 }
 
 #pragma mark - Map stuff
@@ -469,6 +475,11 @@ static UIImage * babyImage;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
