@@ -80,6 +80,7 @@
 		0F9E1DB718344677000AA4E4 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F9E1DAA18344677000AA4E4 /* launch640x960.png */; };
 		0F9E1DB918345092000AA4E4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DB818345092000AA4E4 /* StoreKit.framework */; };
 		0F9E1DBB18345099000AA4E4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9E1DBA18345099000AA4E4 /* Social.framework */; };
+		0FD2D7C0186B45CF00E2BFEF /* BGCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2D7BF186B45CF00E2BFEF /* BGCSettingsViewController.m */; };
 		0FF6F4B51835C4C300C1188A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF6F4AF1835C4C300C1188A /* libTestFlight.a */; };
 		0FF6F4B61835C4C300C1188A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6F4B01835C4C300C1188A /* README.md */; };
 		0FF6F4B71835C4C300C1188A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6F4B11835C4C300C1188A /* release_notes.md */; };
@@ -380,6 +381,8 @@
 		0F9E1DAA18344677000AA4E4 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
 		0F9E1DB818345092000AA4E4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F9E1DBA18345099000AA4E4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0FD2D7BE186B45CF00E2BFEF /* BGCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCSettingsViewController.h; sourceTree = "<group>"; };
+		0FD2D7BF186B45CF00E2BFEF /* BGCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCSettingsViewController.m; sourceTree = "<group>"; };
 		0FF6F4AF1835C4C300C1188A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		0FF6F4B01835C4C300C1188A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0FF6F4B11835C4C300C1188A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -686,6 +689,7 @@
 		0F45616417B0474C00F8DD40 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0FD2D7C1186B45DF00E2BFEF /* SettingsViewController */,
 				0F2B4E3F180BCCE80033C186 /* VictimViewController */,
 				0F45616517B0505700F8DD40 /* NotificationsViewController */,
 				0F45616217B0473400F8DD40 /* DifferenceViewController */,
@@ -830,6 +834,15 @@
 			);
 			name = Launch;
 			path = "../../Assets-round-2/remaining_assets/Launch";
+			sourceTree = "<group>";
+		};
+		0FD2D7C1186B45DF00E2BFEF /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FD2D7BE186B45CF00E2BFEF /* BGCSettingsViewController.h */,
+				0FD2D7BF186B45CF00E2BFEF /* BGCSettingsViewController.m */,
+			);
+			name = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		0FF6F4AE1835C4C300C1188A /* TestFlightSDK2-3 */ = {
@@ -1595,6 +1608,7 @@
 				8D6D320017A0FC1100DA5556 /* BGCSidebarViewController.m in Sources */,
 				8D6D320517A100B900DA5556 /* BGCLeftTableViewController.m in Sources */,
 				0F98FC2717AB225200ABF50F /* BGCDifferenceViewController.m in Sources */,
+				0FD2D7C0186B45CF00E2BFEF /* BGCSettingsViewController.m in Sources */,
 				0F98FC2B17AB276800ABF50F /* BGCRecoilNavigationBar.m in Sources */,
 				0F2B4E42180BCD0D0033C186 /* BGCVictimViewController.m in Sources */,
 				0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */,

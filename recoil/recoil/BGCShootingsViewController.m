@@ -310,6 +310,7 @@ static UIImage * babyImage;
         }
         [s setValue:newValue animated:YES];
         [self plotCasualtiesForMapState:self.currentMapState];
+        // in case there is currently a callout
         [self makeAllMapAnnotationsEnabledState:YES];
     }
 }
@@ -328,6 +329,7 @@ static UIImage * babyImage;
     }
     [sender setValue:newValue animated:YES];
     [self plotCasualtiesForMapState:self.currentMapState];
+    // in case there is currently a callout
     [self makeAllMapAnnotationsEnabledState:YES];
 }
 
