@@ -60,7 +60,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Terms of Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eg3-Wt-Q3T">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eg3-Wt-Q3T">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="iSI-e4-Iwt" style="IBUITableViewCellStyleDefault" id="Gpu-Nk-EfC">
+                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gpu-Nk-EfC" id="J62-5g-5BC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Terms of Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSI-e4-Iwt">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -71,7 +88,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="3N7-Fk-ZCy" style="IBUITableViewCellStyleDefault" id="Q8b-NY-OC9">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="167" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q8b-NY-OC9" id="mZk-es-G5C">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -578,7 +595,7 @@
                                 </connections>
                             </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lt1-9L-k0b">
-                                <rect key="frame" x="70" y="511" width="180" height="34"/>
+                                <rect key="frame" x="71" y="516" width="179" height="34"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="2" eventType="touchUpInside" id="eiv-TD-WSc"/>
                                 </connections>
@@ -651,10 +668,10 @@
                             <constraint firstItem="hXA-3U-vUe" firstAttribute="top" secondItem="j3w-PV-DY4" secondAttribute="bottom" constant="8" id="ADf-8p-hgt"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="a9e-na-Snx" secondAttribute="trailing" constant="5" id="H3Q-Vd-ety"/>
                             <constraint firstItem="HMp-pU-8Ud" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="HVw-cD-eBs"/>
-                            <constraint firstAttribute="bottom" secondItem="Lt1-9L-k0b" secondAttribute="bottom" constant="24" id="Jdm-ld-BXh"/>
+                            <constraint firstAttribute="bottom" secondItem="Lt1-9L-k0b" secondAttribute="bottom" constant="19" id="Jdm-ld-BXh"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="bottom" secondItem="iih-D6-rpe" secondAttribute="bottom" id="JwT-IY-xrh"/>
                             <constraint firstItem="iih-D6-rpe" firstAttribute="top" secondItem="uV1-iF-fgX" secondAttribute="top" id="QZH-d6-ae0"/>
-                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="72" id="TCe-vF-8cS"/>
+                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="73" id="TCe-vF-8cS"/>
                             <constraint firstAttribute="trailing" secondItem="iih-D6-rpe" secondAttribute="trailing" constant="72" id="VSm-Qh-V3b"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="J3t-g3-nSi" secondAttribute="trailing" constant="27" id="Vwo-iq-4XV"/>
                             <constraint firstItem="FMm-1T-4YG" firstAttribute="top" secondItem="hXA-3U-vUe" secondAttribute="bottom" constant="52" id="YwK-gM-9Wz"/>
