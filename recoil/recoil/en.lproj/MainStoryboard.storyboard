@@ -583,8 +583,8 @@
                                     <outlet property="delegate" destination="2" id="vOA-h8-JBV"/>
                                 </connections>
                             </tableView>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lt1-9L-k0b">
-                                <rect key="frame" x="70" y="515" width="173" height="34"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lt1-9L-k0b">
+                                <rect key="frame" x="70" y="511" width="180" height="34"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="2" eventType="touchUpInside" id="eiv-TD-WSc"/>
                                 </connections>
@@ -655,17 +655,17 @@
                             <constraint firstItem="a9e-na-Snx" firstAttribute="bottom" secondItem="uV1-iF-fgX" secondAttribute="bottom" id="6Sx-o6-PjJ"/>
                             <constraint firstItem="j3w-PV-DY4" firstAttribute="centerX" secondItem="FdD-4v-CKQ" secondAttribute="centerX" id="6sS-UL-mwZ"/>
                             <constraint firstItem="hXA-3U-vUe" firstAttribute="top" secondItem="j3w-PV-DY4" secondAttribute="bottom" constant="8" id="ADf-8p-hgt"/>
-                            <constraint firstItem="zfB-8k-eYB" firstAttribute="centerX" secondItem="Lt1-9L-k0b" secondAttribute="centerX" id="GSN-P7-Jg0"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="a9e-na-Snx" secondAttribute="trailing" constant="5" id="H3Q-Vd-ety"/>
                             <constraint firstItem="HMp-pU-8Ud" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="HVw-cD-eBs"/>
+                            <constraint firstAttribute="bottom" secondItem="Lt1-9L-k0b" secondAttribute="bottom" constant="24" id="Jdm-ld-BXh"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="bottom" secondItem="iih-D6-rpe" secondAttribute="bottom" id="JwT-IY-xrh"/>
-                            <constraint firstAttribute="bottom" secondItem="Lt1-9L-k0b" secondAttribute="bottom" constant="20" symbolic="YES" id="P1Y-IN-48e"/>
-                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="79" id="QI4-En-MiA"/>
                             <constraint firstItem="iih-D6-rpe" firstAttribute="top" secondItem="uV1-iF-fgX" secondAttribute="top" id="QZH-d6-ae0"/>
+                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="72" id="TCe-vF-8cS"/>
                             <constraint firstAttribute="trailing" secondItem="iih-D6-rpe" secondAttribute="trailing" constant="72" id="VSm-Qh-V3b"/>
                             <constraint firstItem="uV1-iF-fgX" firstAttribute="leading" secondItem="J3t-g3-nSi" secondAttribute="trailing" constant="27" id="Vwo-iq-4XV"/>
                             <constraint firstItem="FMm-1T-4YG" firstAttribute="top" secondItem="hXA-3U-vUe" secondAttribute="bottom" constant="52" id="YwK-gM-9Wz"/>
                             <constraint firstItem="a9e-na-Snx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="72" id="abM-6q-CnJ"/>
+                            <constraint firstItem="Lt1-9L-k0b" firstAttribute="trailing" secondItem="j3w-PV-DY4" secondAttribute="trailing" constant="-6" id="at6-Jv-oJ3"/>
                             <constraint firstItem="hXA-3U-vUe" firstAttribute="top" secondItem="j3w-PV-DY4" secondAttribute="bottom" constant="8" id="b4K-Ij-Atb"/>
                             <constraint firstItem="a9e-na-Snx" firstAttribute="top" secondItem="HMp-pU-8Ud" secondAttribute="bottom" constant="15" id="cqX-oi-UYK"/>
                             <constraint firstItem="FMm-1T-4YG" firstAttribute="top" secondItem="hXA-3U-vUe" secondAttribute="bottom" constant="52" id="eCF-s5-bap"/>
