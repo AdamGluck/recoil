@@ -159,17 +159,24 @@ static UIImage * babyImage;
         for (BGCCasualty *casualty in self.casualties) {
             [self addMarkerForCasualty:casualty];
         }
+        self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
     } else if (mapState == MAP_STATE_ADULTS) {
+        int counter = 0;
         for (BGCCasualty *casualty in self.casualties) {
             if (casualty.victimAge >= 18) {
                 [self addMarkerForCasualty:casualty];
+                counter++;
             }
+            self.crimeCount.text = [NSString stringWithFormat:@"%i", counter];
         }
     } else if (mapState == MAP_STATE_CHILDREN) {
+        int counter = 0;
         for (BGCCasualty *casualty in self.casualties) {
             if (casualty.victimAge < 18) {
                 [self addMarkerForCasualty:casualty];
+                counter ++;
             }
+            self.crimeCount.text = [NSString stringWithFormat:@"%i", counter];
         }
     }
 }
