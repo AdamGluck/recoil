@@ -42,11 +42,16 @@
         self.cause = [object objectForKey:kBGCCause];
         self.neighborhood = [object objectForKey:kBGCNeighborhood];
         self.genderString = [object objectForKey:@"gender"];
+        if ([self.genderString isEqualToString:@"Male"]){
+            self.victimGender = MALE;
+        } else if ([self.genderString isEqualToString:@"Female"]){
+            self.victimGender = FEMALE;
+        } else {
+            self.victimGender = UNKNOWN;
+        }
         self.newsArticle = [NSURL URLWithString:[object objectForKey:@"storyUrl"]];
     }
-    
     return self;
-        
 }
 
 #pragma mark - Lazy instantiation
