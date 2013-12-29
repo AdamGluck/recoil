@@ -50,6 +50,15 @@
             self.victimGender = UNKNOWN;
         }
         self.newsArticle = [NSURL URLWithString:[object objectForKey:@"storyUrl"]];
+        
+        NSLog(@"Gender string: %@", self.genderString);
+        if ([self.genderString isEqualToString:@"Male"]) {
+            self.victimGender = MALE;
+        } else if ([self.genderString isEqualToString:@"Female"]) {
+            self.victimGender = FEMALE;
+        } else {
+            self.victimGender = UNKNOWN;
+        }
     }
     return self;
 }
@@ -60,6 +69,12 @@
 {
     if (!_victimName) _victimName = [[NSString alloc] init];
     return _victimName;
+}
+
+-(NSString *)genderString
+{
+    if (!_genderString) _genderString = [[NSString alloc] init];
+    return _genderString;
 }
 
 -(NSString *)address
