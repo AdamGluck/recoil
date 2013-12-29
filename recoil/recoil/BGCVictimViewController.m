@@ -63,6 +63,8 @@
         } else {
             self.imageView.image = [UIImage imageNamed:@"woman_profile"];
         }
+    } else {
+        self.imageView.image = [UIImage imageNamed:@"man_profile"];
     }
     
     self.navigationController.navigationBar.topItem.title = @"VICTIM";

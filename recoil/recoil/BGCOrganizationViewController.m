@@ -56,7 +56,7 @@
         controller.mailComposeDelegate = self;
         [controller setToRecipients:@[self.organizationContact]];
         [controller setSubject:@"How can I help out?"];
-        [controller setMessageBody:@"Hello, \n I discovered your organization though an app called Recoil. I am a concerned citizen and I wish to make a difference any way I can. Let me know how I can help contribute to your organization. \n Thank you, \n" isHTML:NO];
+        [controller setMessageBody:@"Hello, \n I discovered your organization through an app called Recoil. I am a concerned citizen and I wish to make a difference any way I can. Let me know how I can help contribute to your organization. \n Thank you, \n" isHTML:NO];
         controller.delegate = self;
         [self presentViewController:controller animated:YES completion:nil];
     } else {

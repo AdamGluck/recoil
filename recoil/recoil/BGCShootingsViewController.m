@@ -137,8 +137,11 @@ static UIImage * babyImage;
             // Do something with the found objects
             for (PFObject *object in objects) {
                 BGCCasualty *casualty = [[BGCCasualty alloc] initWithPFObject:object];
-                [self.casualties addObject:casualty];
-                [self addMarkerForCasualty:casualty];
+                if ([casualty.cause  isEqual: @"Gunshot"]) {
+                    [self.casualties addObject:casualty];
+                    [self addMarkerForCasualty:casualty];
+                }
+                
             }
 #warning self.navBar is not set up to configure alert count according to incoming data
             //TODO: Fix this
