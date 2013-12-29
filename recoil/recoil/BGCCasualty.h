@@ -37,6 +37,10 @@
 //- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
 - (id)initWithPFObject:(PFObject *)object;
 
+// Helper methods
+- (BOOL)isAdult;
+- (BOOL)isBaby;
+
 
 
 @end

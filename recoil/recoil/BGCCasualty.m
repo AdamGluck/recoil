@@ -58,6 +58,14 @@
         
 }
 
+-(BOOL)isAdult {
+    return self.victimAge >= 18;
+}
+
+-(BOOL)isBaby {
+    return self.victimAge <= 1;
+}
+
 #pragma mark - Lazy instantiation
 
 -(NSString *)victimName

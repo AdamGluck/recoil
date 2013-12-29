@@ -36,6 +36,8 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UILabel *crimeCount;
 @property (strong, nonatomic) NSMutableArray *casualties;
+@property (strong, nonatomic) NSMutableArray *adultCasualties;
+@property (strong, nonatomic) NSMutableArray *childCasualties;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
@@ -68,7 +70,7 @@ typedef enum mapState {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived:) name:@"pushNotification" object:nil];
 
-    // Fills self.casualty with killer data! (pun intended)
+    // Fills self.casualty with killer data!
     // This is a sick joke
     [self fetchDataFromParse];
 }
@@ -140,6 +142,12 @@ static UIImage * babyImage;
                 if ([casualty.cause  isEqual: @"Gunshot"]) {
                     [self.casualties addObject:casualty];
                     [self addMarkerForCasualty:casualty];
+                    
+                    if ([casualty isAdult]) {
+                        [self.adultCasualties addObject:casualty];
+                    } else {
+                        [self.childCasualties addObject:casualty];
+                    }
                 }
                 
             }
@@ -158,30 +166,26 @@ static UIImage * babyImage;
 -(void)plotCasualtiesForMapState:(BGCMapState)mapState
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
-    if (mapState == MAP_STATE_ALL) {
-        for (BGCCasualty *casualty in self.casualties) {
-            [self addMarkerForCasualty:casualty];
-        }
-        self.crimeCount.text = [NSString stringWithFormat:@"%i", self.casualties.count];
-    } else if (mapState == MAP_STATE_ADULTS) {
-        int counter = 0;
-        for (BGCCasualty *casualty in self.casualties) {
-            if (casualty.victimAge >= 18) {
-                [self addMarkerForCasualty:casualty];
-                counter++;
-            }
-            self.crimeCount.text = [NSString stringWithFormat:@"%i", counter];
-        }
-    } else if (mapState == MAP_STATE_CHILDREN) {
-        int counter = 0;
-        for (BGCCasualty *casualty in self.casualties) {
-            if (casualty.victimAge < 18) {
-                [self addMarkerForCasualty:casualty];
-                counter ++;
-            }
-            self.crimeCount.text = [NSString stringWithFormat:@"%i", counter];
-        }
+    NSMutableArray *casualtiesToPlot = [[NSMutableArray alloc] init];
+    switch (mapState) {
+        case MAP_STATE_ALL:
+            casualtiesToPlot = self.casualties;
+            break;
+        case MAP_STATE_ADULTS:
+            casualtiesToPlot = self.adultCasualties;
+            break;
+        case MAP_STATE_CHILDREN:
+            casualtiesToPlot = self.childCasualties;
+            break;
+        default:
+            casualtiesToPlot = self.casualties;
+            break;
     }
+    
+    for (BGCCasualty *casualty in casualtiesToPlot) {
+        [self addMarkerForCasualty:casualty];
+    }
+    self.crimeCount.text = [NSString stringWithFormat:@"%i", casualtiesToPlot.count];
 }
 
 -(void)addMarkerForCasualty:(BGCCasualty *)casualty
@@ -320,6 +324,7 @@ static UIImage * babyImage;
         }
         [s setValue:newValue animated:YES];
         [self plotCasualtiesForMapState:self.currentMapState];
+        [self.tableView reloadData];
         // in case there is currently a callout
         [self makeAllMapAnnotationsEnabledState:YES];
     }
@@ -339,6 +344,7 @@ static UIImage * babyImage;
     }
     [sender setValue:newValue animated:YES];
     [self plotCasualtiesForMapState:self.currentMapState];
+    [self.tableView reloadData];
     // in case there is currently a callout
     [self makeAllMapAnnotationsEnabledState:YES];
 }
@@ -399,7 +405,16 @@ static UIImage * babyImage;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.casualties.count;
+    if (self.currentMapState == MAP_STATE_ALL) {
+        return self.casualties.count;
+    } else if (self.currentMapState == MAP_STATE_ADULTS) {
+        return self.adultCasualties.count;
+    } else if (self.currentMapState == MAP_STATE_CHILDREN) {
+        return self.childCasualties.count; // fix!!
+    } else {
+        return self.casualties.count;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -410,7 +425,23 @@ static UIImage * babyImage;
     backgroundImage.frame = CGRectMake(backgroundImage.frame.origin.x, backgroundImage.frame.origin.y, backgroundImage.frame.size.width - 20, backgroundImage.frame.size.height);
     [cell setBackgroundView:backgroundImage];
     
-    BGCCasualty * casualty = self.casualties[indexPath.row];
+    BGCCasualty *casualty = [[BGCCasualty alloc] init];
+    
+    switch (self.currentMapState) {
+        case MAP_STATE_ALL:
+            casualty = self.casualties[indexPath.row];
+            break;
+        case MAP_STATE_ADULTS:
+            casualty = self.adultCasualties[indexPath.row];
+            break;
+        case MAP_STATE_CHILDREN:
+            casualty = self.childCasualties[indexPath.row];
+            break;
+        default:
+            casualty = self.casualties[indexPath.row];
+            break;
+    }
+    
     
     UITextField * nameField = (UITextField *)[cell viewWithTag:1];
     nameField.text = [NSString stringWithFormat:@"%@, %i", casualty.victimName, casualty.victimAge];
@@ -424,16 +455,16 @@ static UIImage * babyImage;
 
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:3];
     imageView.image = nil;
-    if (casualty.victimAge <= 1){
+    if ([casualty isBaby]){
         imageView.image = babyImage;
     } else if (casualty.victimGender == MALE){
-        if (casualty.victimAge < 18){
+        if (![casualty isAdult]){
             imageView.image = boyImage;
         } else {
             imageView.image = manImage;
         }
     } else if (casualty.victimGender == FEMALE){
-        if (casualty.victimAge < 18){
+        if (![casualty isAdult]){
             imageView.image = girlImage;
         } else {
             imageView.image = womanImage;
@@ -481,6 +512,20 @@ static UIImage * babyImage;
         _casualties = [[NSMutableArray alloc] init];
     }
     return _casualties;
+}
+
+- (NSMutableArray *)adultCasualties {
+    if (!_adultCasualties){
+        _adultCasualties = [[NSMutableArray alloc] init];
+    }
+    return _adultCasualties;
+}
+
+- (NSMutableArray *)childCasualties {
+    if (!_childCasualties){
+        _childCasualties = [[NSMutableArray alloc] init];
+    }
+    return _childCasualties;
 }
 
 - (void)didReceiveMemoryWarning
