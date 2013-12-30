@@ -41,6 +41,8 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (strong, nonatomic) BGCCasualty * selectedCasualty;
 @property (strong, nonatomic) BGCCalloutAnnotation * callout;
+@property (strong, nonatomic) NSMutableArray * childCasualties;
+@property (strong, nonatomic) NSMutableArray * adultCasualties;
 
 @end
 
