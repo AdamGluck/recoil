@@ -27,9 +27,6 @@ typedef enum mapState {
 
 
 @interface BGCShootingsViewController () <RecoilNavigationBarDelegate, UITableViewDataSource, UITableViewDelegate>
-{
-    BOOL rightRevealed;
-}
 
 @property (nonatomic) BGCMapState currentMapState;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
@@ -357,14 +354,8 @@ static UIImage * babyImage;
 
 -(void) notificationPressed
 {
-    if (rightRevealed){
-        NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
-        [defaults setObject:[NSDate date] forKey:@"last_notification_viewed"];
-    }
     [self.sidePanelController toggleRightPanel:nil];
     
-    rightRevealed = !rightRevealed;
-
     NSArray *casualties;
     casualties = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSDate *first = ((BGCCasualty *)obj1).dateOccured;
@@ -373,8 +364,9 @@ static UIImage * babyImage;
     }];
     
     if (self.sidePanelController.rightPanel){
-        ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualties = [casualties mutableCopy];
-        [((BGCNotificationsViewController *)self.sidePanelController.rightPanel) reload];
+        BGCNotificationsViewController * notificationsController = (BGCNotificationsViewController *) self.sidePanelController.rightPanel;
+        notificationsController.casualties = [casualties mutableCopy];
+        [notificationsController reload];
     }
 }
 
