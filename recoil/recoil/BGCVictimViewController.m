@@ -50,18 +50,18 @@
     self.descriptionLabel.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     
     if (self.casualty.victimAge <= 1){
-        self.imageView.image = [UIImage imageNamed:@"Baby_50x72"];
+        self.imageView.image = [UIImage imageNamed:@"baby_profile"];
     } else if (self.casualty.victimGender == MALE){
         if (self.casualty.victimAge < 18){
-            self.imageView.image = [UIImage imageNamed:@"Boy_50x72"];
+            self.imageView.image = [UIImage imageNamed:@"boy_profile"];
         } else {
-            self.imageView.image = [UIImage imageNamed:@"Man_50x72"];
+            self.imageView.image = [UIImage imageNamed:@"man_profile"];
         }
     } else if (self.casualty.victimGender == FEMALE){
         if (self.casualty.victimAge < 18){
-            self.imageView.image = [UIImage imageNamed:@"Girl_50x72"];
+            self.imageView.image = [UIImage imageNamed:@"girl_profile"];
         } else {
-            self.imageView.image = [UIImage imageNamed:@"Woman_50x72"];
+            self.imageView.image = [UIImage imageNamed:@"woman_profile_100x144"];
         }
     } else {
         self.imageView.image = [UIImage imageNamed:@"man_profile"];
@@ -84,7 +84,6 @@
 {
     if (!_casualty)
         _casualty = [[BGCCasualty alloc] init];
-    
     return _casualty;
 }
 

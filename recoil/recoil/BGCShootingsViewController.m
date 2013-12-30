@@ -35,7 +35,6 @@ typedef enum mapState {
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet BGCRecoilNavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UILabel *crimeCount;
-@property (strong, nonatomic) NSMutableArray *casualties;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
@@ -141,8 +140,8 @@ static UIImage * babyImage;
                     [self.casualties addObject:casualty];
                     [self addMarkerForCasualty:casualty];
                 }
-                
             }
+            self.casualtiesLoaded = YES;
 #warning self.navBar is not set up to configure alert count according to incoming data
             //TODO: Fix this
             [self.navBar configureAlertCountAt:0];
@@ -360,15 +359,15 @@ static UIImage * babyImage;
     
     rightRevealed = !rightRevealed;
 
-    NSArray *casualtyNotifs;
-    casualtyNotifs = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSArray *casualties;
+    casualties = [self.casualties sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSDate *first = ((BGCCasualty *)obj1).dateOccured;
         NSDate *second = ((BGCCasualty *)obj2).dateOccured;
         return [second compare:first];
     }];
     
     if (self.sidePanelController.rightPanel){
-        ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualtyNotifs = [casualtyNotifs mutableCopy];
+        ((BGCNotificationsViewController *)self.sidePanelController.rightPanel).casualties = [casualties mutableCopy];
         [((BGCNotificationsViewController *)self.sidePanelController.rightPanel) reload];
     }
 }

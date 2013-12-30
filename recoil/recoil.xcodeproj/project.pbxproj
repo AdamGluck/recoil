@@ -19,6 +19,7 @@
 		0F15C86C17B42C2A00EEFF10 /* ribbon_deactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86417B42C2A00EEFF10 /* ribbon_deactive@2x.png */; };
 		0F15C86E17B436DF00EEFF10 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86D17B436DF00EEFF10 /* OpenSans-Regular.ttf */; };
 		0F15C87017B4458800EEFF10 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C86F17B4458800EEFF10 /* OpenSans-Bold.ttf */; };
+		0F16CB7D187120F800FA5168 /* woman_profile_100x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F16CB7C187120F700FA5168 /* woman_profile_100x144.png */; };
 		0F2B4E42180BCD0D0033C186 /* BGCVictimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B4E41180BCD0D0033C186 /* BGCVictimViewController.m */; };
 		0F45616817B0522000F8DD40 /* BGCNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F45616717B0522000F8DD40 /* BGCNotificationsViewController.m */; };
 		0F4A686E1824965C00961ADF /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A683C1824965C00961ADF /* AppIcon29x29.png */; };
@@ -312,6 +313,7 @@
 		0F15C86417B42C2A00EEFF10 /* ribbon_deactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_deactive@2x.png"; sourceTree = "<group>"; };
 		0F15C86D17B436DF00EEFF10 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		0F15C86F17B4458800EEFF10 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		0F16CB7C187120F700FA5168 /* woman_profile_100x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman_profile_100x144.png; sourceTree = "<group>"; };
 		0F2B4E40180BCD0D0033C186 /* BGCVictimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCVictimViewController.h; sourceTree = "<group>"; };
 		0F2B4E41180BCD0D0033C186 /* BGCVictimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCVictimViewController.m; sourceTree = "<group>"; };
 		0F45616617B0522000F8DD40 /* BGCNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCNotificationsViewController.h; sourceTree = "<group>"; };
@@ -1157,6 +1159,7 @@
 		8D6D324A17A112F600DA5556 /* victims */ = {
 			isa = PBXGroup;
 			children = (
+				0F16CB7C187120F700FA5168 /* woman_profile_100x144.png */,
 				0F4A68531824965C00961ADF /* 23x30 */,
 				0F4A68591824965C00961ADF /* 25x36 */,
 				0F4A685F1824965C00961ADF /* 46x60 */,
@@ -1493,6 +1496,7 @@
 				8D17426917B4509100F55146 /* org_IllinoisCouncil_icon@1x.png in Resources */,
 				8D17426A17B4509100F55146 /* org_IllinoisCouncil_icon@2x.png in Resources */,
 				0F9E1DAD18344677000AA4E4 /* AppIcon57x57.png in Resources */,
+				0F16CB7D187120F800FA5168 /* woman_profile_100x144.png in Resources */,
 				8D17426B17B4509100F55146 /* org_IllinoisCouncil_profile@1x.png in Resources */,
 				8D17426C17B4509100F55146 /* org_IllinoisCouncil_profile@2x.png in Resources */,
 				0F4A687F1824965D00961ADF /* notifications_icon@1x.png in Resources */,

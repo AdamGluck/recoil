@@ -12,6 +12,8 @@
 
 @interface BGCShootingsViewController : UIViewController <MKMapViewDelegate>
 
+@property (strong, nonatomic) NSMutableArray *casualties;
+@property (assign, nonatomic) BOOL casualtiesLoaded;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
