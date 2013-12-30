@@ -34,7 +34,7 @@
     self.infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     self.emphaticQuestionView.font = [UIFont fontWithName:@"OpenSans-Bold" size:14.0f];
     self.descriptionView.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
-    self.imageStrings = @[@"org_Ceasefire_icon", @"org_STOP_icon", @"org_ProjectSafe_icon", @"org_BeyondBullets_icon", @"org_IllinoisCouncil_icon", @"org_STOP_icon", @"org_United_icon", @"org_Safer_icon", @"org_TeamEnglewood_icon", @"org_CAP_profile", @"org_YouthGuidance_icon", @"org_CYC_icon", @"org_YouthOutreach_icon"];
+    self.imageStrings = @[@"org_Ceasefire_icon", @"org_STOP_icon", @"org_ProjectSafe_icon", @"org_BeyondBullets_icon", @"org_IllinoisCouncil_icon", @"org_StopGV_icon", @"org_United_icon", @"org_Safer_icon", @"org_TeamEnglewood_icon", @"org_CAP_profile", @"org_YouthGuidance_icon", @"org_CYC_icon", @"org_YouthOutreach_icon"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
