@@ -85,11 +85,11 @@ static UIImage * babyImage;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        babyImage = [UIImage imageNamed:@"Baby_50x72"];
-        girlImage = [UIImage imageNamed:@"Boy_50x72"];
-        boyImage = [UIImage imageNamed:@"Girl_50x72"];
-        manImage = [UIImage imageNamed:@"Man_50x72"];
-        womanImage = [UIImage imageNamed:@"Woman_50x72"];
+        babyImage = [UIImage imageNamed:@"Baby_46x60"];
+        girlImage = [UIImage imageNamed:@"Girl_46x60"];
+        boyImage = [UIImage imageNamed:@"Boy_46x60"];
+        manImage = [UIImage imageNamed:@"Man_46x60"];
+        womanImage = [UIImage imageNamed:@"Woman_46x60"];
     });
 }
 
@@ -424,7 +424,7 @@ static UIImage * babyImage;
     backgroundImage.frame = CGRectMake(backgroundImage.frame.origin.x, backgroundImage.frame.origin.y, backgroundImage.frame.size.width - 20, backgroundImage.frame.size.height);
     [cell setBackgroundView:backgroundImage];
     
-    BGCCasualty *casualty = [[BGCCasualty alloc] init];
+    BGCCasualty *casualty;
     
     switch (self.currentMapState) {
         case MAP_STATE_ALL:
@@ -442,7 +442,7 @@ static UIImage * babyImage;
     }
     
     
-    UITextField * nameField = (UITextField *)[cell viewWithTag:1];
+    UITextField * nameField = (UITextField *)[cell viewWithTag:1];    
     nameField.text = [NSString stringWithFormat:@"%@, %i", casualty.victimName, casualty.victimAge];
     nameField.font = [UIFont fontWithName:@"OpenSans" size:12.0f];
     nameField.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
@@ -481,7 +481,21 @@ static UIImage * babyImage;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BGCCasualty * casualty = self.casualties[indexPath.row];
+    BGCCasualty *casualty;
+    switch (self.currentMapState) {
+        case MAP_STATE_ALL:
+            casualty = self.casualties[indexPath.row];
+            break;
+        case MAP_STATE_ADULTS:
+            casualty = self.adultCasualties[indexPath.row];
+            break;
+        case MAP_STATE_CHILDREN:
+            casualty = self.childCasualties[indexPath.row];
+            break;
+        default:
+            casualty = self.casualties[indexPath.row];
+            break;
+    }
     self.selectedCasualty = casualty;
     [self performSegueWithIdentifier:@"crimeInfo" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

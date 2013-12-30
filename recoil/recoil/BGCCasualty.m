@@ -35,7 +35,9 @@
         // These will be nil if they don't exist -- and that's ok!
         self.coordinate = CLLocationCoordinate2DMake(self.geopoint.latitude, self.geopoint.longitude);
         self.victimAge = [[object objectForKey:kBGCParseAgeKey] intValue];
-        self.victimName = [object objectForKey:kBGCParseNameKey];
+        NSString * name = [object objectForKey:kBGCParseNameKey];
+        if (!name.length) name = @"(Name Unknown)";
+        self.victimName = name;
         self.address = [object objectForKey:kBGCParseAddressKey];
         self.dateOccured = [object objectForKey:kBGCParseDateKey];
         self.locationType = [object objectForKey:kBGCLocationType];

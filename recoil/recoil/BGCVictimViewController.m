@@ -23,7 +23,7 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     
-    self.nameLabel.text = [NSString stringWithFormat:@"%@%@", [self.casualty.victimName length] != 0 ? self.casualty.victimName : @"(Name unknown)", self.casualty.victimAge ? [NSString stringWithFormat:@", %i", self.casualty.victimAge] : @""];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@%@", self.casualty.victimName, self.casualty.victimAge ? [NSString stringWithFormat:@", %i", self.casualty.victimAge] : @""];
     self.nameLabel.font = [UIFont fontWithName:@"OpenSans-Bold" size:20.0f];
     self.nameLabel.textColor = [UIColor colorWithRed:218.0/255.0 green:180.0/255.0 blue:105.0/255.0 alpha:1.0f];
 
@@ -32,7 +32,7 @@
         descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@"%@'s", self.casualty.victimName]];
     }
     if ([self.casualty.cause length] != 0) {
-        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" death was caused by %@", self.casualty.cause.lowercaseString]];
+        descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" death was caused by a %@", self.casualty.cause.lowercaseString]];
     }
     if ([self.casualty.locationType length] != 0) {
         descriptionLabelText = [descriptionLabelText stringByAppendingString:[NSString stringWithFormat:@" in a %@", self.casualty.locationType.lowercaseString]];

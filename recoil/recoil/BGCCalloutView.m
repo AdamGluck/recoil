@@ -34,18 +34,18 @@
         UIImageView * personIcon = [[UIImageView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x + 17, imageView.frame.origin.y + 10, 25, 36)];
         
         if (casualty.victimAge <= 1){
-            personIcon.image = [UIImage imageNamed:@"Baby_46x60"];
+            personIcon.image = [UIImage imageNamed:@"Baby_50x72"];
         } else if (casualty.victimGender == MALE){
             if (casualty.victimAge < 18){
-                personIcon.image = [UIImage imageNamed:@"Boy_46x60"];
+                personIcon.image = [UIImage imageNamed:@"Boy_50x72"];
             } else {
-                personIcon.image = [UIImage imageNamed:@"Man_46x60"];
+                personIcon.image = [UIImage imageNamed:@"Man_50x72"];
             }
         } else if (casualty.victimGender == FEMALE){
             if (casualty.victimAge < 18){
-                personIcon.image = [UIImage imageNamed:@"Girl_46x60"];
+                personIcon.image = [UIImage imageNamed:@"Girl_50x72"];
             } else {
-                personIcon.image = [UIImage imageNamed:@"Woman_46x60"];
+                personIcon.image = [UIImage imageNamed:@"Woman_50x72"];
             }
         }
         
