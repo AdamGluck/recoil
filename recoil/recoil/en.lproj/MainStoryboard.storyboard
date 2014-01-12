@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="918" y="1130"/>
         </scene>
-        <!--Settings View Controller - Settings-->
+        <!--Settings View Controller - SETTINGS-->
         <scene sceneID="cuy-Af-36x">
             <objects>
                 <tableViewController id="dnl-9m-bsu" customClass="BGCSettingsViewController" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                             <outlet property="delegate" destination="dnl-9m-bsu" id="fC1-sf-2P9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="TRd-TG-8XP">
+                    <navigationItem key="navigationItem" title="SETTINGS" id="TRd-TG-8XP">
                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="svz-Jr-S0Z">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -384,7 +384,7 @@
             </objects>
             <point key="canvasLocation" x="1368" y="-270"/>
         </scene>
-        <!--Organization View Controller - Organization-->
+        <!--Organization View Controller - ORGANIZATION-->
         <scene sceneID="udh-ch-7o5">
             <objects>
                 <viewController id="aGJ-P6-VXC" customClass="BGCOrganizationViewController" sceneMemberID="viewController">
@@ -470,7 +470,7 @@
                             <constraint firstItem="c3P-Q6-IJb" firstAttribute="top" secondItem="Ked-kI-DF3" secondAttribute="bottom" constant="38" id="uzY-fp-KK0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Organization" id="mrv-nP-O1R">
+                    <navigationItem key="navigationItem" title="ORGANIZATION" id="mrv-nP-O1R">
                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="eDl-JF-tpW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
