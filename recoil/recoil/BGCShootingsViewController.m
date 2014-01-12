@@ -123,6 +123,7 @@ static UIImage * babyImage;
     [self.mapView setRegion:viewRegion];
 }
 
+// TO DO: MAKE FETCHING AND HANDLING LAST VIEWED LOGIC SEPERATE OBJECT
 -(void)fetchDataFromParse
 {
     // Fetches data from Parse, and plots markers!
@@ -405,7 +406,6 @@ static UIImage * babyImage;
     } else {
         return self.casualties.count;
     }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -432,7 +432,6 @@ static UIImage * babyImage;
             casualty = self.casualties[indexPath.row];
             break;
     }
-    
     
     UITextField * nameField = (UITextField *)[cell viewWithTag:1];    
     nameField.text = [NSString stringWithFormat:@"%@, %i", casualty.victimName, casualty.victimAge];

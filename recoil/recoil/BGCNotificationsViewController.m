@@ -35,9 +35,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    self.tableView.backgroundColor = [UIColor colorWithRed:26.0/255.0 green:23.0/255.0 blue:24.0/255.0 alpha:1.0f]; //[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
+    
     if (!self.casualties.count){
         [self checkForCasualtiesInBackground];
+    }
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        // quick and dirty solution to add spacing to the top bar
+        // see: http://stackoverflow.com/questions/18900428/ios-7-uitableview-shows-under-status-bar
+        // for discussions of bugs with UITableViewController in relation to status bar
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     }
 }
 
@@ -97,17 +105,13 @@
     BGCNotificationCell *cell = (BGCNotificationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     BGCCasualty *casualty = self.casualties[indexPath.row];
     
-    if (self.lastViewed){
-        if ([self.lastViewed earlierDate:[NSDate date]]){
-            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
-        } else {
-            [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
-        }
-    } else {
+    if ([self.lastViewed compare:casualty.dateOccured] == NSOrderedAscending){
         [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeColor];
+    } else {
+        [cell prepareWithNotificationDescription:casualty.victimName timeStamp:[casualty.dateOccured stringDaysAgoAgainstMidnight:NO] notificationType:NotificationTypeCrimeOccured andColorType:ColorTypeGray];
     }
     
-    if (indexPath.row == self.casualties.count){
+    if (indexPath.row == self.casualties.count - 1){
         [self makeLastViewedUserDefaultMostRecentEvent];
     }
     
@@ -120,10 +124,13 @@
 // this assumption is emphasized in the header under the casualties property
 -(void)makeLastViewedUserDefaultMostRecentEvent
 {
-    if (_casualties){
+    if (_casualties.count){
+        // making last viewed user default
         BGCCasualty * mostRecentCasualty = self.casualties[0];
+        NSDate * dateOfMostRecentCasualty = mostRecentCasualty.dateOccured;
         NSUserDefaults * defaults = [[NSUserDefaults alloc] init];
-        [defaults setObject:mostRecentCasualty.dateOccured forKey:@"last_notification_viewed"];
+        [defaults setObject: dateOfMostRecentCasualty forKey:@"last_notification_viewed"];
+        self.lastViewed = dateOfMostRecentCasualty;
     }
 }
 
@@ -155,7 +162,10 @@
         if ([defauts objectForKey:@"last_notification_viewed"]){
             _lastViewed = (NSDate *) [defauts objectForKey:@"last_notification_viewed"];
         } else {
-            _lastViewed = nil;
+            // if there is not a default initialize it to 1970
+            NSDate * theYear1970 = [NSDate dateWithTimeIntervalSince1970:1.0];
+            [defauts setObject:theYear1970 forKey:@"last_notification_viewed"];
+            _lastViewed = theYear1970;
         }
     }
     return _lastViewed;
