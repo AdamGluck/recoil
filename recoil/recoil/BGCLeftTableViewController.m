@@ -121,6 +121,7 @@
             }
             break;
         case 2:
+            [self performSegueWithIdentifier:@"toSettingsViewController" sender:self];
             break;
         default:
             break;
