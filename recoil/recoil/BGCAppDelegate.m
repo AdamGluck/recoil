@@ -23,6 +23,7 @@
 {
     // Override point for customization after application launch.
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+
     [Parse setApplicationId:@"BErxVzz4caaIQP3nGgGIHGRqfNbRcSGqlQAAUqN7"
                   clientKey:@"zfchaZNDvJzvot0em8HXi4bOt4zPzzrV3oVNw9rM"];
     [TestFlight takeOff:@"64078b09-2264-435c-8026-5a312a3d6f29"];

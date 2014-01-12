@@ -72,7 +72,6 @@
 
 -(void) configureRightBarButtonItem
 {
-    NSLog(@"configure Right button");
     UIImage * image = [UIImage imageNamed:@"notification.png"];
     UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - image.size.width - 15.0, 0, image.size.width, image.size.height)];
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
